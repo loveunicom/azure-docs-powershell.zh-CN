@@ -10,45 +10,40 @@ ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 03/30/2017
-ms.openlocfilehash: 4bfa14f4f139fa8c35d4bb51ae81baea819188ce
-ms.sourcegitcommit: 226527be7cb647acfe2ea9ab151185053ab3c6db
+ms.openlocfilehash: f1c13317f0b42b547166a8130dd8c29bed5759c9
+ms.sourcegitcommit: db5c50de90764a9bdc7c1f1dbca3aed5bfeb05fa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/29/2017
+ms.lasthandoff: 08/22/2017
 ---
-<a id="getting-started-with-azure-powershell" class="xliff"></a>
-# Azure PowerShell 入门
+# <a name="getting-started-with-azure-powershell"></a>Azure PowerShell 入门
 
 Azure PowerShell 用于从命令行管理 Azure 资源，以及生成可以针对 Azure Resource Manager 运行的自动化脚本。 本文将帮助你开始使用 Azure PowerShell，并讲解其重要概念。
 
+## <a name="install-azure-powershell"></a>安装 Azure PowerShell
 
-<a id="install-azure-powershell" class="xliff"></a>
-## 安装 Azure PowerShell
-首先，请确保已安装最新版本的 Azure PowerShell。  最新版本为 4.1.0。
+首先，请确保已安装最新版本的 Azure PowerShell。 有关最新版本的信息，请参阅[发行说明](./release-notes-azureps.md)。
 
 1. [安装 Azure PowerShell](install-azurerm-ps.md)。
-
 2. 若要验证安装是否成功，请从命令行运行 `Get-Module AzureRM`。
 
-
-<a id="log-in-to-azure" class="xliff"></a>
-## 登录 Azure
+## <a name="log-in-to-azure"></a>登录 Azure
 
 以交互方式登录：
 
-1. 键入 `Login-AzureRmAccount`。  此时将出现一个对话框，要求输入 Azure 凭据。 通过 '-EnvironmentName' 选项可登录 Azure China 或 Azure Germany。
+1. 键入 `Login-AzureRmAccount`。 此时会出现一个对话框，要求输入 Azure 凭据。 通过 '-EnvironmentName' 选项可登录 Azure China 或 Azure Germany。
+
    例如 Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
-2. 键入与你的帐户关联的电子邮件地址和密码。 Azure 将对凭据信息进行身份验证和保存，然后关闭该窗口。
+2. 键入与帐户关联的电子邮件地址和密码。 Azure 将对凭据信息进行身份验证和保存，然后关闭该窗口。
 
 登录到 Azure 帐户后，可以使用 Azure PowerShell cmdlet 访问和管理器订阅中的资源。
 
-<a id="create-a-resource-group" class="xliff"></a>
-## 创建资源组
+## <a name="create-a-resource-group"></a>创建资源组
 
 完成所有设置后，让我们使用 Azure PowerShell 在 Azure 中创建资源。
 
-首先，请创建一个资源组。 使用 Azure 中的资源组可以管理你想要以逻辑方式分组在一起的多个资源。 例如，可为应用程序或项目创建资源组，并在其中添加虚拟机、数据库和 CDN 服务。
+首先，请创建一个资源组。 使用 Azure 中的资源组可以同时管理希望以逻辑方式分组的多个资源。 例如，可为应用程序或项目创建资源组，并在其中添加虚拟机、数据库和 CDN 服务。
 
 让我们在 Azure 的西欧区域创建一个名为“MyResourceGroup”的资源组。 为此，请键入以下命令：
 
@@ -64,13 +59,11 @@ Tags              :
 ResourceId        : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/myResourceGroup
 ```
 
-<a id="create-a-windows-virtual-machine" class="xliff"></a>
-## 创建 Windows 虚拟机
+## <a name="create-a-windows-virtual-machine"></a>创建 Windows 虚拟机
 
-创建资源组后，让我们在其中创建 Windows VM。 若要创建新的 VM，必须先创建其他所需的资源并将其分配到配置中。 然后，可以使用该配置来创建 VM。
+创建资源组后，让我们在其中创建 Windows VM。 要创建新的 VM，必须先创建其他所需的资源并将其分配到配置中。 然后，可以使用该配置来创建 VM。
 
-<a id="create-the-required-network-resources" class="xliff"></a>
-### 创建所需的网络资源
+### <a name="create-the-required-network-resources"></a>创建所需的网络资源
 
 首先，需要创建一个子网配置，以便在创建虚拟网络过程中使用。 此外，还要创建一个公共 IP 地址，以便能够连接到此 VM。 我们将创建一个网络安全组来保护对公共地址的访问。 最后，使用上述所有资源创建虚拟 NIC。
 
@@ -106,8 +99,7 @@ $nic = New-AzureRmNetworkInterface -Name myNic1 -ResourceGroupName $resourceGrou
   -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $publicIp.Id -NetworkSecurityGroupId $nsg.Id
 ```
 
-<a id="create-the-virtual-machine" class="xliff"></a>
-### 创建虚拟机
+### <a name="create-the-virtual-machine"></a>创建虚拟机
 
 首先，需要提供 OS 的一组凭据。
 
@@ -149,7 +141,7 @@ Name                  IpAddress
 mypublicdns1400512543 xx.xx.xx.xx
 ```
 
-如果你使用的是基于 Windows 的系统，可以在命令行中使用 mstsc 命令来执行此操作：
+如果使用的是基于 Windows 的系统，可以在命令行中使用 mstsc 命令来执行此操作：
 
 ```
 mstsc /v:xx.xxx.xx.xxx
@@ -158,13 +150,11 @@ mstsc /v:xx.xxx.xx.xxx
 提供创建 VM 时所用的同一用户名/密码组合进行登录。
 
 
-<a id="create-a-linux-virtual-machine" class="xliff"></a>
-## 创建 Linux 虚拟机
+## <a name="create-a-linux-virtual-machine"></a>创建 Linux 虚拟机
 
-若要创建新的 Linux VM，必须先创建其他所需的资源并将其分配到配置中。 然后，可以使用该配置来创建 VM。 此步骤假设已创建前面所示的资源组。 此外，用户配置文件的 .ssh 目录中需具备名为 `id_rsa.pub` 的 SSH 公钥。
+要创建新的 Linux VM，必须先创建其他所需的资源并将其分配到配置中。 然后，可以使用该配置来创建 VM。 此步骤假设已创建前面所示的资源组。 此外，用户配置文件的 .ssh 目录中需具备名为 `id_rsa.pub` 的 SSH 公钥。
 
-<a id="create-the-required-network-resources" class="xliff"></a>
-### 创建所需的网络资源
+### <a name="create-the-required-network-resources"></a>创建所需的网络资源
 
 首先，需要创建一个子网配置，以便在创建虚拟网络过程中使用。 此外，还要创建一个公共 IP 地址，以便能够连接到此 VM。 我们将创建一个网络安全组来保护对公共地址的访问。 最后，使用上述所有资源创建虚拟 NIC。
 
@@ -204,8 +194,7 @@ $nic = New-AzureRmNetworkInterface -Name myNic2 -ResourceGroupName $resourceGrou
   -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $publicIp.Id -NetworkSecurityGroupId $nsg.Id
 ```
 
-<a id="create-the-virtual-machine" class="xliff"></a>
-### 创建虚拟机
+### <a name="create-the-virtual-machine"></a>创建虚拟机
 
 准备好所需的资源后，便可以创建 VM。 在此步骤中，我们将创建一个 VM 配置对象，然后使用该配置来创建 VM。
 
@@ -261,8 +250,7 @@ applicable law.
 my-login@MyLinuxVM:~$
 ```
 
-<a id="creating-other-resources-in-azure" class="xliff"></a>
-## 在 Azure 中创建其他资源
+## <a name="creating-other-resources-in-azure"></a>在 Azure 中创建其他资源
 
 前面已经逐步讲解了如何创建资源组、Linux VM 和 Windows Server VM。 还可以创建许多其他类型的 Azure 资源。
 
@@ -293,8 +281,7 @@ New-AzureRmWebApp -Name MyWebApp43432 -AppServicePlan MyAppServicePlan -Resource
 New-AzureRmWebApp -Name MyWebApp43433 -AppServicePlan MyAppServicePlan -ResourceGroupName myResourceGroup -Location westeurope
 ```
 
-<a id="listing-deployed-resources" class="xliff"></a>
-## 列出已部署的资源
+## <a name="listing-deployed-resources"></a>列出已部署的资源
 
 可以使用 `Get-AzureRmResource` cmdlet 列出 Azure 中运行的资源。 以下示例显示我们刚刚在新资源组中创建的资源。
 
@@ -323,8 +310,7 @@ MYvNET2                                               westeurope Microsoft.Netwo
 micromyresomywi032907510                              westeurope Microsoft.Storage/storageAccounts
 ```
 
-<a id="deleting-resources" class="xliff"></a>
-## 删除资源
+## <a name="deleting-resources"></a>删除资源
 
 若要清理 Azure 帐户，可以删除我们在本示例中创建的资源。 可以使用 `Remove-AzureRm*` cmdlet 删除不再需要的资源。 若要删除我们创建的 Windows VM，请使用以下命令：
 
@@ -332,7 +318,7 @@ micromyresomywi032907510                              westeurope Microsoft.Stora
 Remove-AzureRmVM -Name myWindowsVM -ResourceGroupName myResourceGroup
 ```
 
-系统将提示你确认删除该资源。
+系统会提示确认删除该资源。
 
 ```
 Confirm
@@ -340,7 +326,7 @@ Are you sure you want to remove resource group 'myResourceGroup'
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 ```
 
-还可以一次性删除多个资源。 例如，以下命令将删除本入门教程中的所有示例使用的“MyResourceGroup”资源组中的所有资源。 这会删除该资源组及其包含的所有资源。
+还可以一次性删除多个资源。 例如，以下命令将删除本入门教程中所有示例使用的“MyResourceGroup”资源组中的所有资源。 这会删除该资源组及其包含的所有资源。
 
 ```powershell
 Remove-AzureRmResourceGroup -Name myResourceGroup
@@ -354,13 +340,11 @@ Are you sure you want to remove resource group 'myResourceGroup'
 
 此过程需要几分钟才能完成。
 
-<a id="get-samples" class="xliff"></a>
-## 获取示例
+## <a name="get-samples"></a>获取示例
 
 若要详细了解 Azure PowerShell 的用法，请查看适用于 [Linux VM](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json)、[Windows VM](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json)、[Web 应用](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json)和 [SQL 数据库](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json)的最常用脚本。
 
-<a id="next-steps" class="xliff"></a>
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 
 * [使用 Azure PowerShell 登录](authenticate-azureps.md)
 * [使用 Azure PowerShell 管理 Azure 订阅](manage-subscriptions-azureps.md)
