@@ -17,13 +17,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/29/2017
 ---
-# <span data-ttu-id="25418-103">发行说明</span><span class="sxs-lookup"><span data-stu-id="25418-103">Release notes</span></span>
-<a id="release-notes" class="xliff"></a>
+# <a name="release-notes"></a><span data-ttu-id="25418-103">发行说明</span><span class="sxs-lookup"><span data-stu-id="25418-103">Release notes</span></span>
 
 <span data-ttu-id="25418-104">下面是此版本中对 Azure PowerShell 所做的更改列表。</span><span class="sxs-lookup"><span data-stu-id="25418-104">This is a list of changes made to Azure PowerShell in this release.</span></span>
 
-## <span data-ttu-id="25418-105">版本 1.7.0</span><span class="sxs-lookup"><span data-stu-id="25418-105">Version 1.7.0</span></span>
-<a id="version-170" class="xliff"></a>
+## <a name="version-170"></a><span data-ttu-id="25418-105">版本 1.7.0</span><span class="sxs-lookup"><span data-stu-id="25418-105">Version 1.7.0</span></span>
 
 * <span data-ttu-id="25418-106">**所有 cmdlet 的 -Force、–Confirm 和 $ConfirmPreference 参数的行为更改。我们正在根据 PowerShell 准则更改此实现。对于大多数 cmdlet，这意味着删除 Force 参数，并且若要跳过 ShouldProcess 提示，用户需要在其 PowerShell 脚本中包含“-Confirm:$false”参数。**</span><span class="sxs-lookup"><span data-stu-id="25418-106">**Behavioral change for -Force, –Confirm and $ConfirmPreference parameters for all cmdlets. We are changing this implementation to be in line with PowerShell guidelines. For most cmdlets, this means removing the Force parameter and to skip the ShouldProcess prompt, users will need to include the parameter: ‘-Confirm:$false’ in their PowerShell scripts.**</span></span> <span data-ttu-id="25418-107">此更改将解决以下问题：</span><span class="sxs-lookup"><span data-stu-id="25418-107">This changes are addressing following issues:</span></span>
   - <span data-ttu-id="25418-108">正确实现 -WhatIf 功能，允许用户确定 cmdlet 或脚本的影响，而无需进行任何实际更改</span><span class="sxs-lookup"><span data-stu-id="25418-108">Correct implementation of –WhatIf functionality, allowing a user to determine the effects of a cmdlet or script without making any actual changes</span></span>

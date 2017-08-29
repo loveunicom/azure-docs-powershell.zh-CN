@@ -17,13 +17,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/29/2017
 ---
-# <span data-ttu-id="17318-103">发行说明</span><span class="sxs-lookup"><span data-stu-id="17318-103">Release notes</span></span>
-<a id="release-notes" class="xliff"></a>
+# <a name="release-notes"></a><span data-ttu-id="17318-103">发行说明</span><span class="sxs-lookup"><span data-stu-id="17318-103">Release notes</span></span>
 
 <span data-ttu-id="17318-104">下面是此版本中对 Azure PowerShell 所做的更改列表。</span><span class="sxs-lookup"><span data-stu-id="17318-104">This is a list of changes made to Azure PowerShell in this release.</span></span>
 
-## <span data-ttu-id="17318-105">版本 2.2.0</span><span class="sxs-lookup"><span data-stu-id="17318-105">Version 2.2.0</span></span>
-<a id="version-220" class="xliff"></a>
+## <a name="version-220"></a><span data-ttu-id="17318-105">版本 2.2.0</span><span class="sxs-lookup"><span data-stu-id="17318-105">Version 2.2.0</span></span>
 * <span data-ttu-id="17318-106">计算</span><span class="sxs-lookup"><span data-stu-id="17318-106">Compute</span></span>
   - <span data-ttu-id="17318-107">添加了从 AzureDiskEncryptionForLinux 扩展查询加密状态的支持</span><span class="sxs-lookup"><span data-stu-id="17318-107">Add support for querying encryption status from the AzureDiskEncryptionForLinux extension</span></span>
 * <span data-ttu-id="17318-108">DataFactory</span><span class="sxs-lookup"><span data-stu-id="17318-108">DataFactory</span></span>

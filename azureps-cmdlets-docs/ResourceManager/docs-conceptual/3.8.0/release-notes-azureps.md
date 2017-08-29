@@ -17,13 +17,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/29/2017
 ---
-# <span data-ttu-id="87d1e-103">发行说明</span><span class="sxs-lookup"><span data-stu-id="87d1e-103">Release notes</span></span>
-<a id="release-notes" class="xliff"></a>
+# <a name="release-notes"></a><span data-ttu-id="87d1e-103">发行说明</span><span class="sxs-lookup"><span data-stu-id="87d1e-103">Release notes</span></span>
 
 <span data-ttu-id="87d1e-104">下面是此版本中对 Azure PowerShell 所做的更改列表。</span><span class="sxs-lookup"><span data-stu-id="87d1e-104">This is a list of changes made to Azure PowerShell in this release.</span></span>
 
-## <span data-ttu-id="87d1e-105">版本 3.8.0</span><span class="sxs-lookup"><span data-stu-id="87d1e-105">Version 3.8.0</span></span>
-<a id="version-380" class="xliff"></a>
+## <a name="version-380"></a><span data-ttu-id="87d1e-105">版本 3.8.0</span><span class="sxs-lookup"><span data-stu-id="87d1e-105">Version 3.8.0</span></span>
 * <span data-ttu-id="87d1e-106">计算</span><span class="sxs-lookup"><span data-stu-id="87d1e-106">Compute</span></span>
   - <span data-ttu-id="87d1e-107">修复了 Get-* cmdlet 中的 bug，以便能够检索多个数据页面（超过 120 项）</span><span class="sxs-lookup"><span data-stu-id="87d1e-107">Fix bug in Get-* cmdlets, to allow retrieving multiple pages of data (more than 120 items)</span></span>
 * <span data-ttu-id="87d1e-108">DataLakeAnalytics</span><span class="sxs-lookup"><span data-stu-id="87d1e-108">DataLakeAnalytics</span></span>

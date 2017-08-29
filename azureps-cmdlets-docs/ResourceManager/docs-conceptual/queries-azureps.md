@@ -1,6 +1,6 @@
 ---
-title: "<span data-ttu-id=\"bcd52-101\">查询 Azure 资源和设置结果的格式 | Microsoft Docs</span><span class=\"sxs-lookup\"><span data-stu-id=\"bcd52-101\">Querying for Azure resources and formatting results | Microsoft Docs</span></span>"
-description: "<span data-ttu-id=\"bcd52-102\">如何查询 Azure 中的资源以及设置结果的格式。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bcd52-102\">How to query for resources in Azure and format the results.</span></span>"
+title: "查询 Azure 资源和设置结果的格式 | Microsoft Docs"
+description: "如何查询 Azure 中的资源以及设置结果的格式。"
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -16,14 +16,12 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/29/2017
 ---
-# <span data-ttu-id="bcd52-103">查询 Azure 资源</span><span class="sxs-lookup"><span data-stu-id="bcd52-103">Querying for Azure resources</span></span>
-<a id="querying-for-azure-resources" class="xliff"></a>
+# <a name="querying-for-azure-resources"></a><span data-ttu-id="bcd52-103">查询 Azure 资源</span><span class="sxs-lookup"><span data-stu-id="bcd52-103">Querying for Azure resources</span></span>
 
 <span data-ttu-id="bcd52-104">可以在 PowerShell 中使用内置的 cmdlet 完成查询。</span><span class="sxs-lookup"><span data-stu-id="bcd52-104">Querying in PowerShell can be completed by using built-in cmdlets.</span></span> <span data-ttu-id="bcd52-105">在 PowerShell 中，cmdlet 名称采用 **_动词-名词_** 格式。</span><span class="sxs-lookup"><span data-stu-id="bcd52-105">In PowerShell, cmdlet names take the form of **_Verb-Noun_**.</span></span> <span data-ttu-id="bcd52-106">使用动词 **_Get_** 的 cmdlet 是查询 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="bcd52-106">The cmdlets using the verb **_Get_** are the query cmdlets.</span></span> <span data-ttu-id="bcd52-107">cmdlet 名词是 cmdlet 动词处理的 Azure 资源的类型。</span><span class="sxs-lookup"><span data-stu-id="bcd52-107">The cmdlet nouns are the types of Azure resources that are acted upon by the cmdlet verbs.</span></span>
 
 
-## <span data-ttu-id="bcd52-108">选择简单属性</span><span class="sxs-lookup"><span data-stu-id="bcd52-108">Selecting simple properties</span></span>
-<a id="selecting-simple-properties" class="xliff"></a>
+## <a name="selecting-simple-properties"></a><span data-ttu-id="bcd52-108">选择简单属性</span><span class="sxs-lookup"><span data-stu-id="bcd52-108">Selecting simple properties</span></span>
 
 <span data-ttu-id="bcd52-109">Azure PowerShell 为每个 cmdlet 定义了默认格式。</span><span class="sxs-lookup"><span data-stu-id="bcd52-109">Azure PowerShell has default formatting defined for each cmdlet.</span></span> <span data-ttu-id="bcd52-110">每种资源类型的最常见属性自动以表或列表格式显示。</span><span class="sxs-lookup"><span data-stu-id="bcd52-110">The most common properties for each resource type are displayed in a table or list format automatically.</span></span> <span data-ttu-id="bcd52-111">有关设置输出格式的详细信息，请参阅[设置查询结果的格式](formatting-output.md)。</span><span class="sxs-lookup"><span data-stu-id="bcd52-111">For more information about formatting output, see [Formatting query results](formatting-output.md).</span></span>
 
@@ -55,8 +53,7 @@ MyUnbuntu1610 MYWESTEURG        westeurope
 MyWin2016VM   MYWESTEURG        westeurope
 ```
 
-## <span data-ttu-id="bcd52-115">选择复杂的嵌套属性</span><span class="sxs-lookup"><span data-stu-id="bcd52-115">Selecting complex nested properties</span></span>
-<a id="selecting-complex-nested-properties" class="xliff"></a>
+## <a name="selecting-complex-nested-properties"></a><span data-ttu-id="bcd52-115">选择复杂的嵌套属性</span><span class="sxs-lookup"><span data-stu-id="bcd52-115">Selecting complex nested properties</span></span>
 
 <span data-ttu-id="bcd52-116">如果要选择的属性嵌套在 JSON 输出中的深层位置，则你需要提供该嵌套属性的完整路径。</span><span class="sxs-lookup"><span data-stu-id="bcd52-116">If the property you want to select is nested deep in the JSON output you need to supply the full path to that nested property.</span></span> <span data-ttu-id="bcd52-117">以下示例演示如何从 `Get-AzureRmVM` cmdlet 选择 VM 名称和 OS 类型。</span><span class="sxs-lookup"><span data-stu-id="bcd52-117">The following example shows how to select the VM Name and the OS type from the `Get-AzureRmVM` cmdlet.</span></span>
 
@@ -71,8 +68,7 @@ MyUnbuntu1610   Linux
 MyWin2016VM   Windows
 ```
 
-## <span data-ttu-id="bcd52-118">使用 Where-Object cmdlet 筛选结果</span><span class="sxs-lookup"><span data-stu-id="bcd52-118">Filter result using the Where-Object cmdlet</span></span>
-<a id="filter-result-using-the-where-object-cmdlet" class="xliff"></a>
+## <a name="filter-result-using-the-where-object-cmdlet"></a><span data-ttu-id="bcd52-118">使用 Where-Object cmdlet 筛选结果</span><span class="sxs-lookup"><span data-stu-id="bcd52-118">Filter result using the Where-Object cmdlet</span></span>
 
 <span data-ttu-id="bcd52-119">使用 `Where-Object` cmdlet 可以根据任何属性值筛选结果。</span><span class="sxs-lookup"><span data-stu-id="bcd52-119">The `Where-Object` cmdlet allows you to filter the result based on any property value.</span></span> <span data-ttu-id="bcd52-120">在以下示例中，筛选器仅选择名称中包含文本“RGD”的 VM。</span><span class="sxs-lookup"><span data-stu-id="bcd52-120">In the following example, the filter selects only VMs that have the text "RGD" in their name.</span></span>
 

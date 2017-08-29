@@ -17,13 +17,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/29/2017
 ---
-# <span data-ttu-id="56baa-103">发行说明</span><span class="sxs-lookup"><span data-stu-id="56baa-103">Release notes</span></span>
-<a id="release-notes" class="xliff"></a>
+# <a name="release-notes"></a><span data-ttu-id="56baa-103">发行说明</span><span class="sxs-lookup"><span data-stu-id="56baa-103">Release notes</span></span>
 
 <span data-ttu-id="56baa-104">下面是此版本中对 Azure PowerShell 所做的更改列表。</span><span class="sxs-lookup"><span data-stu-id="56baa-104">This is a list of changes made to Azure PowerShell in this release.</span></span>
 
-## <span data-ttu-id="56baa-105">版本 1.2.9</span><span class="sxs-lookup"><span data-stu-id="56baa-105">Version 1.2.9</span></span>
-<a id="version-129" class="xliff"></a>
+## <a name="version-129"></a><span data-ttu-id="56baa-105">版本 1.2.9</span><span class="sxs-lookup"><span data-stu-id="56baa-105">Version 1.2.9</span></span>
 
 <span data-ttu-id="56baa-106">此版本的更改</span><span class="sxs-lookup"><span data-stu-id="56baa-106">Changes This Release</span></span>
 

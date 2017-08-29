@@ -1,6 +1,6 @@
 ---
-title: "<span data-ttu-id=\"40c49-101\">使用 Azure PowerShell 登录</span><span class=\"sxs-lookup\"><span data-stu-id=\"40c49-101\">Log in with Azure PowerShell</span></span>"
-description: "<span data-ttu-id=\"40c49-102\">使用 Azure PowerShell 登录</span><span class=\"sxs-lookup\"><span data-stu-id=\"40c49-102\">Log in with Azure PowerShell</span></span>"
+title: "使用 Azure PowerShell 登录"
+description: "使用 Azure PowerShell 登录"
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -16,20 +16,17 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/29/2017
 ---
-# <span data-ttu-id="40c49-103">使用 Azure PowerShell 登录</span><span class="sxs-lookup"><span data-stu-id="40c49-103">Log in with Azure PowerShell</span></span>
-<a id="log-in-with-azure-powershell" class="xliff"></a>
+# <a name="log-in-with-azure-powershell"></a><span data-ttu-id="40c49-103">使用 Azure PowerShell 登录</span><span class="sxs-lookup"><span data-stu-id="40c49-103">Log in with Azure PowerShell</span></span>
 
 <span data-ttu-id="40c49-104">Azure PowerShell 支持多种登录方法。</span><span class="sxs-lookup"><span data-stu-id="40c49-104">Azure PowerShell supports multiple login methods.</span></span> <span data-ttu-id="40c49-105">最简单的初始方法是通过命令行以交互方式登录。</span><span class="sxs-lookup"><span data-stu-id="40c49-105">The simplest way to get started is to log in interactively at the command line.</span></span>
 
-## <span data-ttu-id="40c49-106">交互式登录</span><span class="sxs-lookup"><span data-stu-id="40c49-106">Interactive log in</span></span>
-<a id="interactive-log-in" class="xliff"></a>
+## <a name="interactive-log-in"></a><span data-ttu-id="40c49-106">交互式登录</span><span class="sxs-lookup"><span data-stu-id="40c49-106">Interactive log in</span></span>
 
 1. <span data-ttu-id="40c49-107">键入 `Login-AzureRmAccount`。</span><span class="sxs-lookup"><span data-stu-id="40c49-107">Type `Login-AzureRmAccount`.</span></span> <span data-ttu-id="40c49-108">此时将出现一个对话框，要求输入 Azure 凭据。</span><span class="sxs-lookup"><span data-stu-id="40c49-108">You will get dialog box asking for your Azure credentials.</span></span>
 
 2. <span data-ttu-id="40c49-109">键入与你的帐户关联的电子邮件地址和密码。</span><span class="sxs-lookup"><span data-stu-id="40c49-109">Type the email address and password associated with your account.</span></span> <span data-ttu-id="40c49-110">Azure 将对凭据信息进行身份验证和保存，然后关闭该窗口。</span><span class="sxs-lookup"><span data-stu-id="40c49-110">Azure authenticates and saves the credential information, and then closes the window.</span></span>
 
-## <span data-ttu-id="40c49-111">使用服务主体登录</span><span class="sxs-lookup"><span data-stu-id="40c49-111">Log in with a service principal</span></span>
-<a id="log-in-with-a-service-principal" class="xliff"></a>
+## <a name="log-in-with-a-service-principal"></a><span data-ttu-id="40c49-111">使用服务主体登录</span><span class="sxs-lookup"><span data-stu-id="40c49-111">Log in with a service principal</span></span>
 
 <span data-ttu-id="40c49-112">使用服务主体能够创建可用于处理资源的非交互式帐户。</span><span class="sxs-lookup"><span data-stu-id="40c49-112">Service principals provide a way for you to create non-interactive accounts that you can use to manipulate resources.</span></span> <span data-ttu-id="40c49-113">服务主体类似于可以使用 Azure Active Directory 向其应用规则的用户帐户。</span><span class="sxs-lookup"><span data-stu-id="40c49-113">Service principals are like user accounts to which you can apply rules using Azure Active Directory.</span></span> <span data-ttu-id="40c49-114">通过授予服务主体所需的最低权限，可以确保自动化脚本更加安全。</span><span class="sxs-lookup"><span data-stu-id="40c49-114">By granting the minimum permissions needed to a service principal, you can ensure your automation scripts are even more secure.</span></span>
 
@@ -56,8 +53,7 @@ ms.lasthandoff: 06/29/2017
     CurrentStorageAccount :
     ```
 
-## <span data-ttu-id="40c49-118">登录到其他云</span><span class="sxs-lookup"><span data-stu-id="40c49-118">Log in to another Cloud</span></span>
-<a id="log-in-to-another-cloud" class="xliff"></a>
+## <a name="log-in-to-another-cloud"></a><span data-ttu-id="40c49-118">登录到其他云</span><span class="sxs-lookup"><span data-stu-id="40c49-118">Log in to another Cloud</span></span>
 
 <span data-ttu-id="40c49-119">Azure 云服务提供遵循各政府的数据处理法规的不同环境。</span><span class="sxs-lookup"><span data-stu-id="40c49-119">Azure cloud services provide different environments that adhere to the data-handling regulations of various governments.</span></span> <span data-ttu-id="40c49-120">如果 Azure 帐户在政府云中，登录时需指定环境。</span><span class="sxs-lookup"><span data-stu-id="40c49-120">If your Azure account is in one the government clouds, you need to specify the environment when you sign in.</span></span> <span data-ttu-id="40c49-121">例如，如果帐户在中国云中，请使用以下命令登录：</span><span class="sxs-lookup"><span data-stu-id="40c49-121">For example, if you account is in the China cloud you sign on using the following command:</span></span>
 
@@ -80,8 +76,7 @@ AzureUSGovernment
 AzureGermanCloud
 ```
 
-## <span data-ttu-id="40c49-123">详细了解如何管理 Azure 基于角色的访问</span><span class="sxs-lookup"><span data-stu-id="40c49-123">Learn more about managing Azure role-based access</span></span>
-<a id="learn-more-about-managing-azure-role-based-access" class="xliff"></a>
+## <a name="learn-more-about-managing-azure-role-based-access"></a><span data-ttu-id="40c49-123">详细了解如何管理 Azure 基于角色的访问</span><span class="sxs-lookup"><span data-stu-id="40c49-123">Learn more about managing Azure role-based access</span></span>
 
 <span data-ttu-id="40c49-124">有关 Azure 中的身份验证和订阅管理的详细信息，请参阅[管理帐户、订阅和管理角色](/azure/active-directory/role-based-access-control-configure)。</span><span class="sxs-lookup"><span data-stu-id="40c49-124">For more information about authentication and subscription management in Azure, see [Manage Accounts, Subscriptions, and Administrative Roles](/azure/active-directory/role-based-access-control-configure).</span></span>
 

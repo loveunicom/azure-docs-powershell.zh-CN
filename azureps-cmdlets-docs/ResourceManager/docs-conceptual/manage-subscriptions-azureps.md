@@ -16,8 +16,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/29/2017
 ---
-# <span data-ttu-id="b38b7-104">管理多个 Azure 订阅</span><span class="sxs-lookup"><span data-stu-id="b38b7-104">Manage multiple Azure subscriptions</span></span>
-<a id="manage-multiple-azure-subscriptions" class="xliff"></a>
+# <a name="manage-multiple-azure-subscriptions"></a><span data-ttu-id="b38b7-104">管理多个 Azure 订阅</span><span class="sxs-lookup"><span data-stu-id="b38b7-104">Manage multiple Azure subscriptions</span></span>
 
 <span data-ttu-id="b38b7-105">如果你是 Azure 的新手，也许只有一个订阅。</span><span class="sxs-lookup"><span data-stu-id="b38b7-105">If you are brand new to Azure, you probably only have a single subscription.</span></span> <span data-ttu-id="b38b7-106">但如果你使用 Azure 有一段时间，可能已创建了多个 Azure 订阅。</span><span class="sxs-lookup"><span data-stu-id="b38b7-106">But if you have been using Azure for a while, you may have created multiple Azure subscriptions.</span></span> <span data-ttu-id="b38b7-107">可将 Azure PowerShell 配置为针对特定的订阅执行命令。</span><span class="sxs-lookup"><span data-stu-id="b38b7-107">You can configure Azure PowerShell to execute commands against a particular subscription.</span></span>
 

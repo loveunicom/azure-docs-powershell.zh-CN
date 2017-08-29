@@ -1,6 +1,6 @@
 ---
-title: "<span data-ttu-id=\"bcfdd-101\">设置查询结果的格式 | Microsoft Docs</span><span class=\"sxs-lookup\"><span data-stu-id=\"bcfdd-101\">Formatting query results | Microsoft Docs</span></span>"
-description: "<span data-ttu-id=\"bcfdd-102\">如何查询 Azure 中的资源以及设置结果的格式。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bcfdd-102\">How to query for resources in Azure and format the results.</span></span>"
+title: "设置查询结果的格式 | Microsoft Docs"
+description: "如何查询 Azure 中的资源以及设置结果的格式。"
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -16,8 +16,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/29/2017
 ---
-# <span data-ttu-id="bcfdd-103">设置查询结果的格式</span><span class="sxs-lookup"><span data-stu-id="bcfdd-103">Formatting query results</span></span>
-<a id="formatting-query-results" class="xliff"></a>
+# <a name="formatting-query-results"></a><span data-ttu-id="bcfdd-103">设置查询结果的格式</span><span class="sxs-lookup"><span data-stu-id="bcfdd-103">Formatting query results</span></span>
 
 <span data-ttu-id="bcfdd-104">默认情况下，每个 PowerShell cmdlet 都有预定义的输出格式，使输出结果易于阅读。</span><span class="sxs-lookup"><span data-stu-id="bcfdd-104">By default each PowerShell cmdlet has predefined formatting of output making it easy to read.</span></span>  <span data-ttu-id="bcfdd-105">PowerShell 还可让你使用以下 cmdlet 灵活调整输出，或者将 cmdlet 输出转换为不同的格式：</span><span class="sxs-lookup"><span data-stu-id="bcfdd-105">PowerShell also provides the flexibility to adjust the output or convert the cmdlet output to a different format with the following cmdlets:</span></span>
 
@@ -28,8 +27,7 @@ ms.lasthandoff: 06/29/2017
 | `Format-Table`  | `ConvertTo-Json` |
 | `Format-Wide`   | `ConvertTo-Xml`  |
 
-## <span data-ttu-id="bcfdd-108">格式设置示例</span><span class="sxs-lookup"><span data-stu-id="bcfdd-108">Formatting examples</span></span>
-<a id="formatting-examples" class="xliff"></a>
+## <a name="formatting-examples"></a><span data-ttu-id="bcfdd-108">格式设置示例</span><span class="sxs-lookup"><span data-stu-id="bcfdd-108">Formatting examples</span></span>
 
 <span data-ttu-id="bcfdd-109">此示例获取默认订阅中的 Azure VM 列表。</span><span class="sxs-lookup"><span data-stu-id="bcfdd-109">In this example we get a list of Azure VMs in our default subscription.</span></span>  <span data-ttu-id="bcfdd-110">Get-AzureRmVM 命令将输出默认设置为表格式。</span><span class="sxs-lookup"><span data-stu-id="bcfdd-110">The Get-AzureRmVM command defaults output into a table format.</span></span>
 
@@ -75,8 +73,7 @@ Location          : westeurope
 ResourceGroupName : MYWESTEURG
 ```
 
-## <span data-ttu-id="bcfdd-116">转换为其他数据类型</span><span class="sxs-lookup"><span data-stu-id="bcfdd-116">Converting to other data types</span></span>
-<a id="converting-to-other-data-types" class="xliff"></a>
+## <a name="converting-to-other-data-types"></a><span data-ttu-id="bcfdd-116">转换为其他数据类型</span><span class="sxs-lookup"><span data-stu-id="bcfdd-116">Converting to other data types</span></span>
 
 <span data-ttu-id="bcfdd-117">PowerShell 还提供多种输出格式，你可以根据需要使用不同的格式。</span><span class="sxs-lookup"><span data-stu-id="bcfdd-117">PowerShell also offers multiple output format you can use to meet your needs.</span></span>  <span data-ttu-id="bcfdd-118">以下示例使用 `Select-Object` cmdlet 获取订阅中虚拟机的属性，然后将输出转换为 CSV 格式，以方便导入数据库或电子表格。</span><span class="sxs-lookup"><span data-stu-id="bcfdd-118">In the following example we use the `Select-Object` cmdlet to get attributes of the virtual machines in our subscription and and convert the output to CSV format for easy import into a database or spreadsheet.</span></span>
 
