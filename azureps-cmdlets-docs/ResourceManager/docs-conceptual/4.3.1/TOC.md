@@ -1,9 +1,14 @@
 # [Azure PowerShell](../overview.md)
+
 ## [安装](../install-azurerm-ps.md)
+### [在 macOS 和 Linux 上安装](../install-azurermps-maclinux.md)
 ### [其他安装方法](../other-install.md)
+
 ## [入门](../get-started-azureps.md)
+
 ## [登录](../authenticate-azureps.md)
 ### [创建服务主体](../create-azure-service-principal-azureps.md)
+
 ## [查询](../queries-azureps.md)
 ## [格式设置](../formatting-output.md)
 ## [订阅](../manage-subscriptions-azureps.md)
