@@ -10,13 +10,16 @@ ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/17/2017
-ms.openlocfilehash: 8b82de3634a1492baf54ce4d2172af3e3287229c
-ms.sourcegitcommit: db5c50de90764a9bdc7c1f1dbca3aed5bfeb05fa
+ms.openlocfilehash: 8f99855c88240c6c5aeb6dd3b1ba5d9ddc8aefd1
+ms.sourcegitcommit: 202ec2df66c40a60f47ea06b30a6701ad444d229
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="install-and-configure-azure-powershell"></a>安装和配置 Azure PowerShell
+
+本文介绍了在 Windows 环境中安装 Azure PowerShell 模块的步骤。
+如果想要在 macOS 或 Linux 上使用 Azure PowerShell，请参阅以下文章：[在 macOS 和 Linux 上安装和配置 Azure PowerShell](install-azureps-maclinux.md)。
 
 从 PowerShell 库安装 Azure PowerShell 是首选的安装方法。
 
