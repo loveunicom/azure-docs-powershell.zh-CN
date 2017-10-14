@@ -9,22 +9,41 @@ ms.product: azure
 ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: get-started-article
-ms.date: 03/30/2017
-ms.openlocfilehash: f1c13317f0b42b547166a8130dd8c29bed5759c9
-ms.sourcegitcommit: db5c50de90764a9bdc7c1f1dbca3aed5bfeb05fa
+ms.date: 08/31/2017
+ms.openlocfilehash: 2cd3fc8e955ae826471dceee79d5e6b70070d416
+ms.sourcegitcommit: e6b7e20bbd04eda51416c56b13f867102b602d1a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2017
+ms.lasthandoff: 10/07/2017
 ---
 # <a name="getting-started-with-azure-powershell"></a>Azure PowerShell 入门
 
-Azure PowerShell 用于从命令行管理 Azure 资源，以及生成可以针对 Azure Resource Manager 运行的自动化脚本。 本文将帮助你开始使用 Azure PowerShell，并讲解其重要概念。
+Azure PowerShell 用于从命令行管理 Azure 资源，以及生成可以针对 Azure Resource Manager 运行的自动化脚本。 可以在浏览器中结合 [Azure Cloud Shell](/azure/cloud-shell/overview) 使用这些 cmdlet，或者将它们安装在本地计算机上并在任何 PowerShell 会话中使用。 本文将帮助你开始使用 Azure PowerShell，并讲解其重要概念。
+
+## <a name="connect"></a>连接
+
+最简单的入门方法是[启动 Cloud Shell](/azure/cloud-shell/quickstart)。
+
+1. 从 Azure 门户的顶部导航栏启动 Cloud Shell。
+
+   ![Shell 图标](~/media/get-started-azureps/shell-icon.png)
+
+2. 选择要使用的订阅并创建存储帐户。
+
+   ![创建存储帐户](~/media/get-started-azureps/storage-prompt.png)
+
+创建存储后，Cloud Shell 会在浏览器中打开 PowerShell 会话。
+
+![适用于 PowerShell 的 Cloud Shell](~/media/get-started-azureps/cloud-powershell.png)
+
+也可以安装 Azure PowerShell 并在 PowerShell 会话本地使用它。
 
 ## <a name="install-azure-powershell"></a>安装 Azure PowerShell
 
 首先，请确保已安装最新版本的 Azure PowerShell。 有关最新版本的信息，请参阅[发行说明](./release-notes-azureps.md)。
 
 1. [安装 Azure PowerShell](install-azurerm-ps.md)。
+
 2. 若要验证安装是否成功，请从命令行运行 `Get-Module AzureRM`。
 
 ## <a name="log-in-to-azure"></a>登录 Azure
@@ -51,7 +70,7 @@ Azure PowerShell 用于从命令行管理 Azure 资源，以及生成可以针�
 New-AzureRmResourceGroup -Name 'myResourceGroup' -Location 'westeurope'
 ```
 
-```
+```Output
 ResourceGroupName : myResourceGroup
 Location          : westeurope
 ProvisioningState : Succeeded
@@ -123,7 +142,7 @@ New-AzureRmVM -ResourceGroupName $resourceGroup -Location $location -VM $vmConfi
 
 完全创建并已准备好使用 VM 后，`New-AzureRmVM` 命令将输出结果。
 
-```
+```Output
 RequestId IsSuccessStatusCode StatusCode ReasonPhrase
 --------- ------------------- ---------- ------------
                          True         OK OK
@@ -135,7 +154,7 @@ RequestId IsSuccessStatusCode StatusCode ReasonPhrase
 $publicIp | Select-Object Name,IpAddress
 ```
 
-```
+```Output
 Name                  IpAddress
 ----                  ---------
 mypublicdns1400512543 xx.xx.xx.xx
@@ -143,12 +162,11 @@ mypublicdns1400512543 xx.xx.xx.xx
 
 如果使用的是基于 Windows 的系统，可以在命令行中使用 mstsc 命令来执行此操作：
 
-```
+```powershell
 mstsc /v:xx.xxx.xx.xxx
 ```
 
 提供创建 VM 时所用的同一用户名/密码组合进行登录。
-
 
 ## <a name="create-a-linux-virtual-machine"></a>创建 Linux 虚拟机
 
@@ -219,7 +237,7 @@ New-AzureRmVM -ResourceGroupName $resourceGroup -Location $location -VM $vmConfi
 ssh xx.xxx.xxx.xxx
 ```
 
-```
+```Output
 Welcome to Ubuntu 14.04.4 LTS (GNU/Linux 3.19.0-65-generic x86_64)
 
  * Documentation:  https://help.ubuntu.com/
@@ -247,7 +265,7 @@ individual files in /usr/share/doc/*/copyright.
 Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
 applicable law.
 
-my-login@MyLinuxVM:~$
+my-login@MyLinuxVM:../../..$
 ```
 
 ## <a name="creating-other-resources-in-azure"></a>在 Azure 中创建其他资源
@@ -291,7 +309,7 @@ Get-AzureRmResource |
     Select-Object Name,Location,ResourceType
 ```
 
-```
+```Output
 Name                                                  Location   ResourceType
 ----                                                  --------   ------------
 myLinuxVM_OsDisk_1_36ca038791f642ba91270879088c249a   westeurope Microsoft.Compute/disks
@@ -320,7 +338,7 @@ Remove-AzureRmVM -Name myWindowsVM -ResourceGroupName myResourceGroup
 
 系统会提示确认删除该资源。
 
-```
+```Output
 Confirm
 Are you sure you want to remove resource group 'myResourceGroup'
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
@@ -332,7 +350,7 @@ Are you sure you want to remove resource group 'myResourceGroup'
 Remove-AzureRmResourceGroup -Name myResourceGroup
 ```
 
-```
+```Output
 Confirm
 Are you sure you want to remove resource group 'myResourceGroup'
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
@@ -351,5 +369,5 @@ Are you sure you want to remove resource group 'myResourceGroup'
 * [使用 Azure PowerShell 在 Azure 中创建服务主体](create-azure-service-principal-azureps.md)
 * 在发行说明中阅读有关从旧版迁移的信息：[https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes)。
 * 从社区获得帮助：
-  + [MSDN 上的 Azure 论坛](http://go.microsoft.com/fwlink/p/?LinkId=320212)
-  + [stackoverflow](http://go.microsoft.com/fwlink/?LinkId=320213)
+  * [MSDN 上的 Azure 论坛](http://go.microsoft.com/fwlink/p/?LinkId=320212)
+  * [stackoverflow](http://go.microsoft.com/fwlink/?LinkId=320213)

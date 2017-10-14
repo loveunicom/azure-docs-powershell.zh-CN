@@ -10,11 +10,11 @@ ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: f6d249ca5bb09c4fe8445ba5b339ffa6012815ed
-ms.sourcegitcommit: 226527be7cb647acfe2ea9ab151185053ab3c6db
+ms.openlocfilehash: 1af5aeffb8e87e916df3e2440a84805935136c0f
+ms.sourcegitcommit: e6b7e20bbd04eda51416c56b13f867102b602d1a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/29/2017
+ms.lasthandoff: 10/07/2017
 ---
 # <a name="log-in-with-azure-powershell"></a>使用 Azure PowerShell 登录
 
@@ -22,9 +22,9 @@ Azure PowerShell 支持多种登录方法。 最简单的初始方法是通过�
 
 ## <a name="interactive-log-in"></a>交互式登录
 
-1. 键入 `Login-AzureRmAccount`。 此时将出现一个对话框，要求输入 Azure 凭据。
+1. 键入 `Login-AzureRmAccount`。 此时会出现一个对话框，要求输入 Azure 凭据。
 
-2. 键入与你的帐户关联的电子邮件地址和密码。 Azure 将对凭据信息进行身份验证和保存，然后关闭该窗口。
+2. 键入与帐户关联的电子邮件地址和密码。 Azure 将对凭据信息进行身份验证和保存，然后关闭该窗口。
 
 ## <a name="log-in-with-a-service-principal"></a>使用服务主体登录
 
@@ -38,7 +38,7 @@ Azure PowerShell 支持多种登录方法。 最简单的初始方法是通过�
     Login-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
     ```
 
-    若要获取 TenantId，请以交互方式登录，然后从订阅中获取 TenantId。
+    要获取 TenantId，请以交互方式登录，并从订阅中获取 TenantId。
 
     ```powershell
     Get-AzureRmSubscription
@@ -52,6 +52,12 @@ Azure PowerShell 支持多种登录方法。 最简单的初始方法是通过�
     SubscriptionName      : My Production Subscription
     CurrentStorageAccount :
     ```
+
+### <a name="log-in-using-an-azure-vm-managed-service-identity"></a>使用 Azure VM 托管服务标识登录
+
+托管服务标识 (MSI) 是 Azure Active Directory 的预览版功能。 可以使用 MSI 服务主体进行登录，并获取仅限应用的访问令牌来访问其他资源。
+
+有关 MSI 的详细信息，请参阅[如何使用 Azure VM 托管服务标识 (MSI) 登录和获取令牌](/azure/active-directory/msi-how-to-get-access-token-using-msi)。
 
 ## <a name="log-in-to-another-cloud"></a>登录到其他云
 
