@@ -10,11 +10,11 @@ ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
-ms.openlocfilehash: 4a8a74977440fa89b89843bbc95e43d622a58474
-ms.sourcegitcommit: e6b7e20bbd04eda51416c56b13f867102b602d1a
+ms.openlocfilehash: 7a01957040be7c0498ef4f0e9b8f7297119221a5
+ms.sourcegitcommit: 9d2d35944106bdb6758853b050089bc804e6b9d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2017
+ms.lasthandoff: 10/17/2017
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>使用 Azure PowerShell 试验性模块
 
@@ -35,7 +35,20 @@ Azure PowerShell 团队正在以 Azure 中的开发人员工具（尤其是 CLI�
 
 ## <a name="how-to-install-an-experimental-module"></a>如何安装试验性模块
 
-试验性模块像现有 Azure PowerShell 模块一样发布到 PowerShell 库。 若要安装试验性模块，请在权限提升的 PowerShell 会话中使用以下命令：
+试验性模块像现有 Azure PowerShell 模块一样发布到 PowerShell 库。 若要查看实验性模块列表，请运行以下命令：
+
+```powershell
+Find-Module AzureRM.*.Experiments
+```
+
+```Output
+Version    Name                                Repository           Description
+-------    ----                                ----------           -----------
+1.0.0      AzureRM.Websites.Experiments        PSGallery            Create and deploy web applications using Azure Ap...
+1.0.25     AzureRM.Compute.Experiments         PSGallery            Azure Compute experiments for VM creation
+```
+
+若要安装试验性模块，请在权限提升的 PowerShell 会话中使用以下命令：
 
 ```powershell
 Install-Module AzureRM.Compute.Experiments
@@ -104,8 +117,14 @@ $job = New-AzVm -Name MyVm -AsJob
 Receive-Job $job
 ```
 
-### <a name="send-us-feedback"></a>发送反馈
+### <a name="send-us-feedback"></a>向我们发送反馈
 
 ```powershell
 Send-Feedback
+```
+
+### <a name="uninstall-the-experimental-modules"></a>卸载实验性模块
+
+```powershell
+Uninstall-Module AzureRM.Compute.Experiments
 ```
