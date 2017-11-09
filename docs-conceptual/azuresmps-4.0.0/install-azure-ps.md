@@ -10,10 +10,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/06/2017
 ms.openlocfilehash: 164af369d49e3044e5409c28d8b6145ebc067313
-ms.sourcegitcommit: 020066d68d4ab68da162a4ae0cb4e239241f950f
+ms.sourcegitcommit: b256bf48e15ee98865de0fae50e7b81878b03a54
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="installing-the-azure-powershell-service-management-module"></a>安装 Azure PowerShell 服务管理模块
 
@@ -45,7 +45,7 @@ PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1
 Install-Module Azure
 ```
 
-Azure 模块是 Azure Resource Manager cmdlet 的汇总模块。 安装 AzureRM 模块时，将从 PowerShell 库下载并安装先前尚未安装的其他所有 Azure 模块。
+Azure 模块是 Azure 资源管理器 cmdlet 的汇总模块。 安装 AzureRM 模块时，将从 PowerShell 库下载并安装先前尚未安装的其他所有 Azure 模块。
 
 Azure 服务管理模块与 Azure PowerShell Resource Manager 模块共享依赖项。 如果已安装 Azure PowerShell Resource Manager 模块，需在安装命令中添加 `-AllowClobber` 参数。 这样，便可以更新现有的共享依赖项。 如果不提供此参数，模块安装会失败。
 

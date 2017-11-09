@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.author: sewhee
 ms.manager: carmonm
 ms.openlocfilehash: d9a99d05eb2a1ca269f94cfbe6df4b64cec8a2f6
-ms.sourcegitcommit: 226527be7cb647acfe2ea9ab151185053ab3c6db
+ms.sourcegitcommit: b256bf48e15ee98865de0fae50e7b81878b03a54
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/29/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="overview-of-the-azure-powershell-service-management-module"></a>Azure PowerShell 服务管理模块的概述
 
-Azure 服务管理是经典部署模型。 借助此模块可以使用尚未转换为 Azure Resource Manager 的经典 Azure 部署。 任何新部署应使用 Azure Resource Manager 方法。 若要使用 cmdlet，需要安装并配置 Azure PowerShell，以便连接到你的帐户。 有关详细信息，请参阅[安装和配置 Azure PowerShell](install-azure-ps.md)。
+Azure 服务管理是经典部署模型。 借助此模块可以使用尚未转换为 Azure 资源管理器的经典 Azure 部署。 任何新部署应使用 Azure 资源管理器方法。 要使用 cmdlet，需要安装并配置 Azure PowerShell，以便连接到帐户。 有关详细信息，请参阅[安装和配置 Azure PowerShell](install-azure-ps.md)。

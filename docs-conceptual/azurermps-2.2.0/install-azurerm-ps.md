@@ -11,10 +11,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/17/2017
 ms.openlocfilehash: 0c1500a8748a3aa4546c6ce1e8d16a635b056edb
-ms.sourcegitcommit: 226527be7cb647acfe2ea9ab151185053ab3c6db
+ms.sourcegitcommit: b256bf48e15ee98865de0fae50e7b81878b03a54
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/29/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="install-and-configure-azure-powershell"></a>安装和配置 Azure PowerShell
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 06/29/2017
 Get-Module PowerShellGet -list | Select-Object Name,Version,Path
 ```
 
-你应会看到类似于下面的信息：
+应会看到类似于下面的信息：
 
 ```
 Name          Version Path
@@ -67,7 +67,7 @@ Are you sure you want to install the modules from 'PSGallery'?
 > [!NOTE]
 > 如果使用的 NuGet 版本低于 2.8.5.201，系统会提示下载并安装最新版本的 NuGet。
 
-AzureRM 模块是 Azure Resource Manager cmdlet 的汇总模块。 安装 AzureRM 模块时，将从 PowerShell 库下载先前未安装的所有 Azure PowerShell 模块。
+AzureRM 模块是 Azure 资源管理器 cmdlet 的汇总模块。 安装 AzureRM 模块时，将从 PowerShell 库下载先前未安装的所有 Azure PowerShell 模块。
 
 如果安装了早期版本的 Azure PowerShell，可能会出错。 若要解决此问题，请参阅本文中的[更新到新版 Azure PowerShell](#update-azps) 部分。
 
@@ -97,7 +97,7 @@ Import-Module AzureRM
 <a id="helpmechoose"></a>
 ### <a name="checking-the-version-of-azure-powershell"></a>检查 Azure PowerShell 的版本
 
-虽然我们建议你尽早升级到最新版本，但仍然支持多个 Azure PowerShell 版本。 若要确定安装的 Azure PowerShell 版本，请从命令行运行 `Get-Module AzureRM`。
+虽然我们建议尽早升级到最新版本，但仍然支持多个 Azure PowerShell 版本。 若要确定安装的 Azure PowerShell 版本，请从命令行运行 `Get-Module AzureRM`。
 
 ```powershell
 Get-Module AzureRM -list | Select-Object Name,Version,Path
@@ -134,14 +134,14 @@ Install-Module AzureRM -AllowClobber
 
 ### <a name="installing-module-versions-side-by-side"></a>并行安装多个模块版本
 
-PowerShellGet 安装方法是唯一支持安装多个版本的方法。 例如，你可能使用旧版 Azure PowerShell 编写了脚本，但没有时间或资源来更新该版本。 以下命令演示如何安装 Azure PowerShell 的多个版本：
+PowerShellGet 安装方法是唯一支持安装多个版本的方法。 例如，可能使用旧版 Azure PowerShell 编写了脚本，但没有时间或资源来更新这些脚本。 以下命令演示如何安装 Azure PowerShell 的多个版本：
 
 ```powershell
 Install-Module -Name AzureRM -RequiredVersion 3.7.0
 Install-Module -Name AzureRM -RequiredVersion 1.2.9
 ```
 
-在一个 PowerShell 会话中只能加载一个模块版本。 必须打开新的 PowerShell 窗口，然后使用 `Import-Module` 导入特定版本的 AzureRM cmdlet：
+在一个 PowerShell 会话中只能加载一个模块版本。 必须打开新的 PowerShell 窗口，并使用 `Import-Module` 导入特定版本的 AzureRM cmdlet：
 
 ```powershell
 Import-Module AzureRM -RequiredVersion 1.2.9

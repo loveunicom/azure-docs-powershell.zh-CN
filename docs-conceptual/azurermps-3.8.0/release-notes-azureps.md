@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.workload: 
 ms.date: 05/18/2017
 ms.openlocfilehash: 04f89e8d47d0825d46cb1b8817efbcc0cafa0acd
-ms.sourcegitcommit: 226527be7cb647acfe2ea9ab151185053ab3c6db
+ms.sourcegitcommit: b256bf48e15ee98865de0fae50e7b81878b03a54
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/29/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="release-notes"></a>发行说明
 
@@ -46,7 +46,7 @@ ms.lasthandoff: 06/29/2017
 * 配置文件
   - *已弃用*：Save-AzureRmProfile 已重命名为 Save-AzureRmContext，旧 cmdlet 名称有一个别名，下一版本将删除该别名。
   - *已弃用*：Select-AzureRmProfile 已重命名为 Import-AzureRmContext，旧 cmdlet 名称有一个别名，下一版本将删除该别名。
-  - 下一版本将会更改配置文件 cmdlet 的 PSAzureContext 和 PSAzureProfile 输出类型。
+  - 下一版本会更改配置文件 cmdlet 的 PSAzureContext 和 PSAzureProfile 输出类型。
   - 在下一版本中，Save-AzureRmContext cmdlet 将没有 OutputType。
   - 修复了 cmdlet 通用代码中的 bug，现在对数据哈希使用符合 FIPS 规范的算法：https://github.com/Azure/azure-powershell/issues/3651
 * Sql

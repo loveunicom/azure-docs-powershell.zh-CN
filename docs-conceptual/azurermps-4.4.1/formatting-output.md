@@ -11,10 +11,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
 ms.openlocfilehash: 2b23af1ef84b7c91abdcbe0738b29b068f82fd32
-ms.sourcegitcommit: 226527be7cb647acfe2ea9ab151185053ab3c6db
+ms.sourcegitcommit: b256bf48e15ee98865de0fae50e7b81878b03a54
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/29/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="formatting-query-results"></a>设置查询结果的格式
 
@@ -75,7 +75,7 @@ ResourceGroupName : MYWESTEURG
 
 ## <a name="converting-to-other-data-types"></a>转换为其他数据类型
 
-PowerShell 还提供多种输出格式，你可以根据需要使用不同的格式。  以下示例使用 `Select-Object` cmdlet 获取订阅中虚拟机的属性，然后将输出转换为 CSV 格式，以方便导入数据库或电子表格。
+PowerShell 还提供多种输出格式，可以根据需要使用不同的格式。  以下示例使用 `Select-Object` cmdlet 获取订阅中虚拟机的属性，然后将输出转换为 CSV 格式，以方便导入数据库或电子表格。
 
 ```powershell
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Csv -NoTypeInformation
