@@ -1,20 +1,4 @@
----
-title: "Azure PowerShell 入门 | Microsoft Docs"
-description: 
-services: azure
-author: sdwheeler
-ms.author: sewhee
-manager: carmonm
-ms.product: azure
-ms.service: azure-powershell
-ms.devlang: powershell
-ms.topic: get-started-article
-ms.date: 08/31/2017
-ms.openlocfilehash: 2cd3fc8e955ae826471dceee79d5e6b70070d416
-ms.sourcegitcommit: b256bf48e15ee98865de0fae50e7b81878b03a54
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2017
+-- title: Azure PowerShell 入门 | Microsoft Docs description: services: azure author: sdwheeler ms.author: sewhee manager: carmonm ms.product: azure ms.service: azure-powershell ms.devlang: powershell ms.topic: get-started-article ms.date: 08/31/2017
 ---
 # <a name="getting-started-with-azure-powershell"></a>Azure PowerShell 入门
 
@@ -26,15 +10,15 @@ Azure PowerShell 用于从命令行管理 Azure 资源，以及生成可以针�
 
 1. 从 Azure 门户的顶部导航栏启动 Cloud Shell。
 
-   ![Shell 图标](~/media/get-started-azureps/shell-icon.png)
+   ![Shell 图标](/media/get-started-azureps/shell-icon.png)
 
 2. 选择要使用的订阅并创建存储帐户。
 
-   ![创建存储帐户](~/media/get-started-azureps/storage-prompt.png)
+   ![创建存储帐户](/media/get-started-azureps/storage-prompt.png)
 
 创建存储后，Cloud Shell 会在浏览器中打开 PowerShell 会话。
 
-![适用于 PowerShell 的 Cloud Shell](~/media/get-started-azureps/cloud-powershell.png)
+![适用于 PowerShell 的 Cloud Shell](/media/get-started-azureps/cloud-powershell.png)
 
 也可以安装 Azure PowerShell 并在 PowerShell 会话本地使用它。
 
