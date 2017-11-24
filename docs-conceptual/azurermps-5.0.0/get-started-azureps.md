@@ -1,4 +1,4 @@
--- title: Azure PowerShell 入门 | Microsoft Docs description: services: azure author: sdwheeler ms.author: sewhee manager: carmonm ms.product: azure ms.service: azure-powershell ms.devlang: powershell ms.topic: get-started-article ms.date: 08/31/2017
+-- title: Azure PowerShell 入门 | Microsoft Docs description: services: azure author: sdwheeler ms.author: sewhee manager: carmonm ms.product: azure ms.service: azure-powershell ms.devlang: powershell ms.topic: get-started-article ms.date: 11/15/2017
 ---
 # <a name="getting-started-with-azure-powershell"></a>Azure PowerShell 入门
 
@@ -28,7 +28,7 @@ Azure PowerShell 用于从命令行管理 Azure 资源，以及生成可以针�
 
 1. [安装 Azure PowerShell](install-azurerm-ps.md)。
 
-2. 若要验证安装是否成功，请从命令行运行 `Get-Module AzureRM`。
+2. 若要验证安装是否成功，请从命令行运行 `Get-Module AzureRM -ListAvailable`。
 
 ## <a name="log-in-to-azure"></a>登录 Azure
 
