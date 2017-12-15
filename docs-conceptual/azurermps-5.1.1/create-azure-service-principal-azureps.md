@@ -12,25 +12,25 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.openlocfilehash: 6eda2d2a729331b212938aa2681d0188a25b734a
-ms.sourcegitcommit: 226527be7cb647acfe2ea9ab151185053ab3c6db
+ms.sourcegitcommit: c42c7176276ec4e1cc3360a93e6b15d32083bf9f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/29/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>使用 Azure PowerShell 创建 Azure 服务主体
 
-如果你打算使用 Azure PowerShell 来管理应用或服务，应使用 Azure Active Directory (AAD) 服务主体而不是你自己的凭据运行 PowerShell。 本主题逐步讲解如何使用 Azure PowerShell 创建安全主体。
+如果打算使用 Azure PowerShell 来管理应用或服务，应使用 Azure Active Directory (AAD) 服务主体而不是自己的凭据运行 PowerShell。 本主题逐步讲解如何使用 Azure PowerShell 创建安全主体。
 
 > [!NOTE]
 > 也可以通过 Azure 门户创建服务主体。 有关详细信息，请参阅[使用门户创建可访问资源的 Active Directory 应用程序和服务主体](/azure/azure-resource-manager/resource-group-create-service-principal-portal)。
 
 ## <a name="what-is-a-service-principal"></a>什么是“服务主体”？
 
-Azure 服务主体是用户创建的应用、服务和自动化工具用来访问特定 Azure 资源的安全标识。 可将其视为具有特定角色，并且权限受到严格控制的“用户标识”（用户名和密码，或者证书）。 与普通的用户标识不同，它只需能够完成特定的任务。 如果你只向它授予执行管理任务所需的最低权限级别，则可以提高安全性。
+Azure 服务主体是用户创建的应用、服务和自动化工具用来访问特定 Azure 资源的安全标识。 可将其视为具有特定角色，并且权限受到严格控制的“用户标识”（用户名和密码，或者证书）。 与普通的用户标识不同，它只需能够完成特定的任务。 如果只向它授予执行管理任务所需的最低权限级别，则可以提高安全性。
 
-## <a name="verify-your-own-permission-level"></a>验证你自己的权限级别
+## <a name="verify-your-own-permission-level"></a>验证自己的权限级别
 
-首先，你在 Azure Active Directory 和 Azure 订阅中必须拥有足够的权限。 具体而言，必须能够在 Active Directory 中创建应用并向服务主体分配角色。
+首先，在 Azure Active Directory 和 Azure 订阅中必须拥有足够的权限。 具体而言，必须能够在 Active Directory 中创建应用并向服务主体分配角色。
 
 检查帐户是否有足够权限的最简方法是使用门户。 请参阅[在门户中检查所需的权限](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions)。
 
@@ -94,14 +94,14 @@ Type                  : ServicePrincipal
 
 ### <a name="sign-in-using-the-service-principal"></a>使用服务主体登录
 
-现在，可以使用提供的 *appId* 和*密码*，以应用的新服务主体身份登录。 需要提供帐户的租户 ID。 使用个人凭据登录到 Azure 时，将显示租户 ID。
+现在，可以使用提供的 *appId* 和*密码*，以应用的新服务主体身份登录。 需要提供帐户的租户 ID。 使用个人凭据登录到 Azure 时，会显示租户 ID。
 
 ```powershell
 $cred = Get-Credential -UserName $svcprincipal.ApplicationId -Message "Enter Password"
 Login-AzureRmAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 ```
 
-请通过新的 PowerShell 会话运行此命令。 成功登录后，你将看到如下所示的输出：
+请通过新的 PowerShell 会话运行此命令。 成功登录后，会看到如下所示的输出：
 
 ```
 Environment           : AzureCloud
@@ -112,7 +112,7 @@ SubscriptionName      :
 CurrentStorageAccount :
 ```
 
-祝贺你！ 现在可以使用这些凭据来运行你的应用。 接下来，需要调整服务主体的权限。
+祝贺你！ 现在可以使用这些凭据来运行应用。 接下来，需要调整服务主体的权限。
 
 ## <a name="managing-roles"></a>管理角色
 
@@ -126,7 +126,7 @@ Azure PowerShell 提供以下 cmdlet 用于管理角色分配：
 * [Remove-AzureRmRoleAssignment](/powershell/module/azurerm.resources/remove-azurermroleassignment)
 
 服务主体的默认角色是“参与者”。 由于该角色的权限比较广泛，根据应用与 Azure 服务之间的交互范围，该角色可能不是最合适的选择。
-“读取者”角色受到严格的限制，可能非常适合用于只读的应用。 你可以查看有关角色特定的权限的详细信息，或者如何通过 Azure 门户创建自定义角色。
+“读取者”角色受到严格的限制，可能非常适合用于只读的应用。 可以查看有关角色特定的权限的详细信息，或者如何通过 Azure 门户创建自定义角色。
 
 本示例将“读取者”角色添加到前面的示例，并删除“参与者”角色：
 
@@ -175,7 +175,7 @@ ObjectType         : ServicePrincipal
 
 ## <a name="change-the-credentials-of-the-security-principal"></a>更改安全主体的凭据
 
-良好的安全做法是定期审查权限并更新密码。 此外，随着应用的变化，你可能还需要管理和修改安全凭据。 例如，可以通过创建新密码并删除旧密码来更改服务主体的密码。
+良好的安全做法是定期审查权限并更新密码。 此外，随着应用的变化，可能还需要管理和修改安全凭据。 例如，可以通过创建新密码并删除旧密码来更改服务主体的密码。
 
 ### <a name="add-a-new-password-for-the-service-principal"></a>为服务主体添加新密码
 
