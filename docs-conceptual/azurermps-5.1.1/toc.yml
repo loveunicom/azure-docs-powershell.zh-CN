@@ -37,6 +37,8 @@
       items:
         - name: 使用实验性模块
           href: using-experimental-modules.md
+        - name: 使用 PowerShell 作业并行运行 cmdlet
+          href: using-psjobs.md
     - name: 发行说明
       href: release-notes-azureps.md
 - name: 示例脚本
