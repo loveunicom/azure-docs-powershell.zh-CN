@@ -623,8 +623,8 @@ Set-AzureRmADUser [other required parameters] -Password $SecureStringVariable
 
 ### <a name="type-namespaceattributes"></a>**类型 NamespaceAttributes**
 - 以下属性已删除
-    - Enabled
-    - Status
+    - 已启用
+    - 状态
    
 ```powershell
 # Old
