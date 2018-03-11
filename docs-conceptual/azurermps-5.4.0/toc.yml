@@ -37,13 +37,17 @@
       items:
         - name: 使用实验性模块
           href: using-experimental-modules.md
-        - name: PowerShell 作业
+        - name: 使用 PowerShell 作业
           href: using-psjobs.md
     - name: 发行说明
       href: release-notes-azureps.md
       items:
         - name: Azure PowerShell 5.x 的重大更改
           href: migration-guide.5.0.0.md
+- name: 教程
+  items:
+    - name: 创建虚拟机
+      href: azureps-vm-tutorial.yml
 - name: 示例脚本
   items:
     - name: Linux 虚拟机
