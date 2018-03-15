@@ -11,10 +11,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
 ms.openlocfilehash: 1a1a2e3d69252c8461284e6ec8e26fa838e773f7
-ms.sourcegitcommit: 5fe9a579d2e0d1cb5a05aadaeba5db784f1b18fa
+ms.sourcegitcommit: 20af779cd523c758d40e23d60eb989a4ef982d5c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="install-and-configure-azure-powershell"></a>安装和配置 Azure PowerShell
 
@@ -100,7 +100,7 @@ Import-Module -Name AzureRM
 
 ### <a name="how-to-get-powershellget"></a>如何获取 PowerShellGet
 
-|方案|安装说明|
+|场景|安装说明|
 |---|---|
 |Windows 10<br/>Windows Server 2016|内置在 OS 随附的 Windows Management Framework (WMF) 5.0 中|
 |我想要升级到 PowerShell 5|<ol><li>[安装最新版本的 WMF](https://www.microsoft.com/en-us/download/details.aspx?id=54616)</li><li>运行以下命令：<br/>```Install-Module PowerShellGet -Force```</li></ol>|

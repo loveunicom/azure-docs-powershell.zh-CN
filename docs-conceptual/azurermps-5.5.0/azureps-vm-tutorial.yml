@@ -14,10 +14,10 @@ metadata:
   ms.devlang: azure-powershell
   ms.technology: azure
   ms.openlocfilehash: bb5024927da7888dca406a522fa39dfe225afb89
-  ms.sourcegitcommit: 3842efd1eb2d16f7c6d9ae87d6d7916b770658c1
+  ms.sourcegitcommit: 20af779cd523c758d40e23d60eb989a4ef982d5c
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 03/05/2018
+  ms.lasthandoff: 03/15/2018
 items:
 - durationInMinutes: 1
   content: "本教程介绍使用 Azure PowerShell 设置虚拟机的过程中涉及到的所有步骤。 本教程还介绍输出查询、Azure 资源重用和资源清理。\n\n可以使用通过 Azure Cloud Shell 提供的交互式体验来完成本教程，也可以在本地[安装 Azure PowerShell](install-azurerm-ps.md)。\n\n使用 __ctrl-shift-v__（在 macOS 上则使用 __cmd-shift-v__）将教程文本粘贴到 Azure Cloud Shell 中。"
