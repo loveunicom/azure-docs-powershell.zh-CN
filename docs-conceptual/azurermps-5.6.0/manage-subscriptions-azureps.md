@@ -1,7 +1,7 @@
 ---
-title: "使用 Azure PowerShell 管理 Azure 订阅 | Microsoft Docs"
-description: "使用 Azure PowerShell 管理 Azure 订阅"
-keywords: "Azure PowerShell, 订阅"
+title: 使用 Azure PowerShell 管理 Azure 订阅 | Microsoft Docs
+description: 使用 Azure PowerShell 管理 Azure 订阅
+keywords: Azure PowerShell, 订阅
 author: sdwheeler
 ms.author: sewhee
 manager: carmonm
@@ -11,10 +11,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
 ms.openlocfilehash: 68d03ec8d1a86fb3b270d02a4697bbf9af847f2d
-ms.sourcegitcommit: 20af779cd523c758d40e23d60eb989a4ef982d5c
+ms.sourcegitcommit: 15bf69bf95eceb936b3a429e741add95c308826a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>管理多个 Azure 订阅
 
