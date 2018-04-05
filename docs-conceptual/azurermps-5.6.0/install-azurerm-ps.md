@@ -9,18 +9,17 @@ ms.product: azure
 ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 08/31/2017
-ms.openlocfilehash: 1a1a2e3d69252c8461284e6ec8e26fa838e773f7
-ms.sourcegitcommit: 15bf69bf95eceb936b3a429e741add95c308826a
+ms.date: 03/27/2018
+ms.openlocfilehash: a10cb9496ff6822c6f4c10ab336dd21c85084da8
+ms.sourcegitcommit: 8376e0bc5f862d382d7283ba72990e3707591e7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="install-and-configure-azure-powershell"></a>安装和配置 Azure PowerShell
 
-本文介绍了在 Windows 环境中安装 Azure PowerShell 模块的步骤。  
-如果想要在 macOS 或 Linux 上使用 Azure PowerShell，请参阅以下文章：  
-[在 macOS 和 Linux 上安装和配置 Azure PowerShell](install-azurermps-maclinux.md)。
+本文介绍了在 Windows 环境中安装 Azure PowerShell 模块的步骤。
+如果想要在 macOS 或 Linux 上使用 Azure PowerShell，请参阅以下文章：[在 macOS 和 Linux 上安装和配置 Azure PowerShell](install-azurermps-maclinux.md)。
 
 从 PowerShell 库安装 Azure PowerShell 是首选的安装方法。
 
@@ -37,9 +36,14 @@ Get-Module -Name PowerShellGet -ListAvailable | Select-Object -Property Name,Ver
 ```Output
 Name          Version Path
 ----          ------- ----
+Name          Version Path
+----          ------- ----
+PowerShellGet 1.6.0   C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.6.0\PowerShellGet.psd1
 PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PowerShellGet.psd1
 ```
-此外，可能想要使用以下命令更新 PowerShellGet：
+
+需要 PowerShellGet 版本 1.1.2.0 或更高版本。 若要更新 PowerShellGet，请使用以下命令：
+
 ```powershell
 Install-Module PowerShellGet -Force
 ```
@@ -100,7 +104,7 @@ Import-Module -Name AzureRM
 
 ### <a name="how-to-get-powershellget"></a>如何获取 PowerShellGet
 
-|场景|安装说明|
+|方案|安装说明|
 |---|---|
 |Windows 10<br/>Windows Server 2016|内置在 OS 随附的 Windows Management Framework (WMF) 5.0 中|
 |我想要升级到 PowerShell 5|<ol><li>[安装最新版本的 WMF](https://www.microsoft.com/en-us/download/details.aspx?id=54616)</li><li>运行以下命令：<br/>```Install-Module PowerShellGet -Force```</li></ol>|

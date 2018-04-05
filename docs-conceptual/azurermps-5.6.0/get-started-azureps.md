@@ -10,11 +10,11 @@ ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: 24eb3cf1a58ac87d437d3471639cd9c8cec4070e
-ms.sourcegitcommit: 15bf69bf95eceb936b3a429e741add95c308826a
+ms.openlocfilehash: 12446697e57cc0a76b94309c2338239c16c7f580
+ms.sourcegitcommit: 8376e0bc5f862d382d7283ba72990e3707591e7b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="getting-started-with-azure-powershell"></a>Azure PowerShell 入门
 
@@ -50,9 +50,9 @@ Azure PowerShell 用于从命令行管理 Azure 资源，以及生成可以针�
 
 以交互方式登录：
 
-1. 键入 `Login-AzureRmAccount`。 此时会出现一个对话框，要求输入 Azure 凭据。 通过 '-EnvironmentName' 选项可登录 Azure China 或 Azure Germany。
+1. 键入 `Connect-AzureRmAccount`。 此时会出现一个对话框，要求输入 Azure 凭据。 使用 '-Environment' 选项可登录“Azure 中国”或“Azure 德国”。
 
-   例如 Login-AzureRmAccount -EnvironmentName AzureChinaCloud
+   例如 Connect-AzureRmAccount -Environment AzureChinaCloud
 
 2. 键入与帐户关联的电子邮件地址和密码。 Azure 将对凭据信息进行身份验证和保存，然后关闭该窗口。
 
