@@ -16,11 +16,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/08/2018
 ---
-# <a name="manage-multiple-azure-subscriptions"></a><span data-ttu-id="965ee-104">管理多个 Azure 订阅</span><span class="sxs-lookup"><span data-stu-id="965ee-104">Manage multiple Azure subscriptions</span></span>
+# <a name="manage-multiple-azure-subscriptions"></a><span data-ttu-id="2215a-104">管理多个 Azure 订阅</span><span class="sxs-lookup"><span data-stu-id="2215a-104">Manage multiple Azure subscriptions</span></span>
 
-<span data-ttu-id="965ee-105">如果是 Azure 的新手，也许只有一个订阅。</span><span class="sxs-lookup"><span data-stu-id="965ee-105">If you are brand new to Azure, you probably only have a single subscription.</span></span> <span data-ttu-id="965ee-106">但如果使用 Azure 有一段时间，可能已创建了多个 Azure 订阅。</span><span class="sxs-lookup"><span data-stu-id="965ee-106">But if you have been using Azure for a while, you may have created multiple Azure subscriptions.</span></span> <span data-ttu-id="965ee-107">可将 Azure PowerShell 配置为针对特定的订阅执行命令。</span><span class="sxs-lookup"><span data-stu-id="965ee-107">You can configure Azure PowerShell to execute commands against a particular subscription.</span></span>
+<span data-ttu-id="2215a-105">如果是 Azure 的新手，也许只有一个订阅。</span><span class="sxs-lookup"><span data-stu-id="2215a-105">If you are brand new to Azure, you probably only have a single subscription.</span></span> <span data-ttu-id="2215a-106">但如果使用 Azure 有一段时间，可能已创建了多个 Azure 订阅。</span><span class="sxs-lookup"><span data-stu-id="2215a-106">But if you have been using Azure for a while, you may have created multiple Azure subscriptions.</span></span> <span data-ttu-id="2215a-107">可将 Azure PowerShell 配置为针对特定的订阅执行命令。</span><span class="sxs-lookup"><span data-stu-id="2215a-107">You can configure Azure PowerShell to execute commands against a particular subscription.</span></span>
 
-1. <span data-ttu-id="965ee-108">获取帐户中所有订阅的列表。</span><span class="sxs-lookup"><span data-stu-id="965ee-108">Get a list of all subscriptions in your account.</span></span>
+1. <span data-ttu-id="2215a-108">获取帐户中所有订阅的列表。</span><span class="sxs-lookup"><span data-stu-id="2215a-108">Get a list of all subscriptions in your account.</span></span>
 
     ```powershell
     Get-AzureRmSubscription
@@ -49,13 +49,13 @@ ms.lasthandoff: 05/08/2018
     CurrentStorageAccount :
     ```
 
-2. <span data-ttu-id="965ee-109">设置默认值。</span><span class="sxs-lookup"><span data-stu-id="965ee-109">Set the default.</span></span>
+2. <span data-ttu-id="2215a-109">设置默认值。</span><span class="sxs-lookup"><span data-stu-id="2215a-109">Set the default.</span></span>
 
     ```powershell
     Select-AzureRmSubscription -SubscriptionName "My Demos"
     ```
 
-3. <span data-ttu-id="965ee-110">通过运行 `Get-AzureRmContext` cmdlet 验证更改。</span><span class="sxs-lookup"><span data-stu-id="965ee-110">Verify the change by running the `Get-AzureRmContext` cmdlet.</span></span>
+3. <span data-ttu-id="2215a-110">通过运行 `Get-AzureRmContext` cmdlet 验证更改。</span><span class="sxs-lookup"><span data-stu-id="2215a-110">Verify the change by running the `Get-AzureRmContext` cmdlet.</span></span>
 
     ```powershell
     Get-AzureRmContext
@@ -70,4 +70,4 @@ ms.lasthandoff: 05/08/2018
     CurrentStorageAccount :
     ```
 
-<span data-ttu-id="965ee-111">设置默认订阅后，所有后续 Azure PowerShell 命令将针对此订阅运行。</span><span class="sxs-lookup"><span data-stu-id="965ee-111">Once you set your default subscription, all subsequent Azure PowerShell commands run against this subscription.</span></span>
+<span data-ttu-id="2215a-111">设置默认订阅后，所有后续 Azure PowerShell 命令将针对此订阅运行。</span><span class="sxs-lookup"><span data-stu-id="2215a-111">Once you set your default subscription, all subsequent Azure PowerShell commands run against this subscription.</span></span>
