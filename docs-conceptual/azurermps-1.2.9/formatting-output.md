@@ -1,6 +1,6 @@
 ---
-title: "设置查询结果的格式 | Microsoft Docs"
-description: "如何查询 Azure 中的资源以及设置结果的格式。"
+title: 设置查询结果的格式 | Microsoft Docs
+description: 如何查询 Azure 中的资源以及设置结果的格式。
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -11,10 +11,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
 ms.openlocfilehash: 2b23af1ef84b7c91abdcbe0738b29b068f82fd32
-ms.sourcegitcommit: b256bf48e15ee98865de0fae50e7b81878b03a54
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="formatting-query-results"></a>设置查询结果的格式
 

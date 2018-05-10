@@ -1,6 +1,6 @@
 ---
-title: "Azure PowerShell 入门 | Microsoft Docs"
-description: 
+title: Azure PowerShell 入门 | Microsoft Docs
+description: ''
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -11,10 +11,10 @@ ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
 ms.openlocfilehash: cbe8507a89c048351dab64e28552596ed802bf21
-ms.sourcegitcommit: 5fe9a579d2e0d1cb5a05aadaeba5db784f1b18fa
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="getting-started-with-azure-powershell"></a>Azure PowerShell 入门
 
@@ -367,7 +367,7 @@ Are you sure you want to remove resource group 'myResourceGroup'
 * [使用 Azure PowerShell 登录](authenticate-azureps.md)
 * [使用 Azure PowerShell 管理 Azure 订阅](manage-subscriptions-azureps.md)
 * [使用 Azure PowerShell 在 Azure 中创建服务主体](create-azure-service-principal-azureps.md)
-* 在发行说明中阅读有关从旧版迁移的信息：[https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes)。
+* 阅读有关从较旧版本迁移的发行说明：[https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes)。
 * 从社区获得帮助：
   * [MSDN 上的 Azure 论坛](http://go.microsoft.com/fwlink/p/?LinkId=320212)
   * [stackoverflow](http://go.microsoft.com/fwlink/?LinkId=320213)
