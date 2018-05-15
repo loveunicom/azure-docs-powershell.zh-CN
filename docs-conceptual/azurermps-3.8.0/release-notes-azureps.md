@@ -1,6 +1,6 @@
 ---
-title: "Azure PowerShell 更改日志 | Microsoft Docs"
-description: "下面提供了对 Azure PowerShell 最新版本所做更改的历史记录。"
+title: Azure PowerShell 更改日志 | Microsoft Docs
+description: 下面提供了对 Azure PowerShell 最新版本所做更改的历史记录。
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -9,13 +9,13 @@ ms.service: azure-powershell
 ms.product: azure
 ms.devlang: powershell
 ms.topic: conceptual
-ms.workload: 
+ms.workload: ''
 ms.date: 05/18/2017
 ms.openlocfilehash: 04f89e8d47d0825d46cb1b8817efbcc0cafa0acd
-ms.sourcegitcommit: b256bf48e15ee98865de0fae50e7b81878b03a54
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="release-notes"></a>发行说明
 
@@ -48,7 +48,7 @@ ms.lasthandoff: 11/03/2017
   - *已弃用*：Select-AzureRmProfile 已重命名为 Import-AzureRmContext，旧 cmdlet 名称有一个别名，下一版本将删除该别名。
   - 下一版本会更改配置文件 cmdlet 的 PSAzureContext 和 PSAzureProfile 输出类型。
   - 在下一版本中，Save-AzureRmContext cmdlet 将没有 OutputType。
-  - 修复了 cmdlet 通用代码中的 bug，现在对数据哈希使用符合 FIPS 规范的算法：https://github.com/Azure/azure-powershell/issues/3651
+  - 修复了 cmdlet 通用代码中的 Bug，现在对数据哈希使用符合 FIPS 规范的算法：https://github.com/Azure/azure-powershell/issues/3651
 * Sql
   - 修复了 Azure 故障转移组 Cmdlet 中的 Bug
   - 修复操作轮询
