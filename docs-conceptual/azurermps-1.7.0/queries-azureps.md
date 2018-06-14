@@ -1,19 +1,18 @@
 ---
 title: 查询 Azure 资源和设置结果的格式 | Microsoft Docs
 description: 如何查询 Azure 中的资源以及设置结果的格式。
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 139744596eba467f08be521385049dddcc43ae05
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: 1584c8166078b7d7d24ce8748307fde0f565b662
+ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821932"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "34853502"
 ---
 # <a name="querying-for-azure-resources"></a>查询 Azure 资源
 

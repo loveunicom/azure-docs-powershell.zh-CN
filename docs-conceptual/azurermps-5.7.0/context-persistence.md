@@ -1,19 +1,18 @@
 ---
 title: 在不同的 PowerShell 会话中保留用户登录
 description: 本文介绍 Azure PowerShell 中的新功能：在多个不同的 PowerShell 会话中重复使用凭据和其他用户信息。
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 678d08c24cf254cd904850071872eea18c6bf6cf
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: 5ae4f03207b74df06a2cb81ea1cd0516a4abd2dd
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821592"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323112"
 ---
 # <a name="persisting-user-logins-across-powershell-sessions"></a>在不同的 PowerShell 会话中保留用户登录
 
@@ -76,7 +75,7 @@ Azure 上下文是一组定义 Azure PowerShell cmdlet 目标的信息。 上下
 
 若要在登录后添加新的上下文，请使用 `Set-AzureRmContext`（或其别名 `Select-AzureRmSubscription`）。
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Set-AzureRMContext -Subscription "Contoso Subscription 1" -Name "Contoso1"
 ```
 
@@ -84,7 +83,7 @@ PS C:\> Set-AzureRMContext -Subscription "Contoso Subscription 1" -Name "Contoso
 
 若要重命名现有上下文，请使用 `Rename-AzureRmContext` cmdlet。 例如：
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Contoso2'
 ```
 
@@ -92,7 +91,7 @@ PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Co
 
 最后，若要删除上下文，请使用 `Remove-AzureRmContext` cmdlet。  例如：
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Remove-AzureRmContext Contoso2
 ```
 
@@ -102,7 +101,7 @@ PS C:\> Remove-AzureRmContext Contoso2
 
 可以使用 `Disconnect-AzureRmAccount`（也称为 `Logout-AzureRmAccount`）删除用户或服务主体的所有凭据和关联的上下文。 在不带参数执行时，`Disconnect-AzureRmAccount` cmdlet 会删除与当前上下文中的用户或服务主体关联的所有凭据和上下文。 可以传入用户名、服务主体名称或上下文，来指定以特定的主体为目标。
 
-```powershell
+```azurepowershell-interactive
 Disconnect-AzureRmAccount user1@contoso.org
 ```
 
@@ -112,7 +111,7 @@ Disconnect-AzureRmAccount user1@contoso.org
 
 例如，若要更改当前 PowerShell 会话中的默认上下文且不影响其他会话时段或下次打开会话时使用的上下文，请使用:
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Select-AzureRmContext Contoso1 -Scope Process
 ```
 
@@ -120,7 +119,7 @@ PS C:\> Select-AzureRmContext Contoso1 -Scope Process
 
 上下文自动保存设置保存到 Azure PowerShell 用户目录 (`%AppData%\Roaming\Windows Azure PowerShell`)。 某些类型的计算机帐户可能无权访问此目录。 对于这种情况，可以使用环境变量
 
-```powershell
+```azurepowershell-interactive
 $env:AzureRmContextAutoSave="true" | "false"
 ```
 

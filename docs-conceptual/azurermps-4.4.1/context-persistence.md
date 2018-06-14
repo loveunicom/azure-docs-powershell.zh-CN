@@ -1,19 +1,18 @@
 ---
 title: 在不同的 PowerShell 会话中保留用户登录
 description: 本文介绍 Azure PowerShell 中的新功能：在多个不同的 PowerShell 会话中重复使用凭据和其他用户信息。
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 75eaa1f04e4274e1028e950ad9a98520db2b94de
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: d650cfaae580acd10b3ddb06edec9883f1a32844
+ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34822034"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "34853961"
 ---
 # <a name="persisting-user-logins-across-powershell-sessions"></a>在不同的 PowerShell 会话中保留用户登录
 

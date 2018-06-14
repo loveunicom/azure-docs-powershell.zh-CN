@@ -1,19 +1,18 @@
 ---
-title: 使用 Azure PowerShell 管理 Azure 订阅 | Microsoft Docs
+title: 使用 Azure PowerShell 管理 Azure 订阅
 description: 使用 Azure PowerShell 管理 Azure 订阅
-keywords: Azure PowerShell, 订阅
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: d28da700efbc2927cb3f73ae696759fb1e0c0cd6
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: fbd2fe315efbdfb2147218229d51e983e2b61361
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821949"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323350"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>管理多个 Azure 订阅
 
@@ -21,11 +20,11 @@ ms.locfileid: "34821949"
 
 1. 获取帐户中所有订阅的列表。
 
-    ```powershell
+    ```azurepowershell-interactive
     Get-AzureRmSubscription
     ```
 
-    ```
+    ```output
     Environment           : AzureCloud
     Account               : username@contoso.com
     TenantId              : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
@@ -50,17 +49,17 @@ ms.locfileid: "34821949"
 
 2. 设置默认值。
 
-    ```powershell
+    ```azurepowershell-interactive
     Select-AzureRmSubscription -SubscriptionName "My Demos"
     ```
 
 3. 通过运行 `Get-AzureRmContext` cmdlet 验证更改。
 
-    ```powershell
+    ```azurepowershell-interactive
     Get-AzureRmContext
     ```
 
-    ```
+    ```output
     Environment           : AzureCloud
     Account               : username@contoso.com
     TenantId              : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX

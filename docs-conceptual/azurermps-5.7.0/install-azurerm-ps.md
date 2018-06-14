@@ -1,19 +1,18 @@
 ---
 title: 安装和配置 Azure PowerShell | Microsoft Docs
 description: 如何安装和配置首次使用的 Azure PowerShell。
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: a3db97a2c0a8e4c62c32018dcad15cf09eb41440
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: 8819a0ba2dfb6bc3f88e80581257180aa1558ba4
+ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34822068"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "34853808"
 ---
 # <a name="install-and-configure-azure-powershell"></a>安装和配置 Azure PowerShell
 
