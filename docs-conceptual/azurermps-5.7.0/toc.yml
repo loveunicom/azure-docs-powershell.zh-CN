@@ -17,27 +17,27 @@
       items:
         - name: 创建服务主体
           href: create-azure-service-principal-azureps.md
-        - name: 使用持久性凭据
+        - name: 持久性凭据
           href: context-persistence.md
     - name: 查询
       href: queries-azureps.md
-    - name: 格式设置
+    - name: 设置输出格式
       href: formatting-output.md
-    - name: 订阅
+    - name: 管理订阅
       href: manage-subscriptions-azureps.md
     - name: 部署
       items:
-        - name: 使用 Resource Manager 模板进行部署
+        - name: 部署资源管理器模板
           href: /azure/azure-resource-manager/resource-group-template-deploy
         - name: 导出 Resource Manager 模板
           href: /azure/azure-resource-manager/resource-manager-export-template-powershell
-        - name: 使用 SAS 令牌部署专用 Resource Manager 模板
+        - name: 部署专用资源管理器模板
           href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
     - name: 概念
       items:
-        - name: 使用实验性模块
+        - name: 实验性模块
           href: using-experimental-modules.md
-        - name: 使用 PowerShell 作业
+        - name: PowerShell 作业
           href: using-psjobs.md
     - name: 发行说明
       href: release-notes-azureps.md
