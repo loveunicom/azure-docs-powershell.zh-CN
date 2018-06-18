@@ -1,20 +1,18 @@
 ---
 title: Microsoft Azure PowerShell 6.0.0 的重大更改
-description: 本迁移指南包含一个列表，列出了在发行的第 6 版中对 Azure PowerShell 所做的重大更改。
-services: azure
+description: 本迁移指南包含一个列表，列出了在发行的版本 6 中对 Azure PowerShell 所做的重大更改。
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.workload: ''
 ms.date: 5/1/2018
-ms.openlocfilehash: 2fd51f9e0217da4af7322c4776de49d916a8822c
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: 830afb067ea22999c09c1b894b72097bb8ebfa3b
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34822085"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323503"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Microsoft Azure PowerShell 6.0.0 的重大更改
 

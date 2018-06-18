@@ -1,25 +1,32 @@
 ---
-title: Azure PowerShell 入门 | Microsoft Docs
+title: Azure PowerShell 入门
 description: ''
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: fa9be1722b8260c4737c180eec79ae836235654c
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: cfb7ff30b442bb345931728dab131e1b80e58989
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821881"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323129"
 ---
-# <a name="getting-started-with-azure-powershell"></a>Azure PowerShell 入门
+# <a name="get-started-with-azure-powershell"></a>Azure PowerShell 入门
 
-Azure PowerShell 用于从命令行管理 Azure 资源，以及生成可以针对 Azure 资源管理器运行的自动化脚本。 可以在浏览器中结合 [Azure Cloud Shell](/azure/cloud-shell/overview) 使用这些 cmdlet，或者将它们安装在本地计算机上并在任何 PowerShell 会话中使用。 本文将帮助你开始使用 Azure PowerShell，并讲解其重要概念。
+Azure PowerShell 用于从命令行管理 Azure 资源，以及生成可以针对 Azure 资源管理器运行的自动化脚本。 可以通过 [Azure Cloud Shell](/azure/cloud-shell/overview) 在浏览器中使用它，也可以将它安装在本地计算机上。 本文将帮助你开始使用 Azure PowerShell，并讲解与其相关的核心概念。
 
-## <a name="connect"></a>连接
+## <a name="install-azure-powershell"></a>安装 Azure PowerShell
+
+首先，请确保已安装最新版本的 Azure PowerShell。 有关最新版本的信息，请参阅[发行说明](./release-notes-azureps.md)。
+
+1. [安装 Azure PowerShell](install-azurerm-ps.md)。
+
+2. 若要验证安装是否成功，请从命令行运行 `Get-Module AzureRM -ListAvailable`。
+
+## <a name="azure-cloud-shell"></a>Azure Cloud Shell 
 
 最简单的入门方法是[启动 Cloud Shell](/azure/cloud-shell/quickstart)。
 
@@ -37,15 +44,7 @@ Azure PowerShell 用于从命令行管理 Azure 资源，以及生成可以针�
 
 也可以安装 Azure PowerShell 并在 PowerShell 会话本地使用它。
 
-## <a name="install-azure-powershell"></a>安装 Azure PowerShell
-
-首先，请确保已安装最新版本的 Azure PowerShell。 有关最新版本的信息，请参阅[发行说明](./release-notes-azureps.md)。
-
-1. [安装 Azure PowerShell](install-azurerm-ps.md)。
-
-2. 若要验证安装是否成功，请从命令行运行 `Get-Module AzureRM -ListAvailable`。
-
-## <a name="log-in-to-azure"></a>登录 Azure
+## <a name="sign-in-to-azure"></a>登录 Azure
 
 以交互方式登录：
 
