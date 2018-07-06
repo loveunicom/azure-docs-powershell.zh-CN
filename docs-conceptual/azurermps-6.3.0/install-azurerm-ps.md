@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: dc5a1c59d23e37acf11aa7831ddc6e1edbd7f73e
+ms.openlocfilehash: 0d8019a7acaf2ba3baaa0772a76285ec497c991c
 ms.sourcegitcommit: 4c775721461210431bd913f28d1f1e6f1976880a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/28/2018
-ms.locfileid: "37091412"
+ms.locfileid: "37091463"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>使用 PowerShellGet 在 Windows 上安装 Azure PowerShell
 
@@ -24,39 +24,13 @@ ms.locfileid: "37091412"
 
 ## <a name="requirements"></a>要求
 
-若要安装 Azure PowerShell，则需 PowerShellGet 1.1.2.0 或更高版本。 若要查看它在系统上是否可用，请运行以下命令：
+从 6.0 版开始，Azure PowerShell 要求在 Windows 上运行 5.0 或更高版的 PowerShell。 若要查看在计算机上运行的 PowerShell 的版本，请运行以下命令：
 
 ```powershell
-Get-Module -Name PowerShellGet -ListAvailable | Select-Object -Property Name,Version,Path
+$PSVersionTable.PSVersion
 ```
 
-应会看到类似于下面的信息：
-
-```output
-Name          Version Path
-----          ------- ----
-Name          Version Path
-----          ------- ----
-PowerShellGet 1.6.0   C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.6.0\PowerShellGet.psd1
-PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PowerShellGet.psd1
-```
-
-如需更新安装的 PowerShellGet，请运行以下命令：
-
-```powershell
-Install-Module PowerShellGet -Force
-```
-
-如果尚未安装 PowerShellGet，请按下表中针对系统的说明操作。
-
-|场景|安装说明|
-|---|---|
-|Windows 10<br/>Windows Server 2016|内置在 OS 随附的 Windows Management Framework (WMF) 5.0 中|
-|升级到 PowerShell 5| <ol><li>[安装最新版本的 WMF](https://www.microsoft.com/en-us/download/details.aspx?id=54616)</li><li>运行以下命令：<br/>```Install-Module PowerShellGet -Force```</li></ol>|
-|装有 PowerShell 3 或 PowerShell 4 的 Windows|<ol><il>[获取 PackageManagement 模块](http://go.microsoft.com/fwlink/?LinkID=746217)</il><li>运行以下命令：<br/>```Install-Module PowerShellGet -Force```</li></ol>|
-
-> [!NOTE]
-> 使用 PowerShellGet 需要一个允许运行脚本的执行策略。 有关 PowerShell 执行策略的详细信息，请参阅[关于执行策略](/powershell/module/microsoft.powershell.core/about/about_execution_policies)。
+如果版本已过时，请参阅[升级现有的 Windows PowerShell](/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell)。
 
 ## <a name="install-the-azure-powershell-module"></a>安装 Azure Powershell 模块
 
