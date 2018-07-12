@@ -29,7 +29,7 @@
       items:
         - name: 部署资源管理器模板
           href: /azure/azure-resource-manager/resource-group-template-deploy
-        - name: 导出资源管理器模板
+        - name: 导出 Resource Manager 模板
           href: /azure/azure-resource-manager/resource-manager-export-template-powershell
         - name: 部署专用资源管理器模板
           href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
