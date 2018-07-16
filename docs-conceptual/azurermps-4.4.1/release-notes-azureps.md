@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
-ms.openlocfilehash: 5c8d9fd2e79dd18ee26493343e038c2a5ed24b26
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 6f0e304c499fc8bf4909e2825d52cd63b1fcbf5d
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854420"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100485"
 ---
 # <a name="release-notes"></a>发行说明
 
@@ -150,9 +150,9 @@ ms.locfileid: "34854420"
     * 所有 AzureRm cmdlet 都添加了可接受上下文（Context cmdlet 的输出）的 -AzureRmContext 参数。
       - 具有 DISABLED 上下文持久性的作业的通用模式：`Start-Job {param ($context) New-AzureRmVM -AzureRmContext $context [... other parameters]} -ArgumentList (Get-AzureRmContext)`
       - 具有 ENABLED 上下文持久性的作业的通用模式：`Start-Job {New-AzureRmVM [... other parameters]}`
-  * 在不同会话中保留登录信息，新 cmdlet：
-    - Enable-AzureRmContextAutosave - 在不同的会话中启用登录持久性。
-    - Disable-AzureRmContextAutosave - 在不同的会话中禁用登录持久性。
+  * 在不同会话之间持久保留登录信息，新 cmdlet：
+    - Enable-AzureRmContextAutosave - 在不同的会话之间启用凭据持久性。
+    - Disable-AzureRmContextAutosave - 在不同的会话之间禁用凭据持久性。
   * 管理上下文信息，新 cmdlet
     - Select-AzureRmContext - 选择处于活动状态的命名上下文。
     - Rename-AzureRmContext - 重命名现有上下文以方便引用。

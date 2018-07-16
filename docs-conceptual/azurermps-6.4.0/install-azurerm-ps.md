@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: 0d8019a7acaf2ba3baaa0772a76285ec497c991c
-ms.sourcegitcommit: de0e60800df1add9f3400166faacca202ef567d9
+ms.openlocfilehash: 99c102340e430dbca94538f3bd0e810c79266cd9
+ms.sourcegitcommit: f08f501b75a97ceef59c21f42158bf135a354eaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37406216"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37926155"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>使用 PowerShellGet 在 Windows 上安装 Azure PowerShell
 
@@ -24,13 +24,16 @@ ms.locfileid: "37406216"
 
 ## <a name="requirements"></a>要求
 
-从 6.0 版开始，Azure PowerShell 要求在 Windows 上运行 5.0 或更高版的 PowerShell。 若要查看在计算机上运行的 PowerShell 的版本，请运行以下命令：
+从 Azure PowerShell 版本 6.0 开始，Azure PowerShell 需要 PowerShell 版本 5.0。 若要查看在计算机上运行的 PowerShell 的版本，请运行以下命令：
 
 ```powershell
 $PSVersionTable.PSVersion
 ```
 
 如果版本已过时，请参阅[升级现有的 Windows PowerShell](/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell)。
+
+> [!IMPORTANT]
+> 本文档中介绍的模块 AzureRM 使用 .NET Framework。 这使得它与使用 .NET Core 的 PowerShell 6.0 兼容。 如果使用的是 PowerShell 6.0，请遵循[适用于 macOS 和 Linux 的安装说明](install-azurermps-maclinux.md)。 
 
 ## <a name="install-the-azure-powershell-module"></a>安装 Azure Powershell 模块
 

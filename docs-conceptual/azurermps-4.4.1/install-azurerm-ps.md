@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: 05dd023b407a46ea9133493a000ad9ff75b08dee
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 2444abc6f6f2280645c77c3effcd02db74f4f997
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854437"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100233"
 ---
 # <a name="install-and-configure-azure-powershell"></a>安装和配置 Azure PowerShell
 
@@ -50,6 +50,9 @@ Install-Module PowerShellGet -Force
 
 > [!NOTE]
 > 使用 PowerShellGet 需要一个允许运行脚本的执行策略。 有关 PowerShell 执行策略的详细信息，请参阅[关于执行策略](/powershell/module/microsoft.powershell.core/about/about_execution_policies)。
+
+> [!IMPORTANT]
+> 本文档中介绍的模块 AzureRM 使用 .NET Framework。 这使得它与使用 .NET Core 的 PowerShell 6.0 兼容。 如果使用的是 PowerShell 6.0，请遵循[适用于 macOS 和 Linux 的安装说明](install-azurermps-maclinux.md)。 
 
 ## <a name="step-2-install-azure-powershell"></a>步骤 2：安装 Azure PowerShell
 
@@ -162,7 +165,7 @@ Import-Module -Name AzureRM -RequiredVersion 1.2.9
 ```
 
 > [!NOTE]
-> 版本 2.1.0 和 1.2.6 是可以同时安装和使用的初始模块版本。 加载 Azure PowerShell 早期版本时，会加载不兼容版本的 **AzureRM.Profile** 模块。 这会导致在执行 cmdlet 时，cmdlet 会提示用户登录。
+> 版本 2.1.0 和 1.2.6 是可以同时安装和使用的初始模块版本。 加载 Azure PowerShell 早期版本时，会加载不兼容版本的 **AzureRM.Profile** 模块。 这会导致在执行 cmdlet 时，cmdlet 会提示登录。
 
 ### <a name="other-installation-methods"></a>其他安装方法
 

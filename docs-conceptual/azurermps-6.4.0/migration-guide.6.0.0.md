@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 5/1/2018
-ms.openlocfilehash: 830afb067ea22999c09c1b894b72097bb8ebfa3b
-ms.sourcegitcommit: de0e60800df1add9f3400166faacca202ef567d9
+ms.openlocfilehash: 4f9c99152fd6ddc23aec005c8e8957e545e65246
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37406145"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100199"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Microsoft Azure PowerShell 6.0.0 的重大更改
 
@@ -47,7 +47,7 @@ Azure PowerShell 以前要求使用至少 3.0 版的 PowerShell 来运行 cmdlet
 
 上下文自动保存是指存储可以在新的和不同的 PowerShell 会话之间使用的 Azure 登录信息。 有关上下文自动保存的详细信息，请参阅[此文档](https://docs.microsoft.com/en-us/powershell/azure/context-persistence)。
 
-在以前，上下文自动保存功能是禁用的，这意味着在两次会话之间不会存储用户的 Azure 登录信息，除非用户通过运行 `Enable-AzureRmContextAutosave` cmdlet 启用了上下文保存功能。 在以后，上下文自动保存功能会默认启用，这意味着即使用户的自动保存设置是不保存上下文，他们在下次登录时系统也会存储其上下文。 用户可以选择使用 `Disable-AzureRmContextAutosave` cmdlet 来退出此功能。
+在以前，上下文自动保存功能是禁用的，这意味着在两次会话之间不会存储用户的 Azure 身份验证信息，除非用户通过运行 `Enable-AzureRmContextAutosave` cmdlet 启用了上下文保存功能。 在以后，上下文自动保存功能会默认启用，这意味着即使用户的自动保存设置是不保存上下文，他们在下次登录时系统也会存储其上下文。 用户可以选择使用 `Disable-AzureRmContextAutosave` cmdlet 来退出此功能。
 
 _注意_：如果用户以前禁用了上下文自动保存，或者在启用上下文自动保存后使用的是现有的上下文，则不受此更改的影响
 
@@ -249,7 +249,7 @@ Remove-AzureRmDataLakeStoreItem -Account "ContosoADL" -path /myFolder -Recurse
 ## <a name="breaking-changes-to-azurermkeyvault-cmdlets"></a>AzureRM.KeyVault cmdlet 的重大更改
 
 **Add-AzureKeyVaultCertificate**
-- `Certificate` 参数已变为必选。
+- `CertificatePolicy` 参数已变为必选。
 
 **Set-AzureKeyVaultManagedStorageSasDefinition**
 - 此 cmdlet 不再接受组成访问令牌的单个参数，而是将显式令牌参数（例如 `Service` 或 `Permissions`）替换为泛型 `TemplateUri` 参数，后者对应于在其他位置定义的示例访问令牌（假定使用存储 PowerShell cmdlet，或者根据存储文档手动进行组合）。此 cmdlet 保留 `ValidityPeriod` 参数。

@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: 2f37df114b620566a663eb12c7e739975bc1f8bf
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 0897e8fc3a50a58ac8945bd95722736526f63e19
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854573"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100148"
 ---
 # <a name="getting-started-with-azure-powershell"></a>Azure PowerShell 入门
 
@@ -44,11 +44,11 @@ Azure PowerShell 用于从命令行管理 Azure 资源，以及生成可以针�
 
 2. 若要验证安装是否成功，请从命令行运行 `Get-Module AzureRM -ListAvailable`。
 
-## <a name="log-in-to-azure"></a>登录 Azure
+## <a name="sign-in-to-azure"></a>登录 Azure
 
 以交互方式登录：
 
-1. 键入 `Login-AzureRmAccount`。 此时会出现一个对话框，要求输入 Azure 凭据。 通过 '-EnvironmentName' 选项可登录 Azure China 或 Azure Germany。
+1. 键入 `Login-AzureRmAccount`。 此时会出现一个对话框，要求输入 Azure 凭据。 通过“-EnvironmentName”选项可针对 Azure China 或 Azure Germany 进行身份验证。
 
    例如 Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
@@ -362,7 +362,7 @@ Are you sure you want to remove resource group 'myResourceGroup'
 
 ## <a name="next-steps"></a>后续步骤
 
-* [使用 Azure PowerShell 登录](authenticate-azureps.md)
+* [使用 Azure PowerShell 进行登录](authenticate-azureps.md)
 * [使用 Azure PowerShell 管理 Azure 订阅](manage-subscriptions-azureps.md)
 * [使用 Azure PowerShell 在 Azure 中创建服务主体](create-azure-service-principal-azureps.md)
 * 阅读有关从较旧版本迁移的发行说明：[https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes)。

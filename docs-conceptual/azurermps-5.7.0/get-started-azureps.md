@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: cfb7ff30b442bb345931728dab131e1b80e58989
-ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
+ms.openlocfilehash: a036bb78ddb084dceb3668ab5751951dedd85e15
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35323367"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100464"
 ---
 # <a name="get-started-with-azure-powershell"></a>Azure PowerShell 入门
 
@@ -365,7 +365,7 @@ Are you sure you want to remove resource group 'myResourceGroup'
 
 ## <a name="next-steps"></a>后续步骤
 
-* [使用 Azure PowerShell 登录](authenticate-azureps.md)
+* [使用 Azure PowerShell 进行登录](authenticate-azureps.md)
 * [使用 Azure PowerShell 管理 Azure 订阅](manage-subscriptions-azureps.md)
 * [使用 Azure PowerShell 在 Azure 中创建服务主体](create-azure-service-principal-azureps.md)
 * 阅读有关从较旧版本迁移的发行说明：[https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes)。

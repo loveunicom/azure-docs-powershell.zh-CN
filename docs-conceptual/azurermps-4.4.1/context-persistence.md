@@ -1,26 +1,26 @@
 ---
-title: 在不同的 PowerShell 会话中保留用户登录
-description: 本文介绍 Azure PowerShell 中的新功能：在多个不同的 PowerShell 会话中重复使用凭据和其他用户信息。
+title: 在不同的 PowerShell 会话中保留用户凭据
+description: 了解如何在多个不同的 PowerShell 会话中重复使用 Azure 凭据和其他信息。
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: d650cfaae580acd10b3ddb06edec9883f1a32844
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 12a57f9aaf445fe95f731e09a6dcd174b97aa3fe
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34853961"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100182"
 ---
-# <a name="persisting-user-logins-across-powershell-sessions"></a>在不同的 PowerShell 会话中保留用户登录
+# <a name="persisting-user-credentials-across-powershell-sessions"></a>在不同的 PowerShell 会话中保留用户凭据
 
-在 Azure PowerShell 的 2017 年 9 月版中，Azure 资源管理器 cmdlet 引入了一个新功能：**Azure 上下文自动保存**。 此功能可实现多个新的用户方案，包括：
+Azure PowerShell 提供了一项称为 **Azure 上下文自动保存**的功能，它提供了以下功能：
 
 - 在新 PowerShell 会话中保留登录信息供重复使用。
 - 方便使用后台任务来执行长时间运行的 cmdlet。
-- 无需单独登录即可在帐户、订阅和环境之间切换。
+- 无需分别登录便可在不同的帐户、订阅和环境之间切换。
 - 通过相同的 PowerShell 会话同时使用不同的凭据和订阅执行任务。
 
 ## <a name="azure-contexts-defined"></a>定义的 Azure 上下文
@@ -36,7 +36,7 @@ Azure 上下文是一组定义 Azure PowerShell cmdlet 目标的信息。 上下
 
 在以前的版本中，每次打开新的 PowerShell 会话时，都必须创建 Azure 上下文。 从 Azure PowerShell v4.4.0 开始，可以启用自动保存，然后，每次打开新的 PowerShell 会话时，可以重复使用 Azure 上下文。
 
-## <a name="automatically-saving-the-context-for-the-next-login"></a>自动保存上下文供下次登录使用
+## <a name="automatically-saving-the-context-for-the-next-sign-in"></a>自动保存上下文供下次登录使用
 
 默认情况下，每当关闭 PowerShell 会话时，Azure PowerShell 会丢弃上下文信息。
 
@@ -71,11 +71,11 @@ Azure 上下文是一组定义 Azure PowerShell cmdlet 目标的信息。 上下
 
 ## <a name="creating-selecting-renaming-and-removing-contexts"></a>创建、选择、重命名和删除上下文
 
-若要创建上下文，必须登录到 Azure。 `Add-AzureRmAccount` cmdlet（或其别名 `Login-AzureRmAccount`）设置后续 Azure PowerShell cmdlet 使用的默认上下文，并用于访问登录凭据所允许的任何租户或订阅。
+若要创建上下文，必须登录到 Azure。 `Add-AzureRmAccount` cmdlet（或其别名 `Login-AzureRmAccount`）设置后续 Azure PowerShell cmdlet 使用的默认上下文，并用于访问凭据所允许的任何租户或订阅。
 
 若要在登录后添加新的上下文，请使用 `Set-AzureRmContext`（或其别名 `Select-AzureRmSubscription`）。
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Set-AzureRMContext -Subscription "Contoso Subscription 1" -Name "Contoso1"
 ```
 
@@ -83,7 +83,7 @@ PS C:\> Set-AzureRMContext -Subscription "Contoso Subscription 1" -Name "Contoso
 
 若要重命名现有上下文，请使用 `Rename-AzureRmContext` cmdlet。 例如：
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Contoso2'
 ```
 
@@ -91,7 +91,7 @@ PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Co
 
 最后，若要删除上下文，请使用 `Remove-AzureRmContext` cmdlet。  例如：
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Remove-AzureRmContext Contoso2
 ```
 
@@ -101,7 +101,7 @@ PS C:\> Remove-AzureRmContext Contoso2
 
 可以使用 `Remove-AzureRmAccount`（也称为 `Logout-AzureRmAccount`）删除用户或服务主体的所有凭据和关联的上下文。 在不带参数执行时，`Remove-AzureRmAccount` cmdlet 会删除与当前上下文中的用户或服务主体关联的所有凭据和上下文。 可以传入用户名、服务主体名称或上下文，来指定以特定的主体为目标。
 
-```powershell
+```azurepowershell-interactive
 Remove-AzureRmAccount user1@contoso.org
 ```
 
@@ -111,7 +111,7 @@ Remove-AzureRmAccount user1@contoso.org
 
 例如，若要更改当前 PowerShell 会话中的默认上下文且不影响其他会话时段或下次打开会话时使用的上下文，请使用:
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Select-AzureRmContext Contoso1 -Scope Process
 ```
 
@@ -119,7 +119,7 @@ PS C:\> Select-AzureRmContext Contoso1 -Scope Process
 
 上下文自动保存设置保存到 Azure PowerShell 用户目录 (`%AppData%\Roaming\Windows Azure PowerShell`)。 某些类型的计算机帐户可能无权访问此目录。 对于这种情况，可以使用环境变量
 
-```powershell
+```azurepowershell-interactive
 $env:AzureRmContextAutoSave="true" | "false"
 ```
 
@@ -140,7 +140,7 @@ $env:AzureRmContextAutoSave="true" | "false"
 对现有配置文件 cmdlet 的更改
 
 - [Add-AzureRmAccount][login] - 用于设置进程或当前用户的登录范围。
-  用于在登录后命名默认上下文。
+  用于在身份验证后命名默认上下文。
 - [Import-AzureRmContext][import] - 用于设置进程或当前用户的登录范围。
 - [Set-AzureRmContext][set-context] - 用于选择现有的命名上下文，以及设置对进程或当前用户的更改范围。
 

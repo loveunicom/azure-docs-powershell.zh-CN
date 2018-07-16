@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: dc5a1c59d23e37acf11aa7831ddc6e1edbd7f73e
-ms.sourcegitcommit: 4c775721461210431bd913f28d1f1e6f1976880a
+ms.openlocfilehash: c0bb020fc8cc77b96dc7fe6839911a4d80974d9e
+ms.sourcegitcommit: f08f501b75a97ceef59c21f42158bf135a354eaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37091412"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37926240"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>使用 PowerShellGet 在 Windows 上安装 Azure PowerShell
 
@@ -58,6 +58,9 @@ Install-Module PowerShellGet -Force
 > [!NOTE]
 > 使用 PowerShellGet 需要一个允许运行脚本的执行策略。 有关 PowerShell 执行策略的详细信息，请参阅[关于执行策略](/powershell/module/microsoft.powershell.core/about/about_execution_policies)。
 
+> [!IMPORTANT]
+> 本文档中介绍的模块 AzureRM 使用 .NET Framework。 这使得它与使用 .NET Core 的 PowerShell 6.0 兼容。 如果使用的是 PowerShell 6.0，请遵循[适用于 macOS 和 Linux 的安装说明](install-azurermps-maclinux.md)。 
+
 ## <a name="install-the-azure-powershell-module"></a>安装 Azure Powershell 模块
 
 需要提升的权限才能通过 PowerShell 库安装模块。 若要安装 Azure PowerShell，请在已提升权限的会话中运行以下命令：
@@ -81,7 +84,7 @@ Are you sure you want to install the modules from 'PSGallery'?
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-回答`Yes`或`Yes to All`即可继续安装。
+请回答 `Yes` 或 `Yes to All` 继续安装。
 
 `AzureRM` 模块是 Azure PowerShell cmdlet 的汇总模块。 安装它时，系统会下载所有可用的 Azure 资源管理器模块并使其 cmdlet 可供使用。
 
@@ -101,7 +104,7 @@ Connect-AzureRmAccount
 
 ## <a name="update-the-azure-powershell-module"></a>更新 Azure PowerShell 模块
 
-可以通过运行 [Update-Module](/powershell/module/powershellget/update-module) 来更新 Azure PowerShell 安装。 此命令__不__卸载以前的版本。
+可以通过运行 [Update-Module](/powershell/module/powershellget/update-module) 来更新 Azure PowerShell 安装。 此命令不卸载以前的版本。
 
 ```powershell
 Update-Module -Name AzureRM

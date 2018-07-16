@@ -7,16 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: e2eb6767d16dd15529b35b7a4134f4dcdd257d60
-ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
+ms.openlocfilehash: af39fec226492c9ccf251c996b57e274de783178
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35323333"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100267"
 ---
 # <a name="sign-in-with-azure-powershell"></a>使用 Azure PowerShell 进行登录
 
-Azure PowerShell 支持多种登录方法。 最简单的初始方法是通过命令行以交互方式登录。
+Azure PowerShell 支持多种身份验证方法。 最简单的入门方法是通过命令行以交互方式登录。
 
 ## <a name="sign-in-interactively"></a>以交互方式登录
 
@@ -29,7 +29,7 @@ Connect-AzureRmAccount
 当运行时，此 cmdlet 将显示一个对话框，提示输入与你的 Azure 帐户关联的电子邮件地址和密码。 进行身份验证时，将为当前 PowerShell 会话保存该信息，对话框将关闭并且你可以访问所有 Azure PowerShell cmdlet。
 
 > [!IMPORTANT]
-> 此登录仅适用于当前 PowerShell 会话。 要在多个会话之间持久保留登录，请参阅有关[持久性凭据](context-persistence.md)的文章。
+> 此登录仅适用于当前 PowerShell 会话。 若要在多个会话之间持久保留身份验证，请参阅有关[持久性凭据](context-persistence.md)的文章。
 
 ## <a name="sign-in-with-a-service-principal"></a>使用服务主体进行登录
 
