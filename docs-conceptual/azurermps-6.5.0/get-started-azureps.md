@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: 0228db32c313626029d1a54b8d5c2c8ddbfae7a8
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 5354a75e969e084d6457d0566a516705f365476f
+ms.sourcegitcommit: 8b882d1c27d9e323447ff85f56d11bbf5e244d7f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39025032"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39110698"
 ---
 # <a name="get-started-with-azure-powershell"></a>Azure PowerShell 入门
 
@@ -48,13 +48,13 @@ Azure PowerShell 用于从命令行管理 Azure 资源，以及生成可以针�
 
 以交互方式登录：
 
-1. 键入 `Connect-AzureRmAccount`。 此时会出现一个对话框，要求输入 Azure 凭据。 使用 '-Environment' 选项可登录“Azure 中国”或“Azure 德国”。
+1. 键入 `Connect-AzureRmAccount`。 此时会出现一个对话框，要求输入 Azure 凭据。 通过“-Environment”选项可针对 Azure China 或 Azure Germany 进行身份验证。
 
    例如 Connect-AzureRmAccount -Environment AzureChinaCloud
 
 2. 键入与帐户关联的电子邮件地址和密码。 Azure 将对凭据信息进行身份验证和保存，然后关闭该窗口。
 
-登录到 Azure 帐户后，可以使用 Azure PowerShell cmdlet 访问和管理器订阅中的资源。
+登录到 Azure 帐户后，可以使用 Azure PowerShell cmdlet 访问和管理订阅中的资源。
 
 ## <a name="create-a-windows-virtual-machine-using-simple-defaults"></a>使用简单的默认值创建 Windows 虚拟机
 

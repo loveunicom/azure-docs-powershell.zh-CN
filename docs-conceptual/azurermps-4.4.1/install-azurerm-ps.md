@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: 2444abc6f6f2280645c77c3effcd02db74f4f997
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 3cb6497dd053c7ae5d256ae4b562001ddecaa128
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100233"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39025236"
 ---
 # <a name="install-and-configure-azure-powershell"></a>安装和配置 Azure PowerShell
 
@@ -50,9 +50,9 @@ Install-Module PowerShellGet -Force
 
 > [!NOTE]
 > 使用 PowerShellGet 需要一个允许运行脚本的执行策略。 有关 PowerShell 执行策略的详细信息，请参阅[关于执行策略](/powershell/module/microsoft.powershell.core/about/about_execution_policies)。
-
+>
 > [!IMPORTANT]
-> 本文档中介绍的模块 AzureRM 使用 .NET Framework。 这使得它与使用 .NET Core 的 PowerShell 6.0 兼容。 如果使用的是 PowerShell 6.0，请遵循[适用于 macOS 和 Linux 的安装说明](install-azurermps-maclinux.md)。 
+> 本文档中介绍的模块 AzureRM 使用 .NET Framework。 这使得它与使用 .NET Core 的 PowerShell 6.0 兼容。 如果使用的是 PowerShell 6.0，请遵循[适用于 macOS 和 Linux 的安装说明](install-azurermps-maclinux.md)。
 
 ## <a name="step-2-install-azure-powershell"></a>步骤 2：安装 Azure PowerShell
 
@@ -85,6 +85,7 @@ AzureRM 模块是 Azure 资源管理器 cmdlet 的汇总模块。 安装 AzureRM
 如果安装了早期版本的 Azure PowerShell，可能会出错。 若要解决此问题，请参阅本文中的[更新到新版 Azure PowerShell](#update-azps) 部分。
 
 ## <a name="step-3-load-the-azurerm-module"></a>步骤 3：加载 AzureRM 模块
+
 安装该模块后，需要将它加载到 PowerShell 会话中。 应该在正常（而非提升）的 PowerShell 会话中执行此操作。 可以使用 `Import-Module` cmdlet 加载模块，如下所示：
 
 ```powershell
@@ -111,8 +112,7 @@ Import-Module -Name AzureRM
 |我想要升级到 PowerShell 5|[安装最新版本的 WMF](https://www.microsoft.com/en-us/download/details.aspx?id=54616)|
 |我正在运行某个包含 PowerShell 3 或 PowerShell 4 的 Windows 版本|[获取 PackageManagement 模块](http://go.microsoft.com/fwlink/?LinkID=746217)|
 
-<a id="helpmechoose"></a>
-### <a name="checking-the-version-of-azure-powershell"></a>检查 Azure PowerShell 的版本
+### <a name="div-idhelpmechoosechecking-the-version-of-azure-powershell"></a><div id="helpmechoose"/>检查 Azure PowerShell 的版本
 
 虽然建议尽早升级到最新版本，但仍然支持多个 Azure PowerShell 版本。 若要确定安装的 Azure PowerShell 版本，请从命令行运行 `Get-Module AzureRM`。
 
@@ -124,7 +124,7 @@ Get-Module AzureRM -ListAvailable | Select-Object -Property Name,Version,Path
 
 如果部署使用了经典部署模型，则可以安装 Azure PowerShell 的服务管理版本。 有关详细信息，请参阅[安装 Azure PowerShell 服务管理模块](/powershell/azure/servicemanagement/install-azure-ps)。 Azure 和 AzureRM 模块共享通用的依赖项。 如果同时使用 Azure 和 AzureRM 模块，应该安装每个包的同一版本。
 
-### <a id="update-azps"></a>更新到新版 Azure PowerShell
+### <a name="div-idupdate-azpsupdating-to-a-new-version-of-azure-powershell"></a><div id="update-azps"/>更新到新版 Azure PowerShell
 
 如果安装了包含 Service Management 模块的早期版本 Azure PowerShell，可能会出现以下错误：
 

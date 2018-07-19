@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
-ms.openlocfilehash: e5139a28a0c96d130ef1b48845a9093c3428571e
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: abf6aad6a04ffcf15b8fc38b47477caa1a04e015
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854641"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39025215"
 ---
 # <a name="other-installation-methods"></a>其他安装方法
 
@@ -42,7 +42,7 @@ Get-Module -ListAvailable Azure* | Select-Object Name, Version, Path
 
 安装后尝试加载或执行 cmdlet 时，可能会出现以下错误消息：
 
-```
+```output
 PS C:\> Login-AzureRmAccount
 Login-AzureRmAccount : The term 'Login-AzureRmAccount' is not recognized as the name of a cmdlet,
 function, script file, or operable program. Check the spelling of the name, or if a path was

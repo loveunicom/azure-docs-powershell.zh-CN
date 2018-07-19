@@ -7,21 +7,21 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: f19f9fc9fb9afabdddcbfc98864c63762753e6f0
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 92af0fdd8db451e2f0f092d66a3e296ad8d6a09e
+ms.sourcegitcommit: 8b882d1c27d9e323447ff85f56d11bbf5e244d7f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024658"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39110341"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>卸载 Azure PowerShell 模块
 
 本文介绍如何卸载旧版 Azure PowerShell 或将其从系统中完全删除。 如果你决定彻底卸载 Azure PowerShell，请通过 [Send-Feedback](/powershell/module/azurerm.profile/send-feedback) cmdlet 为我们提供一些反馈。
 如果你在遇到 bug 后[提出 GitHub 问题](https://github.com/azure/azure-powershell/issues)，我们将十分感激。
 
-## <a name="uninstall-msi-or-web-platform-installer"></a>卸载 MSI 或 Web 平台安装程序
+## <a name="uninstall-msi"></a>卸载 MSI
 
-若是使用 MSI 包或 Web 平台安装程序安装的 Azure PowerShell，则必须通过 Windows 系统而不是 PowerShell 进行卸载。
+若是使用 MSI 包安装的 Azure PowerShell，则必须通过 Windows 系统而不是 PowerShell 进行卸载。
 
 | 平台 | 说明 |
 |----------|--------------|

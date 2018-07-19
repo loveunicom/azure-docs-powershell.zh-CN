@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/06/2018
-ms.openlocfilehash: a779f402fb2b3fccc8269aa30a6fe98a949251d6
-ms.sourcegitcommit: 4c775721461210431bd913f28d1f1e6f1976880a
+ms.openlocfilehash: 6e7d447ea9672c174e3f1d103bc56c11a7f37192
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37091497"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39024913"
 ---
 # <a name="install-azure-powershell-on-macos-or-linux"></a>在 macOS 或 Linux 上安装 Azure PowerShell
 
@@ -30,8 +30,8 @@ ms.locfileid: "37091497"
 就 macOS 和大多数 Linux 发行版来说，PowerShell Core 的安装说明是不同的。
 可在以下文章中找到详细说明：
 
-- [在 macOS 上安装 PowerShell Core](/powershell/scripting/setup/installing-powershell-core-on-macos)
-- [在 Linux 上安装 PowerShell Core](/powershell/scripting/setup/installing-powershell-core-on-linux)
+* [在 macOS 上安装 PowerShell Core](/powershell/scripting/setup/installing-powershell-core-on-macos)
+* [在 Linux 上安装 PowerShell Core](/powershell/scripting/setup/installing-powershell-core-on-linux)
 
 ## <a name="install-azure-powershell-for-net-core"></a>安装 Azure PowerShell for .NET Core
 
@@ -59,14 +59,14 @@ You are installing the modules from an untrusted repository. If you trust this r
 its InstallationPolicy value by running the Set-PSRepository cmdlet.
 
 Are you sure you want to install the modules from 'PSGallery'?
-[Y] Yes� [A] Yes to All� [N] No� [L] No to All� [S] Suspend� [?] Help (default is "N"):
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-回答`Yes`或`Yes to All`即可继续安装。
+请回答 `Yes` 或 `Yes to All` 继续安装。
 
 ## <a name="sign-in"></a>登录
 
-若要开始使用 Azure PowerShell，需使用 [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet 将 `AzureRM.Netcore` 加载到 PowerShell 会话中，然后使用 Azure 凭据登录。 导入模块__不__需要提升的特权。
+若要开始使用 Azure PowerShell，需使用 [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet 将 `AzureRM.Netcore` 加载到 PowerShell 会话中，然后使用 Azure 凭据登录。 导入模块不需要提升的权限。
 
 ```powershell
 # Import the module into the PowerShell session
@@ -83,17 +83,17 @@ Connect-AzureRmAccount
 适用于 .NET Core 的 Azure PowerShell 模块仍处于开发之中。 这些模块不提供可用于模块 Windows 版本的完整 cmdlet 集。 AzureRM.Netcore 模块中实现了以下功能：
 
 * 帐户管理
-  - 通过 Microsoft Azure Active Directory 使用 Microsoft 帐户、组织帐户或服务主体登录
-  - 通过 Save-AzureRmContext 将凭据保存到磁盘，然后使用 Import-AzureRmContext 加载保存的凭据
+  * 通过 Microsoft Azure Active Directory 使用 Microsoft 帐户、组织帐户或服务主体登录
+  * 通过 Save-AzureRmContext 将凭据保存到磁盘，然后使用 Import-AzureRmContext 加载保存的凭据
 * 环境
-  - 获取不同的现成 Microsoft Azure 环境
-  - 添加/设置/删除自定义环境（如 Azure Stack 或 Windows Azure Pack 环境）
+  * 获取不同的现成 Microsoft Azure 环境
+  * 添加/设置/删除自定义环境（如 Azure Stack 或 Windows Azure Pack 环境）
 * 使用资源管理器和服务管理接口的 Azure 服务管理平面 cmdlet。
-  - 虚拟机
-  - 应用服务（网站）
-  - SQL 数据库
-  - 存储
-  - 网络
+  * 虚拟机
+  * 应用服务（网站）
+  * SQL 数据库
+  * 存储
+  * 网络
 
 ## <a name="next-steps"></a>后续步骤
 

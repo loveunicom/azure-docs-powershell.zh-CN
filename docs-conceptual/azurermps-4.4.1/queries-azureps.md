@@ -7,17 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 1584c8166078b7d7d24ce8748307fde0f565b662
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: eb359710efde6b5969ac721e395725a0ce87fddd
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854063"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39024590"
 ---
 # <a name="querying-for-azure-resources"></a>查询 Azure 资源
 
 可以在 PowerShell 中使用内置的 cmdlet 完成查询。 在 PowerShell 中，cmdlet 名称采用 **_动词-名词_** 格式。 使用动词 **_Get_** 的 cmdlet 是查询 cmdlet。 cmdlet 名词是 cmdlet 动词处理的 Azure 资源的类型。
-
 
 ## <a name="selecting-simple-properties"></a>选择简单属性
 
@@ -31,7 +30,7 @@ Get-AzureRmVM
 
 默认输出自动设置为表格式。
 
-```
+```output
 ResourceGroupName          Name   Location          VmSize  OsType              NIC ProvisioningState
 -----------------          ----   --------          ------  ------              --- -----------------
 MYWESTEURG        MyUnbuntu1610 westeurope Standard_DS1_v2   Linux myunbuntu1610980         Succeeded
@@ -44,7 +43,7 @@ MYWESTEURG          MyWin2016VM westeurope Standard_DS1_v2 Windows   mywin2016vm
 Get-AzureRmVM | Select Name,ResourceGroupName,Location
 ```
 
-```
+```output
 Name          ResourceGroupName Location
 ----          ----------------- --------
 MyUnbuntu1610 MYWESTEURG        westeurope
@@ -59,7 +58,7 @@ MyWin2016VM   MYWESTEURG        westeurope
 Get-AzureRmVM | Select Name,@{Name='OSType'; Expression={$_.StorageProfile.OSDisk.OSType}}
 ```
 
-```
+```output
 Name           OSType
 ----           ------
 MyUnbuntu1610   Linux
@@ -74,7 +73,7 @@ MyWin2016VM   Windows
 Get-AzureRmVM | Where ResourceGroupName -like RGD* | Select ResourceGroupName,Name
 ```
 
-```
+```output
 ResourceGroupName  Name
 -----------------  ----
 RGDEMO001          KBDemo001VM
@@ -87,7 +86,7 @@ RGDEMO001          KBDemo020
 Get-AzureRmVM | Where vmSize -eq Standard_DS1_V2
 ```
 
-```
+```output
 ResourceGroupName          Name     Location          VmSize  OsType              NIC ProvisioningState
 -----------------          ----     --------          ------  ------              --- -----------------
 MYWESTEURG        MyUnbuntu1610   westeurope Standard_DS1_v2   Linux myunbuntu1610980         Succeeded

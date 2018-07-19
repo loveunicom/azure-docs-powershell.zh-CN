@@ -8,12 +8,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: 1a4d24b6c772da7b5846c72cf26b457e8ce3d90b
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 76d690f3a7206857861e1ee26d8284de419dc70a
+ms.sourcegitcommit: 8b882d1c27d9e323447ff85f56d11bbf5e244d7f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39025083"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39110681"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>使用 Azure PowerShell 创建 Azure 服务主体
 
@@ -43,7 +43,7 @@ Azure 服务主体是用户创建的应用、服务和自动化工具用来访�
 
 可以使用 `Get-AzureRmADApplication` cmdlet 发现有关应用程序的信息。
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmADApplication -DisplayNameStartWith MyDemoWebApp
 ```
 
@@ -63,10 +63,11 @@ ReplyUrls               : {}
 
 可以使用 `New-AzureRmADServicePrincipal` cmdlet 创建服务主体。
 
-```powershell
+```azurepowershell-interactive
 Add-Type -Assembly System.Web
 $password = [System.Web.Security.Membership]::GeneratePassword(16,3)
-New-AzureRmADServicePrincipal -ApplicationId 00c01aaa-1603-49fc-b6df-b78c4e5138b4 -Password $password
+$securePassword = ConvertTo-SecureString -Force -AsPlainText -String $password
+New-AzureRmADServicePrincipal -ApplicationId 00c01aaa-1603-49fc-b6df-b78c4e5138b4 -Password $securePassword
 ```
 
 ```output
@@ -77,7 +78,7 @@ MyDemoWebApp                   ServicePrincipal               698138e7-d7b6-4738
 
 ### <a name="get-information-about-the-service-principal"></a>获取有关服务主体的信息
 
-```powershell
+```azurepowershell-interactive
 $svcprincipal = Get-AzureRmADServicePrincipal -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
 $svcprincipal | Select-Object *
 ```
@@ -94,9 +95,9 @@ Type                  : ServicePrincipal
 
 现在，可以使用提供的 *appId* 和*密码*，以应用的新服务主体身份登录。 需要提供帐户的租户 ID。 使用个人凭据登录到 Azure 时，会显示租户 ID。
 
-```powershell
+```azurepowershell-interactive
 $cred = Get-Credential -UserName $svcprincipal.ApplicationId -Message "Enter Password"
-Login-AzureRmAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+Connect-AzureRmAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 ```
 
 请通过新的 PowerShell 会话运行此命令。 成功登录后，会看到如下所示的输出：
@@ -128,7 +129,7 @@ Azure PowerShell 提供以下 cmdlet 用于管理角色分配：
 
 本示例将“读取者”角色添加到前面的示例，并删除“参与者”角色：
 
-```powershell
+```azurepowershell-interactive
 New-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Reader
 ```
 
@@ -143,13 +144,13 @@ ObjectId           : 698138e7-d7b6-4738-a866-b4e3081a69e4
 ObjectType         : ServicePrincipal
 ```
 
-```powershell
+```azurepowershell-interactive
 Remove-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Contributor
 ```
 
 查看当前分配的角色：
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
 ```
 
@@ -177,7 +178,7 @@ ObjectType         : ServicePrincipal
 
 ### <a name="add-a-new-password-for-the-service-principal"></a>为服务主体添加新密码
 
-```powershell
+```azurepowershell-interactive
 $password = [System.Web.Security.Membership]::GeneratePassword(16,3)
 New-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp -Password $password
 ```
@@ -190,7 +191,7 @@ StartDate           EndDate             KeyId                                Typ
 
 ### <a name="get-a-list-of-credentials-for-the-service-principal"></a>获取主体服务的凭据列表
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
 ```
 
@@ -203,7 +204,7 @@ StartDate           EndDate             KeyId                                Typ
 
 ### <a name="remove-the-old-password-from-the-service-principal"></a>删除服务主体的旧密码
 
-```powershell
+```azurepowershell-interactive
 Remove-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp -KeyId ca9d4846-4972-4c70-b6f5-a4effa60b9bc
 ```
 
@@ -216,7 +217,7 @@ service principal objectId '698138e7-d7b6-4738-a866-b4e3081a69e4'.
 
 ### <a name="verify-the-list-of-credentials-for-the-service-principal"></a>验证主体服务的凭据列表
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
 ```
 

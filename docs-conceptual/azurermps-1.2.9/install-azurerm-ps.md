@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: c9a2f7b87654de5a50d8e0f06fefc6d362532aaf
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: a5ad1ce6001c9326a5dad135fe5aeea512f70675
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34852890"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39025151"
 ---
 # <a name="install-and-configure-azure-powershell"></a>安装和配置 Azure PowerShell
 
@@ -79,6 +79,7 @@ AzureRM 模块是 Azure 资源管理器 cmdlet 的汇总模块。 安装 AzureRM
 如果安装了早期版本的 Azure PowerShell，可能会出错。 若要解决此问题，请参阅本文中的[更新到新版 Azure PowerShell](#update-azps) 部分。
 
 ## <a name="step-3-load-the-azurerm-module"></a>步骤 3：加载 AzureRM 模块
+
 安装该模块后，需要将它加载到 PowerShell 会话中。 应该在正常（而非提升）的 PowerShell 会话中执行此操作。 可以使用 `Import-Module` cmdlet 加载模块，如下所示：
 
 ```powershell
@@ -101,8 +102,7 @@ Import-Module -Name AzureRM
 |我想要升级到 PowerShell 5|[安装最新版本的 WMF](https://www.microsoft.com/en-us/download/details.aspx?id=54616)|
 |我正在运行某个包含 PowerShell 3 或 PowerShell 4 的 Windows 版本|[获取 PackageManagement 模块](http://go.microsoft.com/fwlink/?LinkID=746217)|
 
-<a id="helpmechoose"></a>
-### <a name="checking-the-version-of-azure-powershell"></a>检查 Azure PowerShell 的版本
+### <a name="div-idhelpmechoosechecking-the-version-of-azure-powershell"></a><div id="helpmechoose"/>检查 Azure PowerShell 的版本
 
 虽然建议尽早升级到最新版本，但仍然支持多个 Azure PowerShell 版本。 若要确定安装的 Azure PowerShell 版本，请从命令行运行 `Get-Module AzureRM`。
 
@@ -114,7 +114,7 @@ Get-Module AzureRM -ListAvailable | Select-Object -Property Name,Version,Path
 
 如果部署使用了经典部署模型，则可以安装 Azure PowerShell 的服务管理版本。 有关详细信息，请参阅[安装 Azure PowerShell 服务管理模块](/powershell/azure/servicemanagement/install-azure-ps)。 Azure 和 AzureRM 模块共享通用的依赖项。 如果同时使用 Azure 和 AzureRM 模块，应该安装每个包的同一版本。
 
-### <a id="update-azps"></a>更新到新版 Azure PowerShell
+### <a name="div-idupdate-azpsupdating-to-a-new-version-of-azure-powershell"></a><div id="update-azps"/>更新到新版 Azure PowerShell
 
 如果安装了包含 Service Management 模块的早期版本 Azure PowerShell，可能会出现以下错误：
 

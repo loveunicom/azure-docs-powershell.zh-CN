@@ -12,7 +12,7 @@ ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024607"
+ms.locfileid: "39024930"
 ---
 # <a name="run-azure-powershell-in-a-docker-container"></a>在 Docker 容器中运行 Azure PowerShell
 

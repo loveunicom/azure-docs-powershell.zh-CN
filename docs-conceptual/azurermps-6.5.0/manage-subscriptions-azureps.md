@@ -1,19 +1,18 @@
 ---
-title: 使用 Azure PowerShell 管理 Azure 订阅 | Microsoft Docs
+title: 使用 Azure PowerShell 管理 Azure 订阅
 description: 使用 Azure PowerShell 管理 Azure 订阅
-keywords: Azure PowerShell, 订阅
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 00f346c2e90fb6615dd9eac96e13f4cfc243d204
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: fbd2fe315efbdfb2147218229d51e983e2b61361
+ms.sourcegitcommit: 8b882d1c27d9e323447ff85f56d11bbf5e244d7f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024471"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39110562"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>管理多个 Azure 订阅
 
@@ -21,7 +20,7 @@ ms.locfileid: "39024471"
 
 1. 获取帐户中所有订阅的列表。
 
-    ```powershell
+    ```azurepowershell-interactive
     Get-AzureRmSubscription
     ```
 
@@ -50,13 +49,13 @@ ms.locfileid: "39024471"
 
 2. 设置默认值。
 
-    ```powershell
+    ```azurepowershell-interactive
     Select-AzureRmSubscription -SubscriptionName "My Demos"
     ```
 
 3. 通过运行 `Get-AzureRmContext` cmdlet 验证更改。
 
-    ```powershell
+    ```azurepowershell-interactive
     Get-AzureRmContext
     ```
 
