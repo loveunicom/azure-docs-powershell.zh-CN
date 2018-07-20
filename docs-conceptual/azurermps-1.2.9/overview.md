@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 08/31/2017
-ms.openlocfilehash: d36952b38a36a5196ee5b38ed048366da5416f0b
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: ff5ee02b11b6f0649e20b056c14fc8a9b3ba6276
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34819977"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39025015"
 ---
 # <a name="overview-of-azure-powershell"></a>Azure PowerShell 概述
 
@@ -31,8 +31,7 @@ Azure PowerShell 提供一组可以使用 [Azure 资源管理器](/azure/azure-r
 > [!NOTE]
 > 如果部署使用无法转换的经典部署模型，则可安装 Azure PowerShell 的服务管理版本。 有关详细信息，请参阅[安装 Azure PowerShell 服务管理模块](/powershell/azure/servicemanagement/install-azure-ps)。
 
-
-### <a name="need-help-with-powershell"></a>需要有关 PowerShell 的帮助？
+## <a name="learn-powershell-basics"></a>了解 PowerShell 基础知识
 
 如果不熟悉 PowerShell，可能会发现 PowerShell 简介文章很有帮助。
 
