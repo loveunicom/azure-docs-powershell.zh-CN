@@ -1,0 +1,376 @@
+### YamlMime:Tutorial
+title: 使用 Azure PowerShell 创建虚拟机
+metadata:
+  title: 使用 Azure PowerShell 创建虚拟机
+  description: 通过创建虚拟机来开始使用 Azure PowerShell。
+  audience: Developer
+  level: Beginner
+  displayType: two-column
+  interactive: azurepowershell
+  ms.date: 02/08/2018
+  ms.author: sewhee
+  author: sdwheeler
+  manager: carmonm
+  ms.devlang: azure-powershell
+  ms.prod: powershell
+  ms.technology: azure-powershell
+  ms.service: virtual-machines
+  clicktale: true
+  ms.openlocfilehash: e6d585d76f507a7959e6e6227aff1effad8fa336
+  ms.sourcegitcommit: fd11600079ee3844986552bccc4e274a231332b6
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 08/02/2018
+  ms.locfileid: "39367933"
+items:
+- durationInMinutes: 1
+  content: >-
+    本教程介绍使用 Azure PowerShell 设置虚拟机的过程中涉及到的所有步骤。 本教程还介绍输出查询、Azure 资源重用和资源清理。
+
+
+    可以使用通过 Azure Cloud Shell 提供的交互式体验来完成本教程，也可以在本地[安装 Azure PowerShell](install-azurerm-ps.md)。
+
+
+    使用 __ctrl-shift-v__（在 macOS 上则使用 __cmd-shift-v__）将教程文本粘贴到 Azure Cloud Shell 中。
+- durationInMinutes: 1
+  title: 登录
+  content: >-
+    如果使用 Azure PowerShell 的本地安装，则需要先登录，然后才能执行任何其他步骤。
+
+
+    ```powershell
+
+    Connect-AzureRmAccount
+
+    ```
+
+
+    请按照终端中显示的步骤操作，完成登录过程。
+- durationInMinutes: 1
+  title: 创建资源组
+  content: >-
+    在 Azure 中，所有资源都分配在资源管理组中。 可以通过资源组对资源进行逻辑分组，以集合的方式更方便地使用资源。
+
+    就本教程来说，所有创建的资源都进入一个名为 `TutorialResources` 的组。
+
+
+    ```powershell
+
+    New-AzureRmResourceGroup -Name TutorialResources -Location eastus
+
+    ```
+
+
+    ```Output
+
+    ResourceGroupName : TutorialResources
+
+    Location          : eastus
+
+    ProvisioningState : Succeeded
+
+    Tags              :
+
+    ResourceId        : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/TutorialResources
+
+    ```
+- durationInMinutes: 1
+  title: 获取 VM 的管理员凭据
+  content: >-
+    创建新的虚拟机之前，必须创建一个包含 Windows VM 管理员帐户用户名和密码的凭据对象。
+
+
+    ```powershell
+
+    $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
+
+    ```
+
+
+    出现提示时输入用户名和密码。 得到的凭据对象将在下一步中作为参数传递。
+
+
+    ```Output
+
+    Windows PowerShell credential request.
+
+    Enter a username and password for the virtual machine.
+
+    User: tutorAdmin
+
+    Password for user tutorAdmin: *********
+
+    ```
+- durationInMinutes: 4
+  title: 创建虚拟机
+  content: >-
+    Azure 中的虚拟机有大量的依赖项。 Azure PowerShell 将根据指定的命令行参数创建这些资源。 为了提高可读性，我们使用 [PowerShell 展开](/powershell/module/microsoft.powershell.core/about/about_splatting)将参数传递给 Azure PowerShell cmdlet。
+
+
+    创建运行 Windows 的新虚拟机。
+
+
+    ```powershell
+
+    $vmParams = @{
+      ResourceGroupName = 'TutorialResources'
+      Name = 'TutorialVM1'
+      Location = 'eastus'
+      ImageName = 'Win2016Datacenter'
+      PublicIpAddressName = 'tutorialPublicIp'
+      Credential = $cred
+      OpenPorts = 3389
+    }
+
+    $newVM1 = New-AzureRmVM @vmParams
+
+    ```
+
+    创建 VM 时将显示参数值已使用并且 Azure 资源正在创建。
+
+    PowerShell 将显示一个进度栏，如下所示。
+
+
+    ```Output
+     Creating Azure resources
+      39% \
+      [ooooooooooooooooooooooooooooooooooo                                                                 ]
+
+      Creating TutorialVM1 virtual machine.
+    ```
+
+
+    VM 准备就绪后，我们可以在 Azure 门户中或通过检查 \$newVM1 变量来查看结果。
+
+
+    ```powershell
+
+    $newVM1
+
+    ```
+
+
+    ```Output
+
+    ResourceGroupName : TutorialResources
+
+    Id                : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/TutorialResources/providers/Microsoft.Compute/virtualMachines/TutorialVM1
+
+    VmId              : 12345678-9abc-def0-1234-56789abcedf0
+
+    Name              : TutorialVM1
+
+    Type              : Microsoft.Compute/virtualMachines
+
+    Location          : eastus
+
+    Tags              : {}
+
+    HardwareProfile   : {VmSize}
+
+    NetworkProfile    : {NetworkInterfaces}
+
+    OSProfile         : {ComputerName, AdminUsername, WindowsConfiguration, Secrets}
+
+    ProvisioningState : Succeeded
+
+    StorageProfile    : {ImageReference, OsDisk, DataDisks}
+
+    ```
+
+
+    在大括号内列出的属性值是嵌套的对象。 在下一步中，我们将演示如何查看这些嵌套对象中的特定值。
+- durationInMinutes: 5
+  title: 通过查询获取 VM 信息
+  content: >-
+    让我们从我们刚刚创建的 VM 中获取一些更详细的信息。 在此示例中，我们将验证我们创建的 VM 的名称和管理员帐户。
+
+
+    ```powershell
+
+    $newVM1.OSProfile | Select-Object ComputerName,AdminUserName
+
+    ```
+
+
+    ```Output
+
+    ComputerName AdminUsername
+
+    ------------ -------------
+
+    TutorialVM1  tutorialAdmin
+
+    ```
+
+
+    可以使用其他 Azure PowerShell 命令来获取有关网络配置的特定信息。
+
+
+    ```powershell
+
+    $newVM1 | Get-AzureRmNetworkInterface |
+      Select-Object -ExpandProperty IpConfigurations |
+        Select-Object Name,PrivateIpAddress
+    ```
+
+
+    在此示例中，我们要使用 PowerShell 管道将 \$newVM1 对象发送到 `Get-AzureRmNetworkInterface` cmdlet。 从得到的网络接口对象中，我们要选择嵌套的 IpConfigurations 对象。 从 Ipconfigurations 对象中，我们要选择 Name 和 PrivateIpAddress 属性。
+
+
+    ```Output
+
+    Name        PrivateIpAddress
+
+    ----        ----------------
+
+    TutorialVM1 192.168.1.4
+
+    ```
+
+
+    为了确认 VM 正在运行，需要通过远程桌面进行连接。 为此，我们需要知道公共 IP 地址。
+
+
+    ```powershell
+
+    $publicIp = Get-AzureRmPublicIpAddress -Name tutorialPublicIp -ResourceGroupName TutorialResources
+
+
+    $publicIp | Select-Object Name,IpAddress,@{label='FQDN';expression={$_.DnsSettings.Fqdn}}
+
+    ```
+
+
+    在此示例中，我们使用 `Get-AzureRmPublicIpAddress` 并将结果存储在 \$publicIp 变量中。 从此变量中，我们将选择属性并使用表达式来检索嵌套的 Fqdn 属性。
+
+
+    ```Output
+
+    Name             IpAddress           FQDN
+
+    ----             ---------           ----
+
+    tutorialPublicIp <PUBLIC_IP_ADDRESS> tutorialvm1-8a0999.eastus.cloudapp.azure.com
+
+    ```
+
+
+    从本地计算机可以运行以下命令来通过远程桌面连接到 VM。
+
+
+    ```powershell
+
+    mstsc.exe /v <PUBLIC_IP_ADDRESS>
+
+    ```
+
+
+    有关查询对象属性的详细信息，请参阅[查询 Azure 资源](./queries-azureps.md)。
+- durationInMinutes: 4
+  title: 在现有的子网上创建新的 VM
+  content: >-
+    第二个 VM 使用现有的子网。
+
+
+    ```powershell
+
+    $vm2Params = @{
+      ResourceGroupName = 'TutorialResources'
+      Name = 'TutorialVM2'
+      ImageName = 'Win2016Datacenter'
+      VirtualNetworkName = 'TutorialVM1'
+      SubnetName = 'TutorialVM1'
+      PublicIpAddressName = 'tutorialPublicIp2'
+      Credential = $cred
+      OpenPorts = 3389
+    }
+
+    $newVM2 = New-AzureRmVM @vm2Params
+
+
+    $newVM2
+
+    ```
+
+
+    ```Output
+
+    ResourceGroupName        : TutorialResources
+
+    Id                       : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/TutorialResources/providers/Microsoft.Compute/virtualMachines/TutorialVM2
+
+    VmId                     : 12345678-9abc-def0-1234-56789abcedf1
+
+    Name                     : TutorialVM2
+
+    Type                     : Microsoft.Compute/virtualMachines
+
+    Location                 : eastus
+
+    Tags                     : {}
+
+    HardwareProfile          : {VmSize}
+
+    NetworkProfile           : {NetworkInterfaces}
+
+    OSProfile                : {ComputerName, AdminUsername, WindowsConfiguration, Secrets}
+
+    ProvisioningState        : Succeeded
+
+    StorageProfile           : {ImageReference, OsDisk, DataDisks}
+
+    FullyQualifiedDomainName : tutorialvm2-dfa5af.eastus.cloudapp.azure.com
+
+    ```
+
+
+    可以跳过几个步骤来获取新 VM 的公共 IP 地址，因为它是在 \$newVM2 对象的 FullyQualifiedDomainName 属性中返回的。 使用以下命令通过远程桌面进行连接。
+
+
+    ```powershell
+
+    mstsc.exe /v $newVM2.FullyQualifiedDomainName
+
+    ```
+- durationInMinutes: 4
+  title: 清理
+  content: >-
+    教程完成以后，即可清理创建的资源。 可以使用 `Remove-AzureRmResource` 命令删除单个资源，但若要删除资源组中的所有资源，最安全的方式是使用 `Remove-AzureRmResourceGroup` 命令删除该组。
+
+
+    ```powershell
+
+    $job = Remove-AzureRmResourceGroup -Name TutorialResources -Force -AsJob
+
+
+    $job
+
+    ```
+
+
+    ```Output
+
+    Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+
+    --     ----            -------------   -----         -----------     --------             -------
+
+    1      Long Running... AzureLongRun... Running       True            localhost            Remove-AzureRmResource...
+
+    ```
+
+
+    该命令删除本教程中创建的资源，可确保按正确顺序将其解除分配。 在进行删除时，`-AsJob` 参数会解除对 PowerShell 的阻止。 若要等到删除已完成，请使用以下命令：
+
+
+    ```powershell
+
+    Wait-Job -Id $job.Id
+
+    ```
+
+
+    清理完成以后，本教程即告完成。 接下来是所学内容的摘要，以及在后续步骤中将要用到的资源的链接。
+- durationInMinutes: 1
+  title: 摘要
+  content: "\n祝贺你！ 你已了解如何使用新的或现有的资源来创建 VM，并使用了表达式和其他 Azure PowerShell 命令来捕获要存储在 shell 变量中的数据，还查看了一些为 Azure VM 创建的资源。\n\n下一步做什么取决于你打算如何使用 Azure PowerShell。 若要进一步深入了解本教程中介绍的功能，可以参阅各种资料。\n\n### <a name=\"in-depth-azure-powershell-documentation\"></a>全面的 Azure PowerShell 文档\n\n你可能想要花些时间浏览完整的 [Azure PowerShell 文档](overview.md)集。\n\n有关本教程中使用的命令的详细信息，请查看以下文章。\n\n- [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup)\n- [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential)\n- [New-AzureRmVM](/powershell/module/azurerm.compute/new-azurermvm)\n- [Select-Object](/powershell/module/microsoft.powershell.utility/select-object)\n- [Get-AzureRmPublicIpAddress](/powershell/module/azurerm.network/get-AzureRmPublicIpAddress)\n- [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/Remove-AzureRmResourceGroup)\n- [Wait-Job](/powershell/module/microsoft.powershell.core/wait-job)\n\n也有文章对本教程中介绍的功能进行了更深入的探讨。\n\n- [PowerShell 展开](/powershell/module/microsoft.powershell.core/about/about_splatting)\n- [查询](queries-azureps.md)\n- [格式设置](formatting-output.md)\n- [使用 PowerShell 作业](using-psjobs.md)\n\n### <a name=\"sample-scripts\"></a>示例脚本\n\n若要立刻开始执行特定的任务，请查看一些示例脚本。\n\n- [Linux 虚拟机](/azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Windows 虚拟机](/azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Web 应用](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [SQL 数据库](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Cosmos DB](/azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json)\n\n### <a name=\"feedback\"></a>反馈\n\n如果想要提供反馈、建议或提出问题，可以通过多种方式联系我们。\n\n* `Send-Feedback` 是一个内置的 Azure PowerShell 命令，用于向我们的团队提供任意形式的反馈。\n* 在 [Azure PowerShell 存储库](https://github.com/Azure/azure-powershell/issues)中提交功能请求或 Bug 报告。\n* 若要提出某个问题或澄清某个问题，请在 [Azure PowerShell 文档存储库](https://github.com/Azure/azure-docs-powershell/issues)中提交该问题。\n\n希望你喜欢使用 Azure PowerShell！"
