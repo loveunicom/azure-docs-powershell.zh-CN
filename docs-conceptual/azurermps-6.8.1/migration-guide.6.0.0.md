@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 5/1/2018
-ms.openlocfilehash: 4f9c99152fd6ddc23aec005c8e8957e545e65246
-ms.sourcegitcommit: dca906e73e943aac207cee23b79915773419c673
+ms.date: 05/01/2018
+ms.openlocfilehash: 72a0e9ca8562dc06a1fe2718658172ce9ee20f0e
+ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43250168"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43383934"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Microsoft Azure PowerShell 6.0.0 的重大更改
 
@@ -22,7 +22,7 @@ ms.locfileid: "43250168"
 
 - [常规重大更改](#general-breaking-changes)
     - [PowerShell 最低版本要求升至 5.0](#minimum-powershell-version-required-bumped-to-50)
-    - [默认启用上下文自动保存功能](#context-autosaved-enabled-by-default)
+    - [默认启用上下文自动保存功能](#context-autosave-enabled-by-default)
     - [删除标记别名](#removal-of-tags-alias)
 - [AzureRM.Compute cmdlet 的重大更改](#breaking-changes-to-azurermcompute-cmdlets)
 - [AzureRM.DataLakeStore cmdlet 的重大更改](#breaking-changes-to-azurermdatalakestore-cmdlets)
