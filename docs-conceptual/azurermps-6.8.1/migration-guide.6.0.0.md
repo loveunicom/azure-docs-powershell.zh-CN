@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 72a0e9ca8562dc06a1fe2718658172ce9ee20f0e
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.openlocfilehash: 227bec0f7eb24b0941e9e21d37524b290c4b83a5
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43383934"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46304159"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Microsoft Azure PowerShell 6.0.0 的重大更改
 
@@ -41,11 +41,11 @@ ms.locfileid: "43383934"
 
 ### <a name="minimum-powershell-version-required-bumped-to-50"></a>PowerShell 最低版本要求升至 5.0
 
-Azure PowerShell 以前要求使用至少 3.0 版的 PowerShell 来运行 cmdlet。 此要求以后会提高到 5.0 版的 PowerShell。 若要了解如何升级到 PowerShell 5.0，请查看[此表](https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell)。
+Azure PowerShell 以前要求使用至少 3.0 版的 PowerShell 来运行 cmdlet。 此要求以后会提高到 5.0 版的 PowerShell。 若要了解如何升级到 PowerShell 5.0，请查看[此表](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell)。
 
 ### <a name="context-autosave-enabled-by-default"></a>默认启用上下文自动保存功能
 
-上下文自动保存是指存储可以在新的和不同的 PowerShell 会话之间使用的 Azure 登录信息。 有关上下文自动保存的详细信息，请参阅[此文档](https://docs.microsoft.com/en-us/powershell/azure/context-persistence)。
+上下文自动保存是指存储可以在新的和不同的 PowerShell 会话之间使用的 Azure 登录信息。 有关上下文自动保存的详细信息，请参阅[此文档](https://docs.microsoft.com/powershell/azure/context-persistence)。
 
 在以前，上下文自动保存功能是禁用的，这意味着在两次会话之间不会存储用户的 Azure 身份验证信息，除非用户通过运行 `Enable-AzureRmContextAutosave` cmdlet 启用了上下文保存功能。 在以后，上下文自动保存功能会默认启用，这意味着即使用户的自动保存设置是不保存上下文，他们在下次登录时系统也会存储其上下文。 用户可以选择使用 `Disable-AzureRmContextAutosave` cmdlet 来退出此功能。
 
@@ -255,8 +255,8 @@ Remove-AzureRmDataLakeStoreItem -Account "ContosoADL" -path /myFolder -Recurse
 - 此 cmdlet 不再接受组成访问令牌的单个参数，而是将显式令牌参数（例如 `Service` 或 `Permissions`）替换为泛型 `TemplateUri` 参数，后者对应于在其他位置定义的示例访问令牌（假定使用存储 PowerShell cmdlet，或者根据存储文档手动进行组合）。此 cmdlet 保留 `ValidityPeriod` 参数。
 
 若要详细了解如何为 Azure 存储组合共享访问令牌，请参阅相应的文档页：
-- [Constructing a Service SAS] (https://docs.microsoft.com/en-us/rest/api/storageservices/Constructing-a-Service-SAS)（构造服务 SAS）
-- [Constructing an Account SAS] (https://docs.microsoft.com/en-us/rest/api/storageservices/constructing-an-account-sas)（构造帐户 SAS）
+- [Constructing a Service SAS] (https://docs.microsoft.com/rest/api/storageservices/Constructing-a-Service-SAS)（构造服务 SAS）
+- [Constructing an Account SAS] (https://docs.microsoft.com/rest/api/storageservices/constructing-an-account-sas)（构造帐户 SAS）
 
 ```powershell
 # Old
