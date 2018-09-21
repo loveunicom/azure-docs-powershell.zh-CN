@@ -6,22 +6,22 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 12/11/2017
-ms.openlocfilehash: a986824d952ccf6cd52dc86418899f3805a38973
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.date: 09/11/2018
+ms.openlocfilehash: a5dfcadf97dffcb8431d8480915b2bf4eda45923
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43383594"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46301014"
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>使用 PowerShell 作业并行运行 cmdlet
 
 PowerShell 支持使用 [PowerShell 作业](/powershell/module/microsoft.powershell.core/about/about_jobs)执行异步操作。
-Azure PowerShell 严重依赖于向 Azure 发出和等待网络调用。 开发人员经常发现他们需要在脚本中向 Azure 发出多个非阻塞调用，或者需要在不阻塞当前会话的情况下，在 REPL 中创建 Azure 资源。 为了解决这些需求，Azure PowerShell 提供了一流的 [PSJob](/powershell/module/microsoft.powershell.core/about/about_jobs) 支持。
+Azure PowerShell 严重依赖于向 Azure 发出和等待网络调用。 你可能经常需要发出非阻塞调用。 为了解决此需求，Azure PowerShell 提供了一流的 [PSJob](/powershell/module/microsoft.powershell.core/about/about_jobs) 支持。
 
 ## <a name="context-persistence-and-psjobs"></a>上下文持久性和 PSJob
 
-PSJob 在单独的进程中运行，这意味着，必须适当地与所要创建的作业共享有关 Azure 连接的信息。 使用 `Connect-AzureRmAccount` 将 Azure 帐户连接到 PowerShell 会话之后，可以向作业传递上下文。
+由于 PSJob 作为单独的进程运行，因此必须与 PSJob 共享 Azure 连接。 使用 `Connect-AzureRmAccount` 登录到 Azure 帐户后，将上下文传递给某个作业。
 
 ```azurepowershell-interactive
 $creds = Get-Credential
@@ -63,7 +63,7 @@ ResourceGroupName    Name Location          VmSize  OsType     NIC ProvisioningS
 MyVm                 MyVm   eastus Standard_DS1_v2 Windows    MyVm          Creating
 ```
 
-随后在完成作业时，可以使用 `Receive-Job` 获取作业的结果。
+作业完成后，使用 `Receive-Job` 获取作业的结果。
 
 > [!NOTE]
 > `Receive-Job` 从该 cmdlet 返回结果，就好像未设置 `-AsJob` 标志一样。
@@ -92,7 +92,7 @@ FullyQualifiedDomainName : myvmmyvm.eastus.cloudapp.azure.com
 
 ## <a name="example-scenarios"></a>示例方案
 
-一次性创建多个 VM。
+一次性创建多个 VM：
 
 ```azurepowershell-interactive
 $creds = Get-Credential
@@ -107,7 +107,7 @@ Get-Job | Wait-Job
 Get-AzureRmVM
 ```
 
-在此示例中，`Wait-Job` cmdlet 会在运行作业时导致脚本暂停。 所有作业完成后，该脚本会继续执行。 这样，你便可以创建多个并行运行的作业，等待作业完成，然后继续。
+在此示例中，`Wait-Job` cmdlet 会在运行作业时导致脚本暂停。 所有作业完成后，该脚本会继续执行。 多个作业将并行运行，同时，脚本会等待作业完成，然后继续
 
 ```output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command

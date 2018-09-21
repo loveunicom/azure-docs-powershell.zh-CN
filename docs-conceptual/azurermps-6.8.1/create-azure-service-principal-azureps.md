@@ -7,41 +7,41 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 05/15/2017
-ms.openlocfilehash: 76d690f3a7206857861e1ee26d8284de419dc70a
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.date: 09/09/2018
+ms.openlocfilehash: 4c1bf93d69e186699f434bb979af56fcb1d20e8a
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43383696"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46301133"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>使用 Azure PowerShell 创建 Azure 服务主体
 
-如果打算使用 Azure PowerShell 来管理应用或服务，应使用 Azure Active Directory (AAD) 服务主体而不是自己的凭据运行 PowerShell。 本主题逐步讲解如何使用 Azure PowerShell 创建安全主体。
+如果打算使用 Azure PowerShell 来管理应用或服务，应使用 Azure Active Directory (AAD) 服务主体而不是自己的凭据运行 PowerShell。 本文逐步讲解如何使用 Azure PowerShell 创建安全主体。
 
 > [!NOTE]
 > 也可以通过 Azure 门户创建服务主体。 有关详细信息，请参阅[使用门户创建可访问资源的 Active Directory 应用程序和服务主体](/azure/azure-resource-manager/resource-group-create-service-principal-portal)。
 
 ## <a name="what-is-a-service-principal"></a>什么是“服务主体”？
 
-Azure 服务主体是用户创建的应用、服务和自动化工具用来访问特定 Azure 资源的安全标识。 可将其视为具有特定角色，并且权限受到严格控制的“用户标识”（用户名和密码，或者证书）。 与普通的用户标识不同，它只需能够完成特定的任务。 如果只向它授予执行管理任务所需的最低权限级别，则可以提高安全性。
+Azure 服务主体是用户创建的应用、服务和自动化工具用来访问特定 Azure 资源的安全标识。 可将其视为具有特定角色，并且权限受到严格控制的“用户标识”（用户名和密码，或者证书）。 与普通的用户标识不同，服务主体只需执行特定的操作。 如果只向它授予执行管理任务所需的最低权限级别，则可以提高安全性。
 
 ## <a name="verify-your-own-permission-level"></a>验证自己的权限级别
 
-首先，在 Azure Active Directory 和 Azure 订阅中必须拥有足够的权限。 具体而言，必须能够在 Active Directory 中创建应用并向服务主体分配角色。
+首先，在 Azure Active Directory 和 Azure 订阅中必须拥有足够的权限。 必须能够在 Active Directory 中创建应用并向服务主体分配角色。
 
-检查帐户是否有足够权限的最简方法是使用门户。 请参阅[在门户中检查所需的权限](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions)。
+检查帐户是否有适当权限的最简方法是使用门户。 请参阅[在门户中检查所需的权限](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions)。
 
 ## <a name="create-a-service-principal-for-your-app"></a>为应用创建服务主体
 
-登录到 Azure 帐户后，可创建服务主体。 必须使用以下方式之一来标识已部署的应用：
+登录到 Azure 帐户后，可以创建服务主体。 必须使用以下方式之一来标识已部署的应用：
 
 * 已部署的应用的唯一名称（例如以下示例中的“MyDemoWebApp”），或
 * 应用程序 ID，即与已部署的应用、服务或对象关联的唯一 GUID
 
 ### <a name="get-information-about-your-application"></a>获取有关应用程序的信息
 
-可以使用 `Get-AzureRmADApplication` cmdlet 发现有关应用程序的信息。
+可以使用 `Get-AzureRmADApplication` cmdlet 获取有关应用程序的信息。
 
 ```azurepowershell-interactive
 Get-AzureRmADApplication -DisplayNameStartWith MyDemoWebApp
@@ -93,14 +93,14 @@ Type                  : ServicePrincipal
 
 ### <a name="sign-in-using-the-service-principal"></a>使用服务主体登录
 
-现在，可以使用提供的 *appId* 和*密码*，以应用的新服务主体身份登录。 需要提供帐户的租户 ID。 使用个人凭据登录到 Azure 时，会显示租户 ID。
+现在，可以使用提供的 *appId* 和*密码*，以应用的新服务主体身份登录。 还需要服务主体的租户 ID。 使用个人凭据登录到 Azure 时，会显示租户 ID。 若要使用服务主体登录，请使用以下命令：
 
 ```azurepowershell-interactive
 $cred = Get-Credential -UserName $svcprincipal.ApplicationId -Message "Enter Password"
 Connect-AzureRmAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 ```
 
-请通过新的 PowerShell 会话运行此命令。 成功登录后，会看到如下所示的输出：
+成功登录后，会看到如下所示的输出：
 
 ```output
 Environment           : AzureCloud

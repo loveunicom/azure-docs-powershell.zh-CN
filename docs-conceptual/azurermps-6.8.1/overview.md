@@ -7,13 +7,13 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
-ms.date: 08/31/2017
-ms.openlocfilehash: ef4f9b416454471f8c9476f0bbccbcca20a22000
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.date: 09/11/2018
+ms.openlocfilehash: fcb6213dab12f94796ab0ca9de4d5e391d570f4f
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43384172"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46304125"
 ---
 # <a name="overview-of-azure-powershell"></a>Azure PowerShell 概述
 
@@ -33,10 +33,10 @@ Azure PowerShell 提供一组可以使用 [Azure 资源管理器](/azure/azure-r
 
 ## <a name="learn-powershell-basics"></a>了解 PowerShell 基础知识
 
-如果不熟悉 PowerShell，可能会发现 PowerShell 简介文章很有帮助。
+如果你不熟悉 PowerShell，可以参阅 PowerShell 简介。
 
-* [安装 PowerShell](/powershell/scripting/installing-windows-powershell)
-* [通过 PowerShell 编写脚本](/powershell/scripting/scripting-with-windows-powershell)
+* [安装 PowerShell](/powershell/scripting/setup/installing-windows-powershell)
+* [通过 PowerShell 编写脚本](/powershell/scripting/powershell-scripting)
 
 也可以观看此视频：[PowerShell 基础知识：（第 1 部分）PowerShell 入门](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1)。
 

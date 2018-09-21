@@ -6,21 +6,21 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 08/31/2017
-ms.openlocfilehash: 9496ad0face2fbf4ecd685a6ee8e810a419b55aa
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.date: 09/09/2018
+ms.openlocfilehash: 9867efc991f4a9efe880c0f449d9d2be1cddf8ef
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43384206"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46300623"
 ---
-# <a name="persisting-user-credentials-across-powershell-sessions"></a>在不同的 PowerShell 会话中保留用户凭据
+# <a name="persist-user-credentials-across-powershell-sessions"></a>在不同的 PowerShell 会话中保留用户凭据
 
 Azure PowerShell 提供了一项称为 **Azure 上下文自动保存**的功能，它提供了以下功能：
 
 - 在新 PowerShell 会话中保留登录信息供重复使用。
 - 方便使用后台任务来执行长时间运行的 cmdlet。
-- 无需分别登录便可在不同的帐户、订阅和环境之间切换。
+- 无需另行登录即可在不同的帐户、订阅与环境之间切换。
 - 通过相同的 PowerShell 会话同时使用不同的凭据和订阅执行任务。
 
 ## <a name="azure-contexts-defined"></a>定义的 Azure 上下文
@@ -28,20 +28,20 @@ Azure PowerShell 提供了一项称为 **Azure 上下文自动保存**的功能�
 Azure 上下文是一组定义 Azure PowerShell cmdlet 目标的信息。 上下文由五个部分组成：
 
 - 帐户 - 对 Azure 通信进行身份验证时所用的用户名或服务主体
-- 订阅 - 包含正在操作的资源的 Azure 订阅。
+- 订阅 - 包含正在处理的资源的 Azure 订阅。
 - 租户 - 包含你的订阅的 Azure Active Directory 租户。 租户对于 ServicePrincipal 身份验证而言更重要。
 - 环境 - 作为目标的特定 Azure 云，通常是 Azure 全球云。
   但是，使用环境设置也可以指定以国家、政府和本地 (Azure Stack) 云为目标。
 - 凭据 - Azure 用来验证你的身份并确保你有权访问 Azure 中的资源的信息
 
-在以前的版本中，每次打开新的 PowerShell 会话时，都必须创建 Azure 上下文。 从 Azure PowerShell v4.4.0 开始，可以启用自动保存，然后，每次打开新的 PowerShell 会话时，可以重复使用 Azure 上下文。
+在以前的版本中，每次打开新的 PowerShell 会话时，都必须创建 Azure 上下文。 从 Azure PowerShell v4.4.0 开始，每次打开新的 PowerShell 会话，Azure 上下文都可自动保存。
 
-## <a name="automatically-saving-the-context-for-the-next-sign-in"></a>自动保存上下文供下次登录使用
+## <a name="automatically-save-the-context-for-the-next-sign-in"></a>自动保存上下文供下次登录时使用
 
-从版本 6.3.0 开始，Azure PowerShell 会在各个会话之间自动保留你的上下文信息。 若要将 PowerShell 设置为忘记上下文和凭据，请使用 `Disable-AzureRmContextAutoSave`。 每次打开 PowerShell 会话时，都需要登录到 Azure。
+在 6.3.0 和更高版本中，Azure PowerShell 会在各个会话之间自动保留你的上下文信息。 若要将 PowerShell 设置为忘记上下文和凭据，请使用 `Disable-AzureRmContextAutoSave`。 每次打开 PowerShell 会话时，都需要登录到 Azure。
 
 若要让 Azure PowerShell 在关闭 PowerShell 会话后记住上下文，请使用 `Enable-AzureRmContextAutosave`。 上下文和凭据信息自动保存在用户目录中的特殊隐藏文件夹内 (`%AppData%\Roaming\Windows Azure PowerShell`)。
-以后，每个新的 PowerShell 会话都以最后一个会话中使用的上下文为目标。
+每个新的 PowerShell 会话都以最后一个会话中使用的上下文为目标。
 
 用于管理 Azure 上下文的 cmdlet 也允许进行精细控制。 是希望将更改只应用到当前 PowerShell 会话（`Process` 范围）还是每个 PowerShell 会话（`CurrentUser` 范围）。 [使用上下文范围](#Using-Context-Scopes)中更详细地介绍了这些选项。
 
@@ -69,7 +69,7 @@ Azure 上下文是一组定义 Azure PowerShell cmdlet 目标的信息。 上下
 
 ## <a name="creating-selecting-renaming-and-removing-contexts"></a>创建、选择、重命名和删除上下文
 
-若要创建上下文，必须登录到 Azure。 `Connect-AzureRmAccount` cmdlet（或其别名 `Login-AzureRmAccount`）设置后续 Azure PowerShell cmdlet 使用的默认上下文，并用于访问凭据所允许的任何租户或订阅。
+若要创建上下文，必须登录到 Azure。 `Connect-AzureRmAccount` cmdlet（或其别名 `Login-AzureRmAccount`）设置 Azure PowerShell cmdlet 使用的默认上下文，并用于访问凭据所允许的任何租户或订阅。
 
 若要在登录后添加新的上下文，请使用 `Set-AzureRmContext`（或其别名 `Select-AzureRmSubscription`）。
 
@@ -93,7 +93,7 @@ PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Co
 PS C:\> Remove-AzureRmContext Contoso2
 ```
 
-忘记名为“Contoso2”的上下文。 以后可以使用 `Set-AzureRmContext` 重新创建此上下文
+忘记名为“Contoso2”的上下文。 可以使用 `Set-AzureRmContext` 重新创建此上下文
 
 ## <a name="removing-credentials"></a>删除凭据
 
@@ -130,7 +130,7 @@ $env:AzureRmContextAutoSave="true" | "false"
 - [Enable-AzureRmContextAutosave][enable] - 用于在不同的 PowerShell 会话中保存上下文。
   所做的任何更改都会更改全局上下文。
 - [Disable-AzureRmContextAutosave][disable] - 关闭上下文自动保存。 每打开一个新的 PowerShell 会话都需要重新登录。
-- [Select-AzureRmContext][select] - 选择某个上下文作为默认值。 所有后续 cmdlet 都使用此上下文中的凭据进行身份验证。
+- [Select-AzureRmContext][select] - 选择某个上下文作为默认值。 所有 cmdlet 使用此上下文中的凭据进行身份验证。
 - [Disconnect-AzureRmAccount][remove-cred] - 删除与帐户关联的所有凭据和上下文。
 - [Remove-AzureRmContext][remove-context] - 删除命名的上下文。
 - [Rename-AzureRmContext][rename] - 重命名现有上下文。

@@ -6,17 +6,17 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 06/20/2018
-ms.openlocfilehash: 27ac176d8bd0b142b7740b2ba6793edb500a8af3
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.date: 09/09/2018
+ms.openlocfilehash: 0ed8f50abbcb2aa00192196f19004446dc696b5d
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43383560"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46304006"
 ---
 # <a name="run-azure-powershell-in-a-docker-container"></a>在 Docker 容器中运行 Azure PowerShell
 
-为了方便用户在可移植环境中运行 Azure PowerShell，Microsoft 发布了预安装了 Azure PowerShell 的 Docker 映像。 这些映像为 Linux 来宾提供 PowerShell Core，为 Windows 来宾提供 PowerShell Core 或 PowerShell 5。
+Microsoft 发布了已预装 Azure PowerShell 的 Docker 映像。 使用这些映像可以体验 Azure PowerShell，或者在隔离的环境中运行它。 有些映像运行 PowerShell Core 和 PowerShell 5。 
 
 | 环境 | Docker 映像 |
 |-------------|--------------|
@@ -24,7 +24,7 @@ ms.locfileid: "43383560"
 | Windows 上的 PowerShell Core | [azuresdk/azure-powershell-core:nanoserver](https://hub.docker.com/r/azuresdk/azure-powershell-core/) |
 | Linux 上的 PowerShell Core | [azuresdk/azure-powershell-core:latest](https://hub.docker.com/r/azuresdk/azure-powershell-core/) |
 
-若要运行这些容器中的任何一个，请使用 `docker run -it $ImageName` 获取交互式终端。 例如，若要在 Linux 容器上运行 PowerShell Core，请使用：
+若要运行这些容器中的任何一个，请使用 `docker run -it $ImageName` 获取交互式终端。 例如，若要运行包含 PowerShell Core 的 Linux 容器：
 
 ```powershell
 docker run -it azuresdk/azure-powershell-core:latest

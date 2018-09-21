@@ -6,17 +6,17 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/30/2017
-ms.openlocfilehash: e1606ddb02adf1de2cb5496917d61755ac3dad23
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.date: 09/11/2018
+ms.openlocfilehash: 3f1c1bab5f9903ee7df813bf1ef043c7107ebe79
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43384138"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46300929"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>管理多个 Azure 订阅
 
-如果是 Azure 的新手，也许只有一个订阅。 但如果使用 Azure 有一段时间，可能已创建了多个 Azure 订阅。 可将 Azure PowerShell 配置为针对特定的订阅执行命令。
+如果你是 Azure 新手，也许只有一个订阅。 但如果使用 Azure 有一段时间，可能已创建了多个 Azure 订阅。 可将 Azure PowerShell 配置为针对特定的订阅执行命令。
 
 1. 获取帐户中所有订阅的列表。
 
@@ -68,4 +68,4 @@ ms.locfileid: "43384138"
     CurrentStorageAccount :
     ```
 
-设置默认订阅后，所有后续 Azure PowerShell 命令将针对此订阅运行。
+设置默认订阅后，所有 Azure PowerShell 命令将针对此订阅运行。

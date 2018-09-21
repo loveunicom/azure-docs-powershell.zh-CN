@@ -1,18 +1,18 @@
 ---
 title: 使用 Azure PowerShell 进行登录
-description: 如何使用 Azure PowerShell 作为用户、服务主体或通过 MSI 进行登录。
+description: 如何使用 Azure PowerShell 以用户、服务主体或 Azure 资源托管标识的形式登录。
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: 6525e41be54c3f6b97812504c436e0ff3f5edf8e
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: c3131d3516e50123c48b13dc9e04c0b507a63a58
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100080"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46300861"
 ---
 # <a name="sign-in-with-azure-powershell"></a>使用 Azure PowerShell 进行登录
 
@@ -44,11 +44,11 @@ $pscredential = Get-Credential
 Connect-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
 ```
 
-## <a name="sign-in-using-an-azure-vm-managed-service-identity"></a>使用 Azure VM 托管服务标识进行登录
+## <a name="sign-in-using-managed-identities-for-azure-resources"></a>使用 Azure 资源的托管标识登录
 
-托管服务标识 (MSI) 是 Azure Active Directory 的预览版功能。 可以使用 MSI 服务主体进行登录，并获取仅限应用的访问令牌来访问其他资源。 MSI 只能在 Azure 云中运行的虚拟机上使用。
+Azure 资源的托管标识是 Azure Active Directory 的一项功能。 可以使用托管标识服务主体登录，并获取仅限应用的访问令牌来访问其他资源。 托管标识只能在 Azure 云中运行的虚拟机上使用。
 
-有关 MSI 的详细信息，请参阅[如何使用 Azure VM 托管服务标识 (MSI) 登录和获取令牌](/azure/active-directory/msi-how-to-get-access-token-using-msi)。
+有关 Azure 资源的托管标识的详细信息，请参阅[如何在 Azure VM 上使用 Azure 资源托管标识来获取访问令牌](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token)。
 
 ## <a name="sign-in-to-another-cloud"></a>登录到其他云
 

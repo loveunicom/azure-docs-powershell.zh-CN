@@ -1,18 +1,18 @@
 ---
 title: 卸载 Azure PowerShell
 description: 如何完整地卸载 Azure PowerShell
-ms.date: 06/20/2018
+ms.date: 09/11/2018
 author: sptramer
 ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 92af0fdd8db451e2f0f092d66a3e296ad8d6a09e
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.openlocfilehash: 385dd0281185cfb9e7bdd2c98e4c557659fff384
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43383662"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46300759"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>卸载 Azure PowerShell 模块
 
@@ -34,7 +34,7 @@ ms.locfileid: "43383662"
 
 若是使用 PowerShellGet 安装的 Azure PowerShell，则可使用 [Uninstall-Module](/powershell/module/powershellget/uninstall-module) cmdlet。 但是，`Uninstall-Module` 只卸载一个模块。 若要彻底删除 Azure PowerShell，必须单独卸载每个模块。 如果安装了多个版本的 Azure PowerShell，则卸载过程可能很复杂。
 
-可以使用以下脚本彻底删除单个版本的 Azure PowerShell。 此脚本会查询 PowerShell 库以获取依赖性子模块的列表。 然后，此脚本会卸载每个子模块的正确版本。
+以下脚本查询 PowerShell 库以获取依赖性子模块的列表。 然后，此脚本会卸载每个子模块的正确版本。
 
 ```powershell
 function Uninstall-AllModules {

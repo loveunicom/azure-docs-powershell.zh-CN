@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
-ms.date: 11/15/2017
-ms.openlocfilehash: 5354a75e969e084d6457d0566a516705f365476f
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.date: 09/11/2018
+ms.openlocfilehash: 9150089860f0934cb7344cac2cef38546cac28ad
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43384084"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46300810"
 ---
 # <a name="get-started-with-azure-powershell"></a>Azure PowerShell 入门
 
@@ -95,7 +95,7 @@ StorageProfile           : {ImageReference, OsDisk, DataDisks}
 FullyQualifiedDomainName : samplevm-2c0867.eastus.cloudapp.azure.com
 ```
 
-这非常简单。 但你可能想知道还创建了其他哪些对象以及 VM 是如何配置的。 让我们先看一下资源组。
+你可能想知道另外创建了哪些对象以及 VM 是如何配置的。 让我们先看一下资源组。
 
 ```azurepowershell-interactive
 Get-AzureRmResourceGroup | Select-Object ResourceGroupName,Location
@@ -167,7 +167,7 @@ Tags              :
 ResourceId        : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/myResourceGroup
 ```
 
-这一新资源组将用于包含我们创建的新 VM 所需的所有资源。 要创建新的 Linux VM，必须先创建其他所需的资源并将其分配到配置中。 然后，可以使用该配置来创建 VM。 此外，用户配置文件的 .ssh 目录中需具备名为 `id_rsa.pub` 的 SSH 公钥。
+这一新资源组将用于包含我们创建的新 VM 所需的所有资源。 若要创建新的 Linux VM，必须先创建其他所需的资源并将其分配到配置中。 然后，可以使用该配置来创建 VM。 此外，用户配置文件的 .ssh 目录中需具备名为 `id_rsa.pub` 的 SSH 公钥。
 
 #### <a name="create-the-required-network-resources"></a>创建所需的网络资源
 
@@ -303,7 +303,7 @@ New-AzureRmWebApp -Name MyWebApp43433 -AppServicePlan MyAppServicePlan -Resource
 
 ## <a name="listing-deployed-resources"></a>列出已部署的资源
 
-可以使用 `Get-AzureRmResource` cmdlet 列出 Azure 中运行的资源。 以下示例显示我们刚刚在新资源组中创建的资源。
+可以使用 `Get-AzureRmResource` cmdlet 列出 Azure 中运行的资源。 以下示例显示我们在新资源组中创建的资源。
 
 ```azurepowershell-interactive
 Get-AzureRmResource |
@@ -338,7 +338,7 @@ micromyresomywi032907510                              westeurope Microsoft.Stora
 Remove-AzureRmVM -Name myWindowsVM -ResourceGroupName myResourceGroup
 ```
 
-系统会提示确认删除该资源。
+系统将提示你确认删除该资源。
 
 ```output
 Confirm
@@ -346,7 +346,8 @@ Are you sure you want to remove resource group 'myResourceGroup'
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 ```
 
-还可以一次性删除多个资源。 例如，以下命令将删除本入门教程中所有示例使用的“MyResourceGroup”资源组中的所有资源。 这会删除该资源组及其包含的所有资源。
+还可以一次性删除多个资源。 例如，以下命令将删除我们到目前为止对所有示例使用的资源组“MyResourceGroup”。
+同时会删除该组中的所有资源。
 
 ```azurepowershell-interactive
 Remove-AzureRmResourceGroup -Name myResourceGroup
@@ -358,7 +359,7 @@ Are you sure you want to remove resource group 'myResourceGroup'
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 ```
 
-此过程需要几分钟才能完成。
+该任务可能需要几分钟时间才能完成，具体时间取决于资源的数量和类型。
 
 ## <a name="get-samples"></a>获取示例
 
@@ -369,7 +370,7 @@ Are you sure you want to remove resource group 'myResourceGroup'
 * [使用 Azure PowerShell 进行登录](authenticate-azureps.md)
 * [使用 Azure PowerShell 管理 Azure 订阅](manage-subscriptions-azureps.md)
 * [使用 Azure PowerShell 在 Azure 中创建服务主体](create-azure-service-principal-azureps.md)
-* 阅读有关从较旧版本迁移的发行说明：[https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes)。
+* 阅读有关从旧版迁移的发行说明：[https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes)。
 * 从社区获得帮助：
   * [MSDN 上的 Azure 论坛](http://go.microsoft.com/fwlink/p/?LinkId=320212)
   * [stackoverflow](http://go.microsoft.com/fwlink/?LinkId=320213)

@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 06/06/2018
-ms.openlocfilehash: 6e7d447ea9672c174e3f1d103bc56c11a7f37192
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.date: 09/11/2018
+ms.openlocfilehash: 8347502df3c9cd6237a44293cfa3e5c051066940
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43384036"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46300657"
 ---
 # <a name="install-azure-powershell-on-macos-or-linux"></a>在 macOS 或 Linux 上安装 Azure PowerShell
 
@@ -80,7 +80,7 @@ Connect-AzureRmAccount
 
 ## <a name="available-cmdlets"></a>可用的 cmdlet
 
-适用于 .NET Core 的 Azure PowerShell 模块仍处于开发之中。 这些模块不提供可用于模块 Windows 版本的完整 cmdlet 集。 AzureRM.Netcore 模块中实现了以下功能：
+适用于 .NET Core 的 Azure PowerShell 模块仍处于开发之中。 这些模块不提供适用于 Windows 版模块的整套 cmdlet。 AzureRM.Netcore 模块中实现了以下功能：
 
 * 帐户管理
   * 通过 Microsoft Azure Active Directory 使用 Microsoft 帐户、组织帐户或服务主体登录
@@ -88,7 +88,7 @@ Connect-AzureRmAccount
 * 环境
   * 获取不同的现成 Microsoft Azure 环境
   * 添加/设置/删除自定义环境（如 Azure Stack 或 Windows Azure Pack 环境）
-* 使用资源管理器和服务管理接口的 Azure 服务管理平面 cmdlet。
+* 适用于使用资源管理器和经典部署模型接口的 Azure 服务的管理平面 cmdlet。
   * 虚拟机
   * 应用服务（网站）
   * SQL 数据库

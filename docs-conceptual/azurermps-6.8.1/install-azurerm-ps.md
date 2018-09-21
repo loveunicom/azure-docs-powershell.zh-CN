@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 06/15/2018
-ms.openlocfilehash: 50b05e5f25b6e3e1c815f6b26f1b53b84cd0b7da
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.date: 09/11/2018
+ms.openlocfilehash: 970742c91b327a1310ef5097edef40287ebf9f9b
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43384002"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46304074"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>使用 PowerShellGet 在 Windows 上安装 Azure PowerShell
 
@@ -88,7 +88,7 @@ Update-Module -Name AzureRM
 
 ## <a name="use-multiple-versions-of-azure-powershell"></a>使用多个版本的 Azure PowerShell
 
-可以安装多个版本的 Azure PowerShell。 如果使用本地 Azure Stack 资源、运行不能更新到 PowerShell 5.0 的旧版 Windows，或者使用 Azure 经典部署模型，则可能需要多个版本。 若要安装旧版本，请在安装时提供 `-RequiredVersion` 参数。
+可以安装多个版本的 Azure PowerShell。 如果使用本地 Azure Stack 资源、运行旧版 Windows，或使用 Azure 经典部署模型，则可能需要多个版本。 若要安装旧版本，请在安装时提供 `-RequiredVersion` 参数。
 
 ```powershell
 # Install version 1.2.9 of Azure PowerShell
@@ -104,7 +104,7 @@ Import-Module -Name AzureRM -RequiredVersion 1.2.9
 
 ## <a name="provide-feedback"></a>提供反馈
 
-如果在使用 Azure Powershell 时发现 Bug，请[在 GitHub 上提出问题](https://github.com/Azure/azure-powershell/issues)。
+如果在使用 Azure Powershell 时发现了 bug，请[在 GitHub 上提出问题](https://github.com/Azure/azure-powershell/issues)。
 若要从命令行提供反馈，请使用 [Send-Feedback](/powershell/module/azurerm.profile/send-feedback) cmdlet。
 
 ## <a name="next-steps"></a>后续步骤
