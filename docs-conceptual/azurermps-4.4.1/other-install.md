@@ -7,16 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
-ms.openlocfilehash: abf6aad6a04ffcf15b8fc38b47477caa1a04e015
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: b23d8071c3c91bee1387c54cce1a34004ecdd9ad
+ms.sourcegitcommit: f6f5e256143aa6c097de3e57e930d8badea49f30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39025389"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49399155"
 ---
 # <a name="other-installation-methods"></a>其他安装方法
 
-Azure PowerShell 提供多种安装方法。 首选的方法是结合使用 PowerShellGet 和 PowerShell 库。 可以使用 Web 平台安装程序 (WebPI) 或者 GitHub 中提供的 MSI 文件在 Windows 上安装 Azure PowerShell。 也可以在 Docker 容器中安装 Azure PowerShell。
+Azure PowerShell 提供多种安装方法。 首选的方法是结合使用 PowerShellGet 和 PowerShell 库。 可以使用 Web 平台安装程序 (WebPI) 或者 GitHub 中提供的 MSI 文件在 Windows 上安装 Azure PowerShell。
 
 ## <a name="install-on-windows-using-the-web-platform-installer"></a>使用 Web 平台安装程序在 Windows 上安装
 
@@ -64,28 +64,3 @@ Import-Module "$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\AzureRM.ps
 
 可以使用 [GitHub](https://github.com/Azure/azure-powershell/releases/latest) 中提供的 MSI 文件安装 Azure PowerShell。 如果已安装旧版 Azure 模块，安装程序会自动删除这些模块。 MSI 包在 `$env:ProgramFiles\WindowsPowerShell\Modules` 中安装模块，但不会创建版本特定的文件夹。
 
-## <a name="install-in-a-docker-container"></a>在 Docker 容器中安装
-
-我们维护预先配置了 Azure PowerShell 的 Docker 映像。
-
-通过 `docker run` 运行容器。
-
-```powershell
-docker run azuresdk/azure-powershell
-```
-
-此外，我们还维护作为 PowerShell Core 容器的 cmdlet 子集。
-
-对于 Mac/Linux，请使用 `latest` 映像。
-
-```bash
-docker run azuresdk/azure-powershell-core:latest
-```
-
-对于 Windows，请使用 `nanoserver` 映像。
-
-```powershell
-docker run azuresdk/azure-powershell-core:nanoserver
-```
-
-通过 [PowerShell 库](https://www.powershellgallery.com/)中的 `Install-Module` 将 Azure PowerShell 安装到映像上。

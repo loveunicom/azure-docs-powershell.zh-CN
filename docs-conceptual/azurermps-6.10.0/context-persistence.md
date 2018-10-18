@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
 ms.openlocfilehash: 9867efc991f4a9efe880c0f449d9d2be1cddf8ef
-ms.sourcegitcommit: a749eb729f583c9d0dd86141bbd04984d77ae9ab
+ms.sourcegitcommit: f6f5e256143aa6c097de3e57e930d8badea49f30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "48889037"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49399988"
 ---
 # <a name="persist-user-credentials-across-powershell-sessions"></a>在不同的 PowerShell 会话中保留用户凭据
 

@@ -7,19 +7,17 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/20/2018
-ms.openlocfilehash: 7c6446a66cd3ab9fe8f5d8adf13fed36ee093340
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 2fcd2307667d1f810fbcb3fe4d14e3b0def537ed
+ms.sourcegitcommit: f6f5e256143aa6c097de3e57e930d8badea49f30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39025304"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49399291"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi-or-web-platform-installer"></a>使用 MSI 或 Web 平台安装程序在 Windows 上安装 Azure PowerShell
 
 本文介绍如何使用 MSI 或 Web 平台安装程序 (WebPI) 在 Windows 上安装 Azure PowerShell。  
 只有当你的系统需要时才应使用这些安装方法。 若要在 Windows 上安装 Azure PowerShell，建议的方法是使用 PowerShellGet。 有关使用 PowerShellGet 安装 Azure PowerShell 的说明，请参阅[使用 PowerShellGet 安装 Azure PowerShell](install-azurerm-ps.md)。
-
-若要在 Docker 容器中运行 Azure PowerShell，请参阅[在 Docker 中运行 Azure PowerShell](azurerm-ps-in-docker.md)。
 
 若要在 Linux 或 macOS 环境中进行安装，请参阅[在 macOS 或 Linux 上安装 Azure PowerShell](install-azurermps-maclinux.md)。
 
