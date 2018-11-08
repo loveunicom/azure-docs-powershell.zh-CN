@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 3107f77987745faa7ec57ea4811c62a38a7b2aa2
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 164444b7bacbef202513bfafe2f75bdcd6d027c4
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100250"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211292"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>在不同的 PowerShell 会话中保留用户凭据
 
@@ -55,7 +55,7 @@ Azure 上下文是一组定义 Azure PowerShell cmdlet 目标的信息。 上下
 
   大多数 AzureRM cmdlet 允许将上下文作为参数传递给 cmdlet。 可按以下示例中所示，将上下文传递给后台作业：
 
-  ```powershell
+  ```powershell-interactive
   PS C:\> $job = Start-Job { param ($ctx) New-AzureRmVm -AzureRmContext $ctx [... Additional parameters ...]} -ArgumentList (Get-AzureRmContext)
   ```
 
@@ -63,7 +63,7 @@ Azure 上下文是一组定义 Azure PowerShell cmdlet 目标的信息。 上下
 
   如果已启用**上下文自动保存**，后台作业会自动使用默认保存的上下文。
 
-  ```powershell
+  ```powershell-interactive
   PS C:\> $job = Start-Job { New-AzureRmVm [... Additional parameters ...]}
   ```
 

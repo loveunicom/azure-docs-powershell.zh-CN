@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
-ms.openlocfilehash: f69a0b79ac17c3a6502abfa9bbc5370693ad508e
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 1a9d38cd60ba596c085e5ee9f8d815e238362b1f
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854267"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211938"
 ---
 # <a name="release-notes"></a>发行说明
 
@@ -29,13 +29,13 @@ ARM Cmdlet 的库模块：[链接](https://www.powershellgallery.com/packages/Az
 
 若要从 PowerShell 库安装 `AzureRM`，请运行以下命令：
 
-```powershell
+```powershell-interactive
 Install-Module -Name AzureRM -Repository PSGallery -Force
 ```
 
 若要从旧版 `AzureRM` 更新，请运行以下命令：
 
-```powershell
+```powershell-interactive
 Update-Module -Name AzureRM
 ```
 
@@ -94,7 +94,7 @@ Update-Module -Name AzureRM
 * 添加了新 cmdlet“Stop-AzureRmSqlElasticPoolActivity”，以支持取消对弹性池的异步操作
 * 更新了 cmdlet Get-AzureRmSqlDatabaseActivity 和 Get-AzureRmSqlElasticPoolActivity 的响应，以便在响应中反映更多信息
 
-自上次发布以来的更改：https://github.com/Azure/azure-powershell/compare/v5.6.0-March2018...v5.7.0-April2018
+自上次发布以来的更改： https://github.com/Azure/azure-powershell/compare/v5.6.0-March2018...v5.7.0-April2018
 
 ## <a name="560---march-2018"></a>5.6.0 - 2018 年 3 月
 
@@ -493,7 +493,7 @@ Update-Module -Name AzureRM
 * 添加了对长时间运行的 KeyVault cmdlet 的 -AsJob 支持。 允许选定的 cmdlet 在后台运行并返回可跟踪和控制进度的作业。
   * 受影响的 cmdlet 为：Remove-AzureRmKeyVault
 * 修复了 Set-AzureRmKeyVaultAccessPolicy 的 bug：AAD 筛选器将 SPN 设置为提供的 UPN，而不是设置 UPN
-  - 有关详细信息，请参阅以下问题：https://github.com/Azure/azure-powershell/issues/5201
+  - 有关详细信息，请参阅以下问题： https://github.com/Azure/azure-powershell/issues/5201
 
 #### <a name="azurermlogicapp"></a>AzureRM.LogicApp
 * 为 -Location 参数添加了 Location 补全选项，用于通过 Tab 键补全有效的位置
@@ -667,7 +667,7 @@ Update-Module -Name AzureRM
   - 全新 Cmdlet Update-AzureRmPowerBIEmbeddedCapacity - 修改 PowerBI Embedded 容量的实例
 * 配置文件
   - 将 USGovernmentActiveDirectoryEndpoint 更新到了 https://login.microsoftonline.us/
-    - 有关 Azure 政府版终结点映射的详细信息，请参阅下文：https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-developer-guide#endpoint-mapping
+    - 有关 Azure 政府版终结点映射的详细信息，请参阅下文： https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-developer-guide#endpoint-mapping
     - 添加了对 cmdlet 的 -AsJob 支持，允许所选 cmdlet 在后台执行并返回可跟踪和控制进度的作业
     - 向 Get-AzureRmSubscription cmdlet 添加了 -AsJob 参数
 * RecoveryServices.Backup

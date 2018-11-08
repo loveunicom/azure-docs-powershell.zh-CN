@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 73aa50b75366bc1e095c00c3d25429afdde21835
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 9ae0d661630bf4e080b3bbaa7f357c384ef68cc4
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024641"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211496"
 ---
 # <a name="formatting-query-results"></a>设置查询结果的格式
 
@@ -29,7 +29,7 @@ ms.locfileid: "39024641"
 
 此示例获取默认订阅中的 Azure VM 列表。  Get-AzureRmVM 命令将输出默认设置为表格式。
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM
 ```
 
@@ -42,7 +42,7 @@ MYWESTEURG          MyWin2016VM westeurope Standard_DS1_v2 Windows   mywin2016vm
 
 若要限制返回的列，可以使用 `Format-Table` cmdlet。 以下示例获取相同的虚拟机列表，但会将输出限制为只返回 VM 名称、资源组和 VM 位置。  `-Autosize` 参数根据数据大小调整列的大小。
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM | Format-Table Name,ResourceGroupName,Location -AutoSize
 ```
 
@@ -55,7 +55,7 @@ MyWin2016VM   MYWESTEURG        westeurope
 
 如果需要，可使用列表格式查看信息。 以下示例演示如何使用 `Format-List` cmdlet 以列表格式显示信息。
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM | Format-List Name,VmId,Location,ResourceGroupName
 ```
 
@@ -75,7 +75,7 @@ ResourceGroupName : MYWESTEURG
 
 PowerShell 还提供多种输出格式，可以根据需要使用不同的格式。  以下示例使用 `Select-Object` cmdlet 获取订阅中虚拟机的属性，然后将输出转换为 CSV 格式，以方便导入数据库或电子表格。
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Csv -NoTypeInformation
 ```
 
@@ -87,7 +87,7 @@ Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,Provisioni
 
 还可以将输出转换为 JSON 格式。  以下示例创建相同的 VM 列表，但会将输出格式更改为 JSON。
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Json
 ```
 

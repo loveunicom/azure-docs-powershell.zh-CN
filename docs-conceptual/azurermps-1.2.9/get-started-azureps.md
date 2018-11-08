@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: 3a0d3d1d970f4458e66167fb55c840598ce59e13
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 3114f9e9b36dc374f9fb2d402c448cff7fef0aa3
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100420"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211445"
 ---
 # <a name="getting-started-with-azure-powershell"></a>Azure PowerShell 入门
 
@@ -64,7 +64,7 @@ Azure PowerShell 用于从命令行管理 Azure 资源，以及生成可以针�
 
 让我们在 Azure 的西欧区域创建一个名为“MyResourceGroup”的资源组。 为此，请键入以下命令：
 
-```powershell
+```powershell-interactive
 New-AzureRmResourceGroup -Name 'myResourceGroup' -Location 'westeurope'
 ```
 
@@ -84,7 +84,7 @@ ResourceId        : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resource
 
 首先，需要创建一个子网配置，以便在创建虚拟网络过程中使用。 此外，还要创建一个公共 IP 地址，以便能够连接到此 VM。 我们将创建一个网络安全组来保护对公共地址的访问。 最后，使用上述所有资源创建虚拟 NIC。
 
-```powershell
+```powershell-interactive
 # Variables for common values
 $resourceGroup = "myResourceGroup"
 $location = "westeurope"
@@ -120,14 +120,14 @@ $nic = New-AzureRmNetworkInterface -Name myNic1 -ResourceGroupName $resourceGrou
 
 首先，需要提供 OS 的一组凭据。
 
-```powershell
+```powershell-interactive
 # Create user object
 $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
 ```
 
 准备好所需的资源后，便可以创建 VM。 在此步骤中，我们将创建一个 VM 配置对象，然后使用该配置来创建 VM。
 
-```powershell
+```powershell-interactive
 # Create a virtual machine configuration
 $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
   Set-AzureRmVMOperatingSystem -Windows -ComputerName $vmName -Credential $cred |
@@ -148,7 +148,7 @@ RequestId IsSuccessStatusCode StatusCode ReasonPhrase
 
 现在，请使用远程桌面和 VM 的公共 IP 地址登录到新建的 Windows Server VM。 以下命令显示上述脚本中创建的公共 IP 地址。
 
-```powershell
+```powershell-interactive
 $publicIp | Select-Object Name,IpAddress
 ```
 
@@ -160,7 +160,7 @@ mypublicdns1400512543 xx.xx.xx.xx
 
 如果使用的是基于 Windows 的系统，可以在命令行中使用 mstsc 命令来执行此操作：
 
-```powershell
+```powershell-interactive
 mstsc /v:xx.xxx.xx.xxx
 ```
 
@@ -174,7 +174,7 @@ mstsc /v:xx.xxx.xx.xxx
 
 首先，需要创建一个子网配置，以便在创建虚拟网络过程中使用。 此外，还要创建一个公共 IP 地址，以便能够连接到此 VM。 我们将创建一个网络安全组来保护对公共地址的访问。 最后，使用上述所有资源创建虚拟 NIC。
 
-```powershell
+```powershell-interactive
 # Variables for common values
 $resourceGroup = "myResourceGroup"
 $location = "westeurope"
@@ -214,7 +214,7 @@ $nic = New-AzureRmNetworkInterface -Name myNic2 -ResourceGroupName $resourceGrou
 
 准备好所需的资源后，便可以创建 VM。 在此步骤中，我们将创建一个 VM 配置对象，然后使用该配置来创建 VM。
 
-```powershell
+```powershell-interactive
 # Create a virtual machine configuration
 $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
   Set-AzureRmVMOperatingSystem -Linux -ComputerName $vmName -Credential $cred -DisablePasswordAuthentication |
@@ -272,13 +272,13 @@ my-login@MyLinuxVM:../../..$
 
 例如，若要创建稍后可与新建的 VM 相关联的 Azure 网络负载均衡器，可以使用以下 create 命令：
 
-```powershell
+```powershell-interactive
 New-AzureRmLoadBalancer -Name MyLoadBalancer -ResourceGroupName myResourceGroup -Location westeurope
 ```
 
 还可以使用以下命令为基础结构创建新的专用虚拟网络（在 Azure 中通常称为“VNet”）：
 
-```powershell
+```powershell-interactive
 $subnetConfig = New-AzureRmVirtualNetworkSubnetConfig -Name mySubnet2 -AddressPrefix 10.0.0.0/16
 $vnet = New-AzureRmVirtualNetwork -ResourceGroupName myResourceGroup -Location westeurope `
   -Name MYvNET3 -AddressPrefix 10.0.0.0/16 -Subnet $subnetConfig
@@ -288,7 +288,7 @@ Azure 和 Azure PowerShell 的强大之处在于，我们不仅可以使用它�
 
 例如，可以使用 Azure PowerShell 创建 Azure 应用服务。 Azure 应用服务是一个托管的平台服务，使用它能够十分方便地托管 Web 应用，而无需考虑基础结构。 创建 Azure 应用服务后，可以使用以下命令中应用服务中创建两个新的 Azure Web 应用：
 
-```powershell
+```powershell-interactive
 # Create an Azure AppService that we can host any number of web apps within
 New-AzureRmAppServicePlan -Name MyAppServicePlan -Tier Basic -NumberofWorkers 2 -WorkerSize Small -ResourceGroupName myResourceGroup -Location westeurope
 
@@ -301,7 +301,7 @@ New-AzureRmWebApp -Name MyWebApp43433 -AppServicePlan MyAppServicePlan -Resource
 
 可以使用 `Get-AzureRmResource` cmdlet 列出 Azure 中运行的资源。 以下示例显示我们刚刚在新资源组中创建的资源。
 
-```powershell
+```powershell-interactive
 Get-AzureRmResource |
   Where-Object ResourceGroupName -eq myResourceGroup |
     Select-Object Name,Location,ResourceType
@@ -330,7 +330,7 @@ micromyresomywi032907510                              westeurope Microsoft.Stora
 
 若要清理 Azure 帐户，可以删除我们在本示例中创建的资源。 可以使用 `Remove-AzureRm*` cmdlet 删除不再需要的资源。 若要删除我们创建的 Windows VM，请使用以下命令：
 
-```powershell
+```powershell-interactive
 Remove-AzureRmVM -Name myWindowsVM -ResourceGroupName myResourceGroup
 ```
 
@@ -344,7 +344,7 @@ Are you sure you want to remove resource group 'myResourceGroup'
 
 还可以一次性删除多个资源。 例如，以下命令将删除本入门教程中所有示例使用的“MyResourceGroup”资源组中的所有资源。 这会删除该资源组及其包含的所有资源。
 
-```powershell
+```powershell-interactive
 Remove-AzureRmResourceGroup -Name myResourceGroup
 ```
 

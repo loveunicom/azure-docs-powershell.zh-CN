@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: c3131d3516e50123c48b13dc9e04c0b507a63a58
-ms.sourcegitcommit: ff44dec6418a449757bded3c6ebe0a7d4c05ee6e
+ms.openlocfilehash: d3e467714b1a9e4840f2a34b57eabfa5a2c6eaec
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50737384"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51212040"
 ---
 # <a name="sign-in-with-azure-powershell"></a>使用 Azure PowerShell 进行登录
 
@@ -22,7 +22,7 @@ Azure PowerShell 支持多种身份验证方法。 最简单的入门方法是�
 
 若要以交互方式登录，请使用 [Connect-AzureRmAccount](/powershell/module/azurerm.profile/connect-azurermaccount) cmdlet。
 
-```azurepowershell
+```azurepowershell-interactive
 Connect-AzureRmAccount
 ```
 

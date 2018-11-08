@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: 71a2554052f5a25ea86fe44b6dcf5d9343c81f3e
-ms.sourcegitcommit: ff44dec6418a449757bded3c6ebe0a7d4c05ee6e
+ms.openlocfilehash: edbf17141cac4ea6e41282c8e1dd07c5b738351c
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50737928"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211598"
 ---
 # <a name="log-in-with-azure-powershell"></a>使用 Azure PowerShell 登录
 
@@ -32,13 +32,13 @@ Azure PowerShell 支持多种登录方法。 最简单的初始方法是通过�
 
 2. 使用服务主体登录。
 
-    ```powershell
+    ```powershell-interactive
     Login-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
     ```
 
     要获取 TenantId，请以交互方式登录，并从订阅中获取 TenantId。
 
-    ```powershell
+    ```powershell-interactive
     Get-AzureRmSubscription
     ```
 
@@ -61,13 +61,13 @@ Azure 资源的托管标识是 Azure Active Directory 的一项功能。 可以�
 
 Azure 云服务提供遵循各政府的数据处理法规的不同环境。 如果 Azure 帐户在政府云中，登录时需指定环境。 例如，如果帐户在中国云中，请使用以下命令登录：
 
-```powershell
+```powershell-interactive
 Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 ```
 
 使用以下命令获取可用环境的列表：
 
-```powershell
+```powershell-interactive
 Get-AzureRmEnvironment | Select-Object Name
 ```
 

@@ -7,12 +7,12 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: f19f9fc9fb9afabdddcbfc98864c63762753e6f0
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 3828a6f9d60a68c2837cc201a50d8707324f4f0a
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024658"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211224"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>卸载 Azure PowerShell 模块
 
@@ -36,7 +36,7 @@ ms.locfileid: "39024658"
 
 可以使用以下脚本彻底删除单个版本的 Azure PowerShell。 此脚本会查询 PowerShell 库以获取依赖性子模块的列表。 然后，此脚本会卸载每个子模块的正确版本。
 
-```powershell
+```powershell-interactive
 function Uninstall-AllModules {
   param(
     [Parameter(Mandatory=$true)]
@@ -70,7 +70,7 @@ function Uninstall-AllModules {
 
 若要使用此函数，请将代码复制并粘贴到 PowerShell 会话中。 以下示例演示了如何运行此函数来删除旧版 Azure PowerShell。
 
-```powershell
+```powershell-interactive
 Uninstall-AllModules -TargetModule AzureRM -Version 4.4.1 -Force
 ```
 

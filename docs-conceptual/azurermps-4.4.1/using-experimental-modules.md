@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
-ms.openlocfilehash: f3fcfb84a4c0e775653fb65dc33e30d84cca5646
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 09858da9981c1136e2a39a079962c5b8fc39bde9
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854658"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211904"
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>使用 Azure PowerShell 试验性模块
 
@@ -30,7 +30,7 @@ Azure PowerShell 团队正在以 Azure 中的开发人员工具（尤其是 CLI�
 
 试验性模块像现有 Azure PowerShell 模块一样发布到 PowerShell 库。 若要查看实验性模块列表，请运行以下命令：
 
-```powershell
+```powershell-interactive
 Find-Module AzureRM.*.Experiments
 ```
 
@@ -43,7 +43,7 @@ Version Name                         Repository Description
 
 若要安装试验性模块，请在权限提升的 PowerShell 会话中使用以下命令：
 
-```powershell
+```powershell-interactive
 Install-Module AzureRM.Compute.Experiments
 Install-Module AzureRM.Websites.Experiments
 ```
