@@ -8,20 +8,20 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 00f346c2e90fb6615dd9eac96e13f4cfc243d204
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 8869b700e513d6fc07e69de1dbfe852bd2a52df1
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024471"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211054"
 ---
-# <a name="manage-multiple-azure-subscriptions"></a><span data-ttu-id="edbfa-104">管理多个 Azure 订阅</span><span class="sxs-lookup"><span data-stu-id="edbfa-104">Manage multiple Azure subscriptions</span></span>
+# <a name="manage-multiple-azure-subscriptions"></a><span data-ttu-id="79c9b-104">管理多个 Azure 订阅</span><span class="sxs-lookup"><span data-stu-id="79c9b-104">Manage multiple Azure subscriptions</span></span>
 
-<span data-ttu-id="edbfa-105">如果是 Azure 的新手，也许只有一个订阅。</span><span class="sxs-lookup"><span data-stu-id="edbfa-105">If you are brand new to Azure, you probably only have a single subscription.</span></span> <span data-ttu-id="edbfa-106">但如果使用 Azure 有一段时间，可能已创建了多个 Azure 订阅。</span><span class="sxs-lookup"><span data-stu-id="edbfa-106">But if you have been using Azure for a while, you may have created multiple Azure subscriptions.</span></span> <span data-ttu-id="edbfa-107">可将 Azure PowerShell 配置为针对特定的订阅执行命令。</span><span class="sxs-lookup"><span data-stu-id="edbfa-107">You can configure Azure PowerShell to execute commands against a particular subscription.</span></span>
+<span data-ttu-id="79c9b-105">如果是 Azure 的新手，也许只有一个订阅。</span><span class="sxs-lookup"><span data-stu-id="79c9b-105">If you are brand new to Azure, you probably only have a single subscription.</span></span> <span data-ttu-id="79c9b-106">但如果使用 Azure 有一段时间，可能已创建了多个 Azure 订阅。</span><span class="sxs-lookup"><span data-stu-id="79c9b-106">But if you have been using Azure for a while, you may have created multiple Azure subscriptions.</span></span> <span data-ttu-id="79c9b-107">可将 Azure PowerShell 配置为针对特定的订阅执行命令。</span><span class="sxs-lookup"><span data-stu-id="79c9b-107">You can configure Azure PowerShell to execute commands against a particular subscription.</span></span>
 
-1. <span data-ttu-id="edbfa-108">获取帐户中所有订阅的列表。</span><span class="sxs-lookup"><span data-stu-id="edbfa-108">Get a list of all subscriptions in your account.</span></span>
+1. <span data-ttu-id="79c9b-108">获取帐户中所有订阅的列表。</span><span class="sxs-lookup"><span data-stu-id="79c9b-108">Get a list of all subscriptions in your account.</span></span>
 
-    ```powershell
+    ```powershell-interactive
     Get-AzureRmSubscription
     ```
 
@@ -48,15 +48,15 @@ ms.locfileid: "39024471"
     CurrentStorageAccount :
     ```
 
-2. <span data-ttu-id="edbfa-109">设置默认值。</span><span class="sxs-lookup"><span data-stu-id="edbfa-109">Set the default.</span></span>
+2. <span data-ttu-id="79c9b-109">设置默认值。</span><span class="sxs-lookup"><span data-stu-id="79c9b-109">Set the default.</span></span>
 
-    ```powershell
+    ```powershell-interactive
     Select-AzureRmSubscription -SubscriptionName "My Demos"
     ```
 
-3. <span data-ttu-id="edbfa-110">通过运行 `Get-AzureRmContext` cmdlet 验证更改。</span><span class="sxs-lookup"><span data-stu-id="edbfa-110">Verify the change by running the `Get-AzureRmContext` cmdlet.</span></span>
+3. <span data-ttu-id="79c9b-110">通过运行 `Get-AzureRmContext` cmdlet 验证更改。</span><span class="sxs-lookup"><span data-stu-id="79c9b-110">Verify the change by running the `Get-AzureRmContext` cmdlet.</span></span>
 
-    ```powershell
+    ```powershell-interactive
     Get-AzureRmContext
     ```
 
@@ -69,4 +69,4 @@ ms.locfileid: "39024471"
     CurrentStorageAccount :
     ```
 
-<span data-ttu-id="edbfa-111">设置默认订阅后，所有后续 Azure PowerShell 命令将针对此订阅运行。</span><span class="sxs-lookup"><span data-stu-id="edbfa-111">Once you set your default subscription, all subsequent Azure PowerShell commands run against this subscription.</span></span>
+<span data-ttu-id="79c9b-111">设置默认订阅后，所有后续 Azure PowerShell 命令将针对此订阅运行。</span><span class="sxs-lookup"><span data-stu-id="79c9b-111">Once you set your default subscription, all subsequent Azure PowerShell commands run against this subscription.</span></span>
