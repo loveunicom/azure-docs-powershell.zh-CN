@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
-ms.openlocfilehash: 6f0e304c499fc8bf4909e2825d52cd63b1fcbf5d
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 563f84c3af98de066611dd80102e552b31f12883
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100485"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274919"
 ---
 # <a name="release-notes"></a>发行说明
 
@@ -228,7 +228,7 @@ ms.locfileid: "38100485"
   * 向 Get-AzureRmVM -Status 输出公开 MaintenanceRedeployStatus
   * 向 Get-AzureRmComputeResourceSku 的表格格式公开限制和功能
 * DataLakeStore
-  * 修复问题：https://github.com/Azure/azure-powershell/issues/4323
+  * 修复问题： https://github.com/Azure/azure-powershell/issues/4323
 * EventHub
   * 向 NamespaceAttributes 添加了 ResourceGroup 属性
     - “ResourceGroup”获取命名空间所在资源组的名称
@@ -262,14 +262,15 @@ ms.locfileid: "38100485"
       - Remove-AzureRMRoleDefinition
       - Set-AzureRMRoleDefinition
 * ServiceBus
-    * 为 NameSpace、 Queue 和 Topic 的 AuthorizationRule 添加了以下新 commandlet。 根据参数集执行授权规则操作。
-     - New-AzureRmServiceBusAuthorizationRule - 向现有 ServiceBus NameSpace/Queue/Topic 添加新的 AuthorizationRule。
-     - Get-AzureRmServiceBusAuthorizationRule - 获取现有 ServiceBus NameSpace/Queue/Topic 的 AuthorizationRule 或 AuthorizationRule 列表。
-     - Set-AzureRmServiceBusAuthorizationRule - 更新 Servicebus NameSpace/Queue/Topic 的现有 AuthorizationRule 属性。
-     - New-AzureRmServiceBusKey - 为现有 ServiceBus NameSpace/Queue/Topic 的 AuthorizationRule 生成新的主密钥或辅助密钥。
-     - Get-AzureRmServiceBusKey - 获取现有 ServiceBus NameSpace/Queue/Topic 的 AuthorizationRule 主密钥或辅助密钥。
-     - Remove-AzureRmServiceBusNamespaceAuthorizationRule - 删除 ServiceBus NameSpace/Queue/Topic 的现有 AuthorizationRule 属性。
-    * 向 NamespceAttributes 添加了 Resource Group 属性
+  * 为 NameSpace、 Queue 和 Topic 的 AuthorizationRule 添加了以下新 commandlet。 根据参数集执行授权规则操作。
+    - New-AzureRmServiceBusAuthorizationRule - 向现有 ServiceBus NameSpace/Queue/Topic 添加新的 AuthorizationRule。
+    - Get-AzureRmServiceBusAuthorizationRule - 获取现有 ServiceBus NameSpace/Queue/Topic 的 AuthorizationRule 或 AuthorizationRule 列表。
+    - Set-AzureRmServiceBusAuthorizationRule - 更新 Servicebus NameSpace/Queue/Topic 的现有 AuthorizationRule 属性。
+    - New-AzureRmServiceBusKey - 为现有 ServiceBus NameSpace/Queue/Topic 的 AuthorizationRule 生成新的主密钥或辅助密钥。
+    - Get-AzureRmServiceBusKey - 获取现有 ServiceBus NameSpace/Queue/Topic 的 AuthorizationRule 主密钥或辅助密钥。
+    - Remove-AzureRmServiceBusNamespaceAuthorizationRule - 删除 ServiceBus NameSpace/Queue/Topic 的现有 AuthorizationRule 属性。
+  * 向 NamespceAttributes 添加了 Resource Group 属性
+
 * Sql
     * 更新 Set-AzureRmSqlServerTransparentDataEncryptionProtector，如果加密保护程序类型设置为 AzureKeyVault，则会显示警告并要求确认
     * 为审核设置添加新的已更新 cmdlet
@@ -297,15 +298,16 @@ ms.locfileid: "38100485"
 
 ## <a name="20170717---version-421"></a>2017.07.17 - 版本 4.2.1
 * 计算
-    - 修复 VM 磁盘和 VM 磁盘快照创建和更新 cmdlet 的问题，（链接）[https://github.com/azure/azure-powershell/issues/4309]
-      - New-AzureRmDisk
-      - New-AzureRmSnapshot
-      - Update-AzureRmDisk
-      - Update-AzureRmSnapshot
+  - 修复 VM 磁盘和 VM 磁盘快照创建和更新 cmdlet 的问题，（链接）[<https://github.com/azure/azure-powershell/issues/4309>]
+    - New-AzureRmDisk
+    - New-AzureRmSnapshot
+    - Update-AzureRmDisk
+    - Update-AzureRmSnapshot
 * 配置文件
-    - 修复 RDFE 中非交互用户身份验证的问题（链接）[https://github.com/Azure/azure-powershell/issues/4299]
+  - 修复 RDFE 中非交互用户身份验证的问题（链接）[<https://github.com/Azure/azure-powershell/issues/4299>]
+
 * ServiceManagement
-    - 修复非交互用户身份验证的问题（链接）[https://github.com/Azure/azure-powershell/issues/4299]
+  - 修复非交互用户身份验证的问题（链接）[<https://github.com/Azure/azure-powershell/issues/4299>]
 
 ## <a name="2017711---version-420"></a>2017.7.11 - 版本 4.2.0
 * AnalysisServices
@@ -313,7 +315,7 @@ ms.locfileid: "38100485"
         - 引入了 API，提取 AS 服务器日志 Export-AzureAnalysisServicesInstanceLog
 * 自动化
     * 正确设置 New-AzureRmAutomationSchedule“每周”和“每月”计划的时区值
-        - 详情可参阅此问题：https://github.com/Azure/azure-powershell/issues/3043
+        - 详情可参阅此问题： https://github.com/Azure/azure-powershell/issues/3043
 * AzureBatch
     - 添加了新的 Get-AzureBatchJobPreparationAndReleaseTaskStatus cmdlet。
     - 向 Get-AzureBatchNodeFileContent 参数添加了字节范围开始和结束。
@@ -435,7 +437,7 @@ ms.locfileid: "38100485"
         - Get-AzureRmVirtualNetworkUsageList
 * 配置文件
     * 修复了使用 Import-AzureRmContext 或 Save-AzureRmContext 时的错误
-        - 详情可参阅此问题：https://github.com/Azure/azure-powershell/issues/3954
+        - 详情可参阅此问题： https://github.com/Azure/azure-powershell/issues/3954
 * RecoveryServices.SiteRecovery
     * 为 Azure Site Recovery 操作引入新模块。
         - 所有 cmdlet 都以 AzureRmRecoveryServicesAsr* 开头
@@ -445,7 +447,7 @@ ms.locfileid: "38100485"
     * 已弃用服务器升级 cmdlet，因为旧版服务器 (2.0) 不再存在。
     * 将新的可选开关参数“AssignIdentity”添加到 New-AzureRmSqlServer 和 Set-AzureRmSqlServer cmdlet 中，支持预配 SQL Server 资源的资源标识
     * 参数 ResourceGroupName 现对于 Get AzureRmSqlServer 来说可选
-        - 详情可参阅以下问题：https://github.com/Azure/azure-powershell/issues/635
+        - 详情可参阅以下问题： https://github.com/Azure/azure-powershell/issues/635
 * ExpressRoute 的 ServiceManagement：
     * 更新了 New-AzureBgpPeering cmdlet 以添加以下选项：
         - PeerAddressType：可指定值“IPv4”或“IPv6”，创建相应地址系列类型的 BGP 对等互连
@@ -531,7 +533,7 @@ ms.locfileid: "38100485"
       * 添加了 `-EnvironmentName` 参数别名，实现与 AzureRM.profile 2.x 版的后向兼容性
 
 ## <a name="20170512---version-401"></a>2017.05.12 - 版本 4.0.1
- * 修复了 New-AzureStorageContext 在脱机情况下的问题：https://github.com/Azure/azure-powershell/issues/3939
+ * 修复了 New-AzureStorageContext 在脱机情况下的问题： https://github.com/Azure/azure-powershell/issues/3939
 
 ## <a name="20170510---version-400"></a>2017.05.10 - 版本 4.0.0
 
@@ -660,7 +662,7 @@ ms.locfileid: "38100485"
 * ServiceBus
 
   - Bug 修复：ServiceBus 队列对象属性值设置为 null，该对象用作 Set-AzureRmServiceBusQueue cmdlet 中的输入参数，用于更新队列。
-   - 受影响的属性为 LockDuration、EntityAvailabilityStatus、DuplicateDetectionHistoryTimeWindow、MaxDeliveryCount and MessageCount
+    - 受影响的属性为 LockDuration、EntityAvailabilityStatus、DuplicateDetectionHistoryTimeWindow、MaxDeliveryCount and MessageCount
 * ServiceFabric
 
   - 添加了适用于 Service Fabric 的 cmdlet
