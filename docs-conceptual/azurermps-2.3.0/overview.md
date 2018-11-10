@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: cd415e862bfaa2b767cce108689ebaf34ef74305
-ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
+ms.openlocfilehash: 0cb2fe38ef43657fb02627f9b5bc728eacb3062a
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51274392"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211683"
 ---
 # <a name="azurerm-module-230"></a>AzureRM 模块 2.3.0
 
@@ -42,7 +42,7 @@ Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 
 ```
 
-## <a name="release-notes"></a>发行说明
+##<a name="release-notes"></a>发行说明
 * 发行版 2.3.0 附带一系列重大变更。 若要从 1.2.11 版升级，请使用我们在 https://aka.ms/azspowershellmigration 创建的迁移指南
 * 此发行版对应于特定于 azurestack 的 API 配置文件 2018-03-01-hybrid
 * 所有模块都会采用高于或等于 AzureRm.Profile 模块依赖项的版本。
