@@ -1,5 +1,5 @@
 ### YamlMime:Tutorial
-title: <span data-ttu-id="5be35-101">使用 Azure PowerShell 创建虚拟机</span><span class="sxs-lookup"><span data-stu-id="5be35-101">Create virtual machines with the Azure PowerShell</span></span>
+title: <span data-ttu-id="dba06-101">使用 Azure PowerShell 创建虚拟机</span><span class="sxs-lookup"><span data-stu-id="dba06-101">Create virtual machines with the Azure PowerShell</span></span>
 metadata:
   title: 使用 Azure PowerShell 创建虚拟机
   description: 通过创建虚拟机来开始使用 Azure PowerShell。
@@ -17,25 +17,25 @@ metadata:
   ms.service: virtual-machines
   clicktale: true
   ms.openlocfilehash: 6bf5fdd20d0f9831fc5e7eae9158343c995034b4
-  ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
+  ms.sourcegitcommit: 4afdba3cd7e1d348876ce59f3503fdcd258f79ab
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 11/08/2018
-  ms.locfileid: "51275242"
+  ms.lasthandoff: 11/15/2018
+  ms.locfileid: "51576124"
 items:
 - durationInMinutes: 1
   content: >-
-    <span data-ttu-id="5be35-104">本教程介绍使用 Azure PowerShell 设置虚拟机的过程中涉及到的所有步骤。</span><span class="sxs-lookup"><span data-stu-id="5be35-104">In this tutorial, you learn all of the steps involved in setting up a virtual machine with Azure PowerShell.</span></span> <span data-ttu-id="5be35-105">本教程还介绍输出查询、Azure 资源重用和资源清理。</span><span class="sxs-lookup"><span data-stu-id="5be35-105">The tutorial also covers output queries, Azure resource reuse, and resource cleanup.</span></span>
+    <span data-ttu-id="dba06-104">本教程介绍使用 Azure PowerShell 设置虚拟机的过程中涉及到的所有步骤。</span><span class="sxs-lookup"><span data-stu-id="dba06-104">In this tutorial, you learn all of the steps involved in setting up a virtual machine with Azure PowerShell.</span></span> <span data-ttu-id="dba06-105">本教程还介绍输出查询、Azure 资源重用和资源清理。</span><span class="sxs-lookup"><span data-stu-id="dba06-105">The tutorial also covers output queries, Azure resource reuse, and resource cleanup.</span></span>
 
 
-    <span data-ttu-id="5be35-106">可以使用通过 Azure Cloud Shell 提供的交互式体验来完成本教程，也可以在本地[安装 Azure PowerShell](install-azurerm-ps.md)。</span><span class="sxs-lookup"><span data-stu-id="5be35-106">This tutorial can be completed with the interactive experience offered through Azure Cloud Shell, or you may [install Azure PowerShell](install-azurerm-ps.md) locally.</span></span>
+    <span data-ttu-id="dba06-106">可以使用通过 Azure Cloud Shell 提供的交互式体验来完成本教程，也可以在本地[安装 Azure PowerShell](install-azurerm-ps.md)。</span><span class="sxs-lookup"><span data-stu-id="dba06-106">This tutorial can be completed with the interactive experience offered through Azure Cloud Shell, or you may [install Azure PowerShell](install-azurerm-ps.md) locally.</span></span>
 
 
-    <span data-ttu-id="5be35-107">使用 __ctrl-shift-v__（在 macOS 上则使用 __cmd-shift-v__）将教程文本粘贴到 Azure Cloud Shell 中。</span><span class="sxs-lookup"><span data-stu-id="5be35-107">Use __ctrl-shift-v__ (__cmd-shift-v__ on macOS) to paste tutorial text into Azure Cloud Shell.</span></span>
+    <span data-ttu-id="dba06-107">使用 __ctrl-shift-v__（在 macOS 上则使用 __cmd-shift-v__）将教程文本粘贴到 Azure Cloud Shell 中。</span><span class="sxs-lookup"><span data-stu-id="dba06-107">Use __ctrl-shift-v__ (__cmd-shift-v__ on macOS) to paste tutorial text into Azure Cloud Shell.</span></span>
 - durationInMinutes: 1
-  title: <span data-ttu-id="5be35-108">登录</span><span class="sxs-lookup"><span data-stu-id="5be35-108">Sign in</span></span>
+  title: <span data-ttu-id="dba06-108">登录</span><span class="sxs-lookup"><span data-stu-id="dba06-108">Sign in</span></span>
   content: >-
-    <span data-ttu-id="5be35-109">如果使用 Azure PowerShell 的本地安装，则需要先登录，然后才能执行任何其他步骤。</span><span class="sxs-lookup"><span data-stu-id="5be35-109">If you're using a local install of the Azure PowerShell, you need to sign in before performing any other steps.</span></span>
+    <span data-ttu-id="dba06-109">如果使用 Azure PowerShell 的本地安装，则需要先登录，然后才能执行任何其他步骤。</span><span class="sxs-lookup"><span data-stu-id="dba06-109">If you're using a local install of the Azure PowerShell, you need to sign in before performing any other steps.</span></span>
 
 
     ```powershell-interactive
@@ -45,13 +45,13 @@ items:
     ```
 
 
-    <span data-ttu-id="5be35-110">请按照终端中显示的步骤操作，完成登录过程。</span><span class="sxs-lookup"><span data-stu-id="5be35-110">Complete the sign in process by following the steps displayed in your terminal.</span></span>
+    <span data-ttu-id="dba06-110">请按照终端中显示的步骤操作，完成登录过程。</span><span class="sxs-lookup"><span data-stu-id="dba06-110">Complete the sign in process by following the steps displayed in your terminal.</span></span>
 - durationInMinutes: 1
-  title: <span data-ttu-id="5be35-111">创建资源组</span><span class="sxs-lookup"><span data-stu-id="5be35-111">Create a resource group</span></span>
+  title: <span data-ttu-id="dba06-111">创建资源组</span><span class="sxs-lookup"><span data-stu-id="dba06-111">Create a resource group</span></span>
   content: >-
-    <span data-ttu-id="5be35-112">在 Azure 中，所有资源都分配在资源管理组中。</span><span class="sxs-lookup"><span data-stu-id="5be35-112">In Azure, all resources are allocated in a resource management group.</span></span> <span data-ttu-id="5be35-113">可以通过资源组对资源进行逻辑分组，以集合的方式更方便地使用资源。</span><span class="sxs-lookup"><span data-stu-id="5be35-113">Resource groups provide logical groupings of resources that make them easier to work with as a collection.</span></span>
+    <span data-ttu-id="dba06-112">在 Azure 中，所有资源都分配在资源管理组中。</span><span class="sxs-lookup"><span data-stu-id="dba06-112">In Azure, all resources are allocated in a resource management group.</span></span> <span data-ttu-id="dba06-113">可以通过资源组对资源进行逻辑分组，以集合的方式更方便地使用资源。</span><span class="sxs-lookup"><span data-stu-id="dba06-113">Resource groups provide logical groupings of resources that make them easier to work with as a collection.</span></span>
 
-    <span data-ttu-id="5be35-114">就本教程来说，所有创建的资源都进入一个名为 `TutorialResources` 的组。</span><span class="sxs-lookup"><span data-stu-id="5be35-114">For this tutorial, all of the created resources go into a single group named `TutorialResources`.</span></span>
+    <span data-ttu-id="dba06-114">就本教程来说，所有创建的资源都进入一个名为 `TutorialResources` 的组。</span><span class="sxs-lookup"><span data-stu-id="dba06-114">For this tutorial, all of the created resources go into a single group named `TutorialResources`.</span></span>
 
 
     ```powershell-interactive
@@ -75,9 +75,9 @@ items:
 
     ```
 - durationInMinutes: 1
-  title: <span data-ttu-id="5be35-115">获取 VM 的管理员凭据</span><span class="sxs-lookup"><span data-stu-id="5be35-115">Create admin credentials for the VM</span></span>
+  title: <span data-ttu-id="dba06-115">获取 VM 的管理员凭据</span><span class="sxs-lookup"><span data-stu-id="dba06-115">Create admin credentials for the VM</span></span>
   content: >-
-    <span data-ttu-id="5be35-116">创建新的虚拟机之前，必须创建一个包含 Windows VM 管理员帐户用户名和密码的凭据对象。</span><span class="sxs-lookup"><span data-stu-id="5be35-116">Before you can create a new virtual machine, you must create a credential object containing the username and password for the administrator account of the Windows VM.</span></span>
+    <span data-ttu-id="dba06-116">创建新的虚拟机之前，必须创建一个包含 Windows VM 管理员帐户用户名和密码的凭据对象。</span><span class="sxs-lookup"><span data-stu-id="dba06-116">Before you can create a new virtual machine, you must create a credential object containing the username and password for the administrator account of the Windows VM.</span></span>
 
 
     ```powershell-interactive
@@ -87,7 +87,7 @@ items:
     ```
 
 
-    <span data-ttu-id="5be35-117">出现提示时输入用户名和密码。</span><span class="sxs-lookup"><span data-stu-id="5be35-117">Enter the username and password when prompted.</span></span> <span data-ttu-id="5be35-118">得到的凭据对象将在下一步中作为参数传递。</span><span class="sxs-lookup"><span data-stu-id="5be35-118">The resulting credential object is passed as a parameter in the next step.</span></span>
+    <span data-ttu-id="dba06-117">出现提示时输入用户名和密码。</span><span class="sxs-lookup"><span data-stu-id="dba06-117">Enter the username and password when prompted.</span></span> <span data-ttu-id="dba06-118">得到的凭据对象将在下一步中作为参数传递。</span><span class="sxs-lookup"><span data-stu-id="dba06-118">The resulting credential object is passed as a parameter in the next step.</span></span>
 
 
     ```Output
@@ -102,12 +102,12 @@ items:
 
     ```
 - durationInMinutes: 4
-  title: <span data-ttu-id="5be35-119">创建虚拟机</span><span class="sxs-lookup"><span data-stu-id="5be35-119">Create a virtual machine</span></span>
+  title: <span data-ttu-id="dba06-119">创建虚拟机</span><span class="sxs-lookup"><span data-stu-id="dba06-119">Create a virtual machine</span></span>
   content: >-
-    <span data-ttu-id="5be35-120">Azure 中的虚拟机有大量的依赖项。</span><span class="sxs-lookup"><span data-stu-id="5be35-120">Virtual machines in Azure have a large number of dependencies.</span></span> <span data-ttu-id="5be35-121">Azure PowerShell 将根据指定的命令行参数创建这些资源。</span><span class="sxs-lookup"><span data-stu-id="5be35-121">The Azure PowerShell creates these resources for you based on the command-line arguments you specify.</span></span> <span data-ttu-id="5be35-122">为了提高可读性，我们使用 [PowerShell 展开](/powershell/module/microsoft.powershell.core/about/about_splatting)将参数传递给 Azure PowerShell cmdlet。</span><span class="sxs-lookup"><span data-stu-id="5be35-122">For readability, we are using [PowerShell splatting](/powershell/module/microsoft.powershell.core/about/about_splatting) to pass parameters to the Azure PowerShell cmdlets.</span></span>
+    <span data-ttu-id="dba06-120">Azure 中的虚拟机有大量的依赖项。</span><span class="sxs-lookup"><span data-stu-id="dba06-120">Virtual machines in Azure have a large number of dependencies.</span></span> <span data-ttu-id="dba06-121">Azure PowerShell 将根据指定的命令行参数创建这些资源。</span><span class="sxs-lookup"><span data-stu-id="dba06-121">The Azure PowerShell creates these resources for you based on the command-line arguments you specify.</span></span> <span data-ttu-id="dba06-122">为了提高可读性，我们使用 [PowerShell 展开](/powershell/module/microsoft.powershell.core/about/about_splatting)将参数传递给 Azure PowerShell cmdlet。</span><span class="sxs-lookup"><span data-stu-id="dba06-122">For readability, we are using [PowerShell splatting](/powershell/module/microsoft.powershell.core/about/about_splatting) to pass parameters to the Azure PowerShell cmdlets.</span></span>
 
 
-    <span data-ttu-id="5be35-123">创建运行 Windows 的新虚拟机。</span><span class="sxs-lookup"><span data-stu-id="5be35-123">Create a new virtual machine running Windows.</span></span>
+    <span data-ttu-id="dba06-123">创建运行 Windows 的新虚拟机。</span><span class="sxs-lookup"><span data-stu-id="dba06-123">Create a new virtual machine running Windows.</span></span>
 
 
     ```powershell-interactive
@@ -126,9 +126,9 @@ items:
 
     ```
 
-    <span data-ttu-id="5be35-124">创建 VM 时将显示参数值已使用并且 Azure 资源正在创建。</span><span class="sxs-lookup"><span data-stu-id="5be35-124">As the VM is created, you see the parameter values used and Azure resources being created.</span></span>
+    <span data-ttu-id="dba06-124">创建 VM 时将显示参数值已使用并且 Azure 资源正在创建。</span><span class="sxs-lookup"><span data-stu-id="dba06-124">As the VM is created, you see the parameter values used and Azure resources being created.</span></span>
 
-    <span data-ttu-id="5be35-125">PowerShell 将显示一个进度栏，如下所示。</span><span class="sxs-lookup"><span data-stu-id="5be35-125">PowerShell will displace a progress bar as shown below.</span></span>
+    <span data-ttu-id="dba06-125">PowerShell 将显示一个进度栏，如下所示。</span><span class="sxs-lookup"><span data-stu-id="dba06-125">PowerShell will displace a progress bar as shown below.</span></span>
 
 
     ```Output
@@ -140,7 +140,7 @@ items:
     ```
 
 
-    <span data-ttu-id="5be35-126">VM 准备就绪后，我们可以在 Azure 门户中或通过检查 \$newVM1 变量来查看结果。</span><span class="sxs-lookup"><span data-stu-id="5be35-126">Once the VM is ready, we can view the results in the Azure Portal or by inspecting the \$newVM1 variable.</span></span>
+    <span data-ttu-id="dba06-126">VM 准备就绪后，我们可以在 Azure 门户中或通过检查 \$newVM1 变量来查看结果。</span><span class="sxs-lookup"><span data-stu-id="dba06-126">Once the VM is ready, we can view the results in the Azure Portal or by inspecting the \$newVM1 variable.</span></span>
 
 
     ```powershell-interactive
@@ -179,11 +179,11 @@ items:
     ```
 
 
-    <span data-ttu-id="5be35-127">在大括号内列出的属性值是嵌套的对象。</span><span class="sxs-lookup"><span data-stu-id="5be35-127">Property values listed inside of braces are nested objects.</span></span> <span data-ttu-id="5be35-128">在下一步中，我们将演示如何查看这些嵌套对象中的特定值。</span><span class="sxs-lookup"><span data-stu-id="5be35-128">In the next step we will show you how to view specific values in these nested objects.</span></span>
+    <span data-ttu-id="dba06-127">在大括号内列出的属性值是嵌套的对象。</span><span class="sxs-lookup"><span data-stu-id="dba06-127">Property values listed inside of braces are nested objects.</span></span> <span data-ttu-id="dba06-128">在下一步中，我们将演示如何查看这些嵌套对象中的特定值。</span><span class="sxs-lookup"><span data-stu-id="dba06-128">In the next step we will show you how to view specific values in these nested objects.</span></span>
 - durationInMinutes: 5
-  title: <span data-ttu-id="5be35-129">通过查询获取 VM 信息</span><span class="sxs-lookup"><span data-stu-id="5be35-129">Get VM information with queries</span></span>
+  title: <span data-ttu-id="dba06-129">通过查询获取 VM 信息</span><span class="sxs-lookup"><span data-stu-id="dba06-129">Get VM information with queries</span></span>
   content: >-
-    <span data-ttu-id="5be35-130">让我们从我们刚刚创建的 VM 中获取一些更详细的信息。</span><span class="sxs-lookup"><span data-stu-id="5be35-130">Let's get some more detailed information from the VM we just created.</span></span> <span data-ttu-id="5be35-131">在此示例中，我们将验证我们创建的 VM 的名称和管理员帐户。</span><span class="sxs-lookup"><span data-stu-id="5be35-131">In this example, we verify the Name of the VM and the admin account we created.</span></span>
+    <span data-ttu-id="dba06-130">让我们从我们刚刚创建的 VM 中获取一些更详细的信息。</span><span class="sxs-lookup"><span data-stu-id="dba06-130">Let's get some more detailed information from the VM we just created.</span></span> <span data-ttu-id="dba06-131">在此示例中，我们将验证我们创建的 VM 的名称和管理员帐户。</span><span class="sxs-lookup"><span data-stu-id="dba06-131">In this example, we verify the Name of the VM and the admin account we created.</span></span>
 
 
     ```powershell-interactive
@@ -204,7 +204,7 @@ items:
     ```
 
 
-    <span data-ttu-id="5be35-132">可以使用其他 Azure PowerShell 命令来获取有关网络配置的特定信息。</span><span class="sxs-lookup"><span data-stu-id="5be35-132">We can use other Azure PowerShell commands to get specific information about the network configuration.</span></span>
+    <span data-ttu-id="dba06-132">可以使用其他 Azure PowerShell 命令来获取有关网络配置的特定信息。</span><span class="sxs-lookup"><span data-stu-id="dba06-132">We can use other Azure PowerShell commands to get specific information about the network configuration.</span></span>
 
 
     ```powershell-interactive
@@ -215,7 +215,7 @@ items:
     ```
 
 
-    <span data-ttu-id="5be35-133">在此示例中，我们要使用 PowerShell 管道将 \$newVM1 对象发送到 `Get-AzureRmNetworkInterface` cmdlet。</span><span class="sxs-lookup"><span data-stu-id="5be35-133">In this example we are using the PowerShell pipeline to send the \$newVM1 object to the `Get-AzureRmNetworkInterface` cmdlet.</span></span> <span data-ttu-id="5be35-134">从得到的网络接口对象中，我们要选择嵌套的 IpConfigurations 对象。</span><span class="sxs-lookup"><span data-stu-id="5be35-134">From the resulting network interface object we are selecting the nested IpConfigurations object.</span></span> <span data-ttu-id="5be35-135">从 Ipconfigurations 对象中，我们要选择 Name 和 PrivateIpAddress 属性。</span><span class="sxs-lookup"><span data-stu-id="5be35-135">From the IpConfigurations object we are selecting the Name and PrivateIpAddress properties.</span></span>
+    <span data-ttu-id="dba06-133">在此示例中，我们要使用 PowerShell 管道将 \$newVM1 对象发送到 `Get-AzureRmNetworkInterface` cmdlet。</span><span class="sxs-lookup"><span data-stu-id="dba06-133">In this example we are using the PowerShell pipeline to send the \$newVM1 object to the `Get-AzureRmNetworkInterface` cmdlet.</span></span> <span data-ttu-id="dba06-134">从得到的网络接口对象中，我们要选择嵌套的 IpConfigurations 对象。</span><span class="sxs-lookup"><span data-stu-id="dba06-134">From the resulting network interface object we are selecting the nested IpConfigurations object.</span></span> <span data-ttu-id="dba06-135">从 Ipconfigurations 对象中，我们要选择 Name 和 PrivateIpAddress 属性。</span><span class="sxs-lookup"><span data-stu-id="dba06-135">From the IpConfigurations object we are selecting the Name and PrivateIpAddress properties.</span></span>
 
 
     ```Output
@@ -229,7 +229,7 @@ items:
     ```
 
 
-    <span data-ttu-id="5be35-136">为了确认 VM 正在运行，需要通过远程桌面进行连接。</span><span class="sxs-lookup"><span data-stu-id="5be35-136">To confirm that the VM is running, we need to connect via Remote Desktop.</span></span> <span data-ttu-id="5be35-137">为此，我们需要知道公共 IP 地址。</span><span class="sxs-lookup"><span data-stu-id="5be35-137">For that, we need to know the Public IP address.</span></span>
+    <span data-ttu-id="dba06-136">为了确认 VM 正在运行，需要通过远程桌面进行连接。</span><span class="sxs-lookup"><span data-stu-id="dba06-136">To confirm that the VM is running, we need to connect via Remote Desktop.</span></span> <span data-ttu-id="dba06-137">为此，我们需要知道公共 IP 地址。</span><span class="sxs-lookup"><span data-stu-id="dba06-137">For that, we need to know the Public IP address.</span></span>
 
 
     ```powershell-interactive
@@ -242,7 +242,7 @@ items:
     ```
 
 
-    <span data-ttu-id="5be35-138">在此示例中，我们使用 `Get-AzureRmPublicIpAddress` 并将结果存储在 \$publicIp 变量中。</span><span class="sxs-lookup"><span data-stu-id="5be35-138">In this example, we use the `Get-AzureRmPublicIpAddress` and store the results in the \$publicIp variable.</span></span> <span data-ttu-id="5be35-139">从此变量中，我们将选择属性并使用表达式来检索嵌套的 Fqdn 属性。</span><span class="sxs-lookup"><span data-stu-id="5be35-139">From this variable we are selecting properties and using an expression to retrieve the nested Fqdn property.</span></span>
+    <span data-ttu-id="dba06-138">在此示例中，我们使用 `Get-AzureRmPublicIpAddress` 并将结果存储在 \$publicIp 变量中。</span><span class="sxs-lookup"><span data-stu-id="dba06-138">In this example, we use the `Get-AzureRmPublicIpAddress` and store the results in the \$publicIp variable.</span></span> <span data-ttu-id="dba06-139">从此变量中，我们将选择属性并使用表达式来检索嵌套的 Fqdn 属性。</span><span class="sxs-lookup"><span data-stu-id="dba06-139">From this variable we are selecting properties and using an expression to retrieve the nested Fqdn property.</span></span>
 
 
     ```Output
@@ -256,7 +256,7 @@ items:
     ```
 
 
-    <span data-ttu-id="5be35-140">从本地计算机可以运行以下命令来通过远程桌面连接到 VM。</span><span class="sxs-lookup"><span data-stu-id="5be35-140">From your local machine you can run the following command to connect to the VM over Remote Desktop.</span></span>
+    <span data-ttu-id="dba06-140">从本地计算机可以运行以下命令来通过远程桌面连接到 VM。</span><span class="sxs-lookup"><span data-stu-id="dba06-140">From your local machine you can run the following command to connect to the VM over Remote Desktop.</span></span>
 
 
     ```powershell-interactive
@@ -266,11 +266,11 @@ items:
     ```
 
 
-    <span data-ttu-id="5be35-141">有关查询对象属性的详细信息，请参阅[查询 Azure 资源](./queries-azureps.md)。</span><span class="sxs-lookup"><span data-stu-id="5be35-141">For more information about querying for object properties, see [Querying for Azure resources](./queries-azureps.md).</span></span>
+    <span data-ttu-id="dba06-141">有关查询对象属性的详细信息，请参阅[查询 Azure 资源](./queries-azureps.md)。</span><span class="sxs-lookup"><span data-stu-id="dba06-141">For more information about querying for object properties, see [Querying for Azure resources](./queries-azureps.md).</span></span>
 - durationInMinutes: 4
-  title: <span data-ttu-id="5be35-142">在现有的子网上创建新的 VM</span><span class="sxs-lookup"><span data-stu-id="5be35-142">Creating a new VM on the existing subnet</span></span>
+  title: <span data-ttu-id="dba06-142">在现有的子网上创建新的 VM</span><span class="sxs-lookup"><span data-stu-id="dba06-142">Creating a new VM on the existing subnet</span></span>
   content: >-
-    <span data-ttu-id="5be35-143">第二个 VM 使用现有的子网。</span><span class="sxs-lookup"><span data-stu-id="5be35-143">The second VM uses the existing subnet.</span></span>
+    <span data-ttu-id="dba06-143">第二个 VM 使用现有的子网。</span><span class="sxs-lookup"><span data-stu-id="dba06-143">The second VM uses the existing subnet.</span></span>
 
 
     ```powershell-interactive
@@ -325,7 +325,7 @@ items:
     ```
 
 
-    <span data-ttu-id="5be35-144">可以跳过几个步骤来获取新 VM 的公共 IP 地址，因为它是在 \$newVM2 对象的 FullyQualifiedDomainName 属性中返回的。</span><span class="sxs-lookup"><span data-stu-id="5be35-144">You can skip a few steps to get the public IP address of the new VM since it's returned in the FullyQualifiedDomainName property of the \$newVM2 object.</span></span> <span data-ttu-id="5be35-145">使用以下命令通过远程桌面进行连接。</span><span class="sxs-lookup"><span data-stu-id="5be35-145">Use the following command to connect using Remote Desktop.</span></span>
+    <span data-ttu-id="dba06-144">可以跳过几个步骤来获取新 VM 的公共 IP 地址，因为它是在 \$newVM2 对象的 FullyQualifiedDomainName 属性中返回的。</span><span class="sxs-lookup"><span data-stu-id="dba06-144">You can skip a few steps to get the public IP address of the new VM since it's returned in the FullyQualifiedDomainName property of the \$newVM2 object.</span></span> <span data-ttu-id="dba06-145">使用以下命令通过远程桌面进行连接。</span><span class="sxs-lookup"><span data-stu-id="dba06-145">Use the following command to connect using Remote Desktop.</span></span>
 
 
     ```powershell-interactive
@@ -334,9 +334,9 @@ items:
 
     ```
 - durationInMinutes: 4
-  title: <span data-ttu-id="5be35-146">清理</span><span class="sxs-lookup"><span data-stu-id="5be35-146">Cleanup</span></span>
+  title: <span data-ttu-id="dba06-146">清理</span><span class="sxs-lookup"><span data-stu-id="dba06-146">Cleanup</span></span>
   content: >-
-    <span data-ttu-id="5be35-147">教程完成以后，即可清理创建的资源。</span><span class="sxs-lookup"><span data-stu-id="5be35-147">Now that the tutorial is complete, it's time to clean up the created resources.</span></span> <span data-ttu-id="5be35-148">可以使用 `Remove-AzureRmResource` 命令删除单个资源，但若要删除资源组中的所有资源，最安全的方式是使用 `Remove-AzureRmResourceGroup` 命令删除该组。</span><span class="sxs-lookup"><span data-stu-id="5be35-148">You can delete individual resources with the `Remove-AzureRmResource` command, but the safest way to remove all resources in a resource group is delete the group using the `Remove-AzureRmResourceGroup` command.</span></span>
+    <span data-ttu-id="dba06-147">教程完成以后，即可清理创建的资源。</span><span class="sxs-lookup"><span data-stu-id="dba06-147">Now that the tutorial is complete, it's time to clean up the created resources.</span></span> <span data-ttu-id="dba06-148">可以使用 `Remove-AzureRmResource` 命令删除单个资源，但若要删除资源组中的所有资源，最安全的方式是使用 `Remove-AzureRmResourceGroup` 命令删除该组。</span><span class="sxs-lookup"><span data-stu-id="dba06-148">You can delete individual resources with the `Remove-AzureRmResource` command, but the safest way to remove all resources in a resource group is delete the group using the `Remove-AzureRmResourceGroup` command.</span></span>
 
 
     ```powershell-interactive
@@ -360,7 +360,7 @@ items:
     ```
 
 
-    <span data-ttu-id="5be35-149">该命令删除本教程中创建的资源，可确保按正确顺序将其解除分配。</span><span class="sxs-lookup"><span data-stu-id="5be35-149">This command deletes the resources created during the tutorial, and is guaranteed to deallocate them in the correct order.</span></span> <span data-ttu-id="5be35-150">在进行删除时，`-AsJob` 参数会解除对 PowerShell 的阻止。</span><span class="sxs-lookup"><span data-stu-id="5be35-150">The `-AsJob` parameter keeps PowerShell from blocking while the deletion takes place.</span></span> <span data-ttu-id="5be35-151">若要等到删除已完成，请使用以下命令：</span><span class="sxs-lookup"><span data-stu-id="5be35-151">To wait until the deletion is complete, use the following command:</span></span>
+    <span data-ttu-id="dba06-149">该命令删除本教程中创建的资源，可确保按正确顺序将其解除分配。</span><span class="sxs-lookup"><span data-stu-id="dba06-149">This command deletes the resources created during the tutorial, and is guaranteed to deallocate them in the correct order.</span></span> <span data-ttu-id="dba06-150">在进行删除时，`-AsJob` 参数会解除对 PowerShell 的阻止。</span><span class="sxs-lookup"><span data-stu-id="dba06-150">The `-AsJob` parameter keeps PowerShell from blocking while the deletion takes place.</span></span> <span data-ttu-id="dba06-151">若要等到删除已完成，请使用以下命令：</span><span class="sxs-lookup"><span data-stu-id="dba06-151">To wait until the deletion is complete, use the following command:</span></span>
 
 
     ```powershell-interactive
@@ -370,7 +370,7 @@ items:
     ```
 
 
-    <span data-ttu-id="5be35-152">清理完成以后，本教程即告完成。</span><span class="sxs-lookup"><span data-stu-id="5be35-152">With cleanup completed, the tutorial is finished.</span></span> <span data-ttu-id="5be35-153">接下来是所学内容的摘要，以及在后续步骤中将要用到的资源的链接。</span><span class="sxs-lookup"><span data-stu-id="5be35-153">Continue on for a summary of everything you learned and links to resources that will help you with your next steps.</span></span>
+    <span data-ttu-id="dba06-152">清理完成以后，本教程即告完成。</span><span class="sxs-lookup"><span data-stu-id="dba06-152">With cleanup completed, the tutorial is finished.</span></span> <span data-ttu-id="dba06-153">接下来是所学内容的摘要，以及在后续步骤中将要用到的资源的链接。</span><span class="sxs-lookup"><span data-stu-id="dba06-153">Continue on for a summary of everything you learned and links to resources that will help you with your next steps.</span></span>
 - durationInMinutes: 1
-  title: <span data-ttu-id="5be35-154">摘要</span><span class="sxs-lookup"><span data-stu-id="5be35-154">Summary</span></span>
-  content: "\n<span data-ttu-id=\"5be35-155\">祝贺你！</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-155\">Congratulations!</span></span> <span data-ttu-id=\"5be35-156\">你已了解如何使用新的或现有的资源来创建 VM，并使用了表达式和其他 Azure PowerShell 命令来捕获要存储在 shell 变量中的数据，还查看了一些为 Azure VM 创建的资源。</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-156\">You learned how to create VMs with new or existing resources, used expressions and other Azure PowerShell commands to to capture data to be stored in shell variables, and looked at some of the resources that get created for Azure VMs.</span></span>\n\n<span data-ttu-id=\"5be35-157\">下一步做什么取决于你打算如何使用 Azure PowerShell。</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-157\">Where you go from here depends on how you plan to use Azure PowerShell.</span></span> <span data-ttu-id=\"5be35-158\">若要进一步深入了解本教程中介绍的功能，可以参阅各种资料。</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-158\">There are a variety of materials that go further in depth on the features covered in this tutorial.</span></span>\n\n### <a name=\"in-depth-azure-powershell-documentation\"></a><span data-ttu-id=\"5be35-159\">全面的 Azure PowerShell 文档</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-159\">In-depth Azure PowerShell documentation</span></span>\n\n<span data-ttu-id=\"5be35-160\">你可能想要花些时间浏览完整的 [Azure PowerShell 文档](overview.md)集。</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-160\">You might want to take time to explore the complete [Azure PowerShell documentation](overview.md) set.</span></span>\n\n<span data-ttu-id=\"5be35-161\">有关本教程中使用的命令的详细信息，请查看以下文章。</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-161\">For more information about the commands used in this tutorial, see the following articles.</span></span>\n\n- [<span data-ttu-id=\"5be35-162\">New-AzureRmResourceGroup</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-162\">New-AzureRmResourceGroup</span></span>](/powershell/module/azurerm.resources/new-azurermresourcegroup)\n- [<span data-ttu-id=\"5be35-163\">Get-Credential</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-163\">Get-Credential</span></span>](/powershell/module/microsoft.powershell.security/get-credential)\n- [<span data-ttu-id=\"5be35-164\">New-AzureRmVM</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-164\">New-AzureRmVM</span></span>](/powershell/module/azurerm.compute/new-azurermvm)\n- [<span data-ttu-id=\"5be35-165\">Select-Object</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-165\">Select-Object</span></span>](/powershell/module/microsoft.powershell.utility/select-object)\n- [<span data-ttu-id=\"5be35-166\">Get-AzureRmPublicIpAddress</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-166\">Get-AzureRmPublicIpAddress</span></span>](/powershell/module/azurerm.network/get-AzureRmPublicIpAddress)\n- [<span data-ttu-id=\"5be35-167\">Remove-AzureRmResourceGroup</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-167\">Remove-AzureRmResourceGroup</span></span>](/powershell/module/azurerm.resources/Remove-AzureRmResourceGroup)\n- [<span data-ttu-id=\"5be35-168\">Wait-Job</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-168\">Wait-Job</span></span>](/powershell/module/microsoft.powershell.core/wait-job)\n\n<span data-ttu-id=\"5be35-169\">也有文章对本教程中介绍的功能进行了更深入的探讨。</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-169\">There are also articles that go deeper into the features that were shown in the tutorial.</span></span>\n\n- [<span data-ttu-id=\"5be35-170\">PowerShell 展开</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-170\">PowerShell splatting</span></span>](/powershell/module/microsoft.powershell.core/about/about_splatting)\n- [<span data-ttu-id=\"5be35-171\">查询</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-171\">Queries</span></span>](queries-azureps.md)\n- [<span data-ttu-id=\"5be35-172\">格式设置</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-172\">Formatting</span></span>](formatting-output.md)\n- [<span data-ttu-id=\"5be35-173\">使用 PowerShell 作业</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-173\">Using PowerShell jobs</span></span>](using-psjobs.md)\n\n### <a name=\"sample-scripts\"></a><span data-ttu-id=\"5be35-174\">示例脚本</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-174\">Sample scripts</span></span>\n\n<span data-ttu-id=\"5be35-175\">若要立刻开始执行特定的任务，请查看一些示例脚本。</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-175\">If you want to get started right away with specific tasks, look at some sample scripts.</span></span>\n\n- [<span data-ttu-id=\"5be35-176\">Linux 虚拟机</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-176\">Linux Virtual Machines</span></span>](/azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [<span data-ttu-id=\"5be35-177\">Windows 虚拟机</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-177\">Windows Virtual Machines</span></span>](/azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [<span data-ttu-id=\"5be35-178\">Web 应用</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-178\">Web Apps</span></span>](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [<span data-ttu-id=\"5be35-179\">SQL 数据库</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-179\">SQL Databases</span></span>](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [<span data-ttu-id=\"5be35-180\">Cosmos DB</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-180\">Cosmos DB</span></span>](/azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json)\n\n### <a name=\"feedback\"></a><span data-ttu-id=\"5be35-181\">反馈</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-181\">Feedback</span></span>\n\n<span data-ttu-id=\"5be35-182\">如果想要提供反馈、建议或提出问题，可以通过多种方式联系我们。</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-182\">If you'd like to give feedback, suggestions, or ask questions, there are a number of ways for you to get in touch.</span></span>\n\n* <span data-ttu-id=\"5be35-183\">`Send-Feedback` 是一个内置的 Azure PowerShell 命令，用于向我们的团队提供任意形式的反馈。</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-183\">`Send-Feedback` is a built-in command for Azure PowerShell that allows you to provide free-form feedback to the team.</span></span>\n* <span data-ttu-id=\"5be35-184\">在 [Azure PowerShell 存储库](https://github.com/Azure/azure-powershell/issues)中提交功能请求或 Bug 报告。</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-184\">File a feature request or a bug report in the [Azure PowerShell repository](https://github.com/Azure/azure-powershell/issues).</span></span>\n* <span data-ttu-id=\"5be35-185\">若要提出某个问题或澄清某个问题，请在 [Azure PowerShell 文档存储库](https://github.com/Azure/azure-docs-powershell/issues)中提交该问题。</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-185\">Ask a question or get clarification by filing an issue in the [Azure PowerShell documentation repository](https://github.com/Azure/azure-docs-powershell/issues).</span></span>\n\n<span data-ttu-id=\"5be35-186\">希望你喜欢使用 Azure PowerShell！</span><span class=\"sxs-lookup\"><span data-stu-id=\"5be35-186\">We hope that you enjoy using the Azure PowerShell!</span></span>"
+  title: <span data-ttu-id="dba06-154">摘要</span><span class="sxs-lookup"><span data-stu-id="dba06-154">Summary</span></span>
+  content: "\n<span data-ttu-id=\"dba06-155\">祝贺你！</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-155\">Congratulations!</span></span> <span data-ttu-id=\"dba06-156\">你已了解如何使用新的或现有的资源来创建 VM，并使用了表达式和其他 Azure PowerShell 命令来捕获要存储在 shell 变量中的数据，还查看了一些为 Azure VM 创建的资源。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-156\">You learned how to create VMs with new or existing resources, used expressions and other Azure PowerShell commands to to capture data to be stored in shell variables, and looked at some of the resources that get created for Azure VMs.</span></span>\n\n<span data-ttu-id=\"dba06-157\">下一步做什么取决于你打算如何使用 Azure PowerShell。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-157\">Where you go from here depends on how you plan to use Azure PowerShell.</span></span> <span data-ttu-id=\"dba06-158\">若要进一步深入了解本教程中介绍的功能，可以参阅各种资料。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-158\">There are a variety of materials that go further in depth on the features covered in this tutorial.</span></span>\n\n### <a name=\"in-depth-azure-powershell-documentation\"></a><span data-ttu-id=\"dba06-159\">全面的 Azure PowerShell 文档</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-159\">In-depth Azure PowerShell documentation</span></span>\n\n<span data-ttu-id=\"dba06-160\">你可能想要花些时间浏览完整的 [Azure PowerShell 文档](overview.md)集。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-160\">You might want to take time to explore the complete [Azure PowerShell documentation](overview.md) set.</span></span>\n\n<span data-ttu-id=\"dba06-161\">有关本教程中使用的命令的详细信息，请查看以下文章。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-161\">For more information about the commands used in this tutorial, see the following articles.</span></span>\n\n- [<span data-ttu-id=\"dba06-162\">New-AzureRmResourceGroup</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-162\">New-AzureRmResourceGroup</span></span>](/powershell/module/azurerm.resources/new-azurermresourcegroup)\n- [<span data-ttu-id=\"dba06-163\">Get-Credential</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-163\">Get-Credential</span></span>](/powershell/module/microsoft.powershell.security/get-credential)\n- [<span data-ttu-id=\"dba06-164\">New-AzureRmVM</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-164\">New-AzureRmVM</span></span>](/powershell/module/azurerm.compute/new-azurermvm)\n- [<span data-ttu-id=\"dba06-165\">Select-Object</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-165\">Select-Object</span></span>](/powershell/module/microsoft.powershell.utility/select-object)\n- [<span data-ttu-id=\"dba06-166\">Get-AzureRmPublicIpAddress</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-166\">Get-AzureRmPublicIpAddress</span></span>](/powershell/module/azurerm.network/get-AzureRmPublicIpAddress)\n- [<span data-ttu-id=\"dba06-167\">Remove-AzureRmResourceGroup</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-167\">Remove-AzureRmResourceGroup</span></span>](/powershell/module/azurerm.resources/Remove-AzureRmResourceGroup)\n- [<span data-ttu-id=\"dba06-168\">Wait-Job</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-168\">Wait-Job</span></span>](/powershell/module/microsoft.powershell.core/wait-job)\n\n<span data-ttu-id=\"dba06-169\">也有文章对本教程中介绍的功能进行了更深入的探讨。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-169\">There are also articles that go deeper into the features that were shown in the tutorial.</span></span>\n\n- [<span data-ttu-id=\"dba06-170\">PowerShell 展开</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-170\">PowerShell splatting</span></span>](/powershell/module/microsoft.powershell.core/about/about_splatting)\n- [<span data-ttu-id=\"dba06-171\">查询</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-171\">Queries</span></span>](queries-azureps.md)\n- [<span data-ttu-id=\"dba06-172\">格式设置</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-172\">Formatting</span></span>](formatting-output.md)\n- [<span data-ttu-id=\"dba06-173\">使用 PowerShell 作业</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-173\">Using PowerShell jobs</span></span>](using-psjobs.md)\n\n### <a name=\"sample-scripts\"></a><span data-ttu-id=\"dba06-174\">示例脚本</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-174\">Sample scripts</span></span>\n\n<span data-ttu-id=\"dba06-175\">若要立刻开始执行特定的任务，请查看一些示例脚本。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-175\">If you want to get started right away with specific tasks, look at some sample scripts.</span></span>\n\n- [<span data-ttu-id=\"dba06-176\">Linux 虚拟机</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-176\">Linux Virtual Machines</span></span>](/azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [<span data-ttu-id=\"dba06-177\">Windows 虚拟机</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-177\">Windows Virtual Machines</span></span>](/azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [<span data-ttu-id=\"dba06-178\">Web 应用</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-178\">Web Apps</span></span>](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [<span data-ttu-id=\"dba06-179\">SQL 数据库</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-179\">SQL Databases</span></span>](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [<span data-ttu-id=\"dba06-180\">Cosmos DB</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-180\">Cosmos DB</span></span>](/azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json)\n\n### <a name=\"feedback\"></a><span data-ttu-id=\"dba06-181\">反馈</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-181\">Feedback</span></span>\n\n<span data-ttu-id=\"dba06-182\">如果想要提供反馈、建议或提出问题，可以通过多种方式联系我们。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-182\">If you'd like to give feedback, suggestions, or ask questions, there are a number of ways for you to get in touch.</span></span>\n\n* <span data-ttu-id=\"dba06-183\">`Send-Feedback` 是一个内置的 Azure PowerShell 命令，用于向我们的团队提供任意形式的反馈。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-183\">`Send-Feedback` is a built-in command for Azure PowerShell that allows you to provide free-form feedback to the team.</span></span>\n* <span data-ttu-id=\"dba06-184\">在 [Azure PowerShell 存储库](https://github.com/Azure/azure-powershell/issues)中提交功能请求或 Bug 报告。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-184\">File a feature request or a bug report in the [Azure PowerShell repository](https://github.com/Azure/azure-powershell/issues).</span></span>\n* <span data-ttu-id=\"dba06-185\">若要提出某个问题或澄清某个问题，请在 [Azure PowerShell 文档存储库](https://github.com/Azure/azure-docs-powershell/issues)中提交该问题。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-185\">Ask a question or get clarification by filing an issue in the [Azure PowerShell documentation repository](https://github.com/Azure/azure-docs-powershell/issues).</span></span>\n\n<span data-ttu-id=\"dba06-186\">希望你喜欢使用 Azure PowerShell！</span><span class=\"sxs-lookup\"><span data-stu-id=\"dba06-186\">We hope that you enjoy using the Azure PowerShell!</span></span>"
