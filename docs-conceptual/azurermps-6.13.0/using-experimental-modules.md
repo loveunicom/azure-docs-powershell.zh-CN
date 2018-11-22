@@ -6,21 +6,21 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/05/2017
-ms.openlocfilehash: 30e57805dd59bd60d10c52422fcb68686563fadf
+ms.date: 09/11/2018
+ms.openlocfilehash: 77d0ce36ae3ab7c7bddd3febef4600fc9652850f
 ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/22/2018
-ms.locfileid: "52258445"
+ms.locfileid: "52259379"
 ---
-# <a name="using-experimental-azure-powershell-modules"></a>使用 Azure PowerShell 试验性模块
+# <a name="use-experimental-azure-powershell-modules"></a>使用试验性 Azure PowerShell 模块
 
 Azure PowerShell 团队正在以 Azure 中的开发人员工具（尤其是 CLI）为重点，试验 Azure PowerShell 体验的诸多改进方案。
 
 ## <a name="experimentation-methodology"></a>试验方法
 
-为便于试验，我们会创建新的 Azure PowerShell 模块，用于以更易于使用的全新方式实现现有的 Azure SDK 功能。 在大多数情况下，这些 cmdlet 能够准确对应现有 cmdlet。 但是，试验性 cmdlet 提供速记表示法和更智能化的默认值，使 Azure 资源的创建和管理变得更轻松。
+为便于试验，我们将创建新的 Azure PowerShell 模块，以通过更方便的全新方式实现现有的 Azure SDK 功能。 在大多数情况下，这些 cmdlet 能够准确对应现有 cmdlet。 但是，试验性 cmdlet 提供速记表示法和更智能化的默认值，使 Azure 资源的创建和管理变得更轻松。
 
 这些模块可与现有的 Azure PowerShell 模块一同安装。 cmdlet 名称经过简化，因此变得更短，并可避免与现有的非试验性 cmdlet 名称相冲突。
 
@@ -30,11 +30,11 @@ Azure PowerShell 团队正在以 Azure 中的开发人员工具（尤其是 CLI�
 
 试验性模块像现有 Azure PowerShell 模块一样发布到 PowerShell 库。 若要查看实验性模块列表，请运行以下命令：
 
-```powershell-interactive
+```azurepowershell-interactive
 Find-Module AzureRM.*.Experiments
 ```
 
-```Output
+```output
 Version Name                         Repository Description
 ------- ----                         ---------- -----------
 1.0.25  AzureRM.Compute.Experiments  PSGallery  Azure Compute experiments for VM creation
@@ -43,7 +43,7 @@ Version Name                         Repository Description
 
 若要安装试验性模块，请在权限提升的 PowerShell 会话中使用以下命令：
 
-```powershell-interactive
+```azurepowershell-interactive
 Install-Module AzureRM.Compute.Experiments
 Install-Module AzureRM.Websites.Experiments
 ```
@@ -89,7 +89,7 @@ Azure CLI 2.0 使用大量的智能默认值，让最终用户更轻松地实现
 
 例如，“创建 Web 应用”方案可以包含 `-Git` 或 `-AddRemote` 开关，以便将“azure”远程存储库添加到现有的 git 存储库。
 
-- 可设置的默认值 - 用户应该能够将某些普遍的参数（例如 `-ResourceGroupName` 和 `-Location`）设置为默认值。
+- 可设置的默认值 - 用户应该能够为 `-ResourceGroupName` 和 `-Location` 等通用参数设置默认值。
 
 - 大小默认值 - 用户可能对资源“大小”感到混淆，因为许多资源提供程序使用不同的名称（例如，“Standard\_DS1\_v2”或“S1”）。 但是，大多数用户更关心成本。 因此，根据定价计划定义“通用”大小会很有作用。 用户可以选择特定的大小，或者让 Azure PowerShell 根据资源预算选择最佳选项。
 
