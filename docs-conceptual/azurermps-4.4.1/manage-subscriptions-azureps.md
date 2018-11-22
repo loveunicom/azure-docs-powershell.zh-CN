@@ -9,17 +9,17 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
 ms.openlocfilehash: 12e304f32f585c1af40d20579cd46999e0a12395
-ms.sourcegitcommit: 4afdba3cd7e1d348876ce59f3503fdcd258f79ab
+ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51574747"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "52257952"
 ---
-# <a name="manage-multiple-azure-subscriptions"></a><span data-ttu-id="831b7-104">管理多个 Azure 订阅</span><span class="sxs-lookup"><span data-stu-id="831b7-104">Manage multiple Azure subscriptions</span></span>
+# <a name="manage-multiple-azure-subscriptions"></a><span data-ttu-id="489a5-104">管理多个 Azure 订阅</span><span class="sxs-lookup"><span data-stu-id="489a5-104">Manage multiple Azure subscriptions</span></span>
 
-<span data-ttu-id="831b7-105">如果是 Azure 的新手，也许只有一个订阅。</span><span class="sxs-lookup"><span data-stu-id="831b7-105">If you are brand new to Azure, you probably only have a single subscription.</span></span> <span data-ttu-id="831b7-106">但如果使用 Azure 有一段时间，可能已创建了多个 Azure 订阅。</span><span class="sxs-lookup"><span data-stu-id="831b7-106">But if you have been using Azure for a while, you may have created multiple Azure subscriptions.</span></span> <span data-ttu-id="831b7-107">可将 Azure PowerShell 配置为针对特定的订阅执行命令。</span><span class="sxs-lookup"><span data-stu-id="831b7-107">You can configure Azure PowerShell to execute commands against a particular subscription.</span></span>
+<span data-ttu-id="489a5-105">如果是 Azure 的新手，也许只有一个订阅。</span><span class="sxs-lookup"><span data-stu-id="489a5-105">If you are brand new to Azure, you probably only have a single subscription.</span></span> <span data-ttu-id="489a5-106">但如果使用 Azure 有一段时间，可能已创建了多个 Azure 订阅。</span><span class="sxs-lookup"><span data-stu-id="489a5-106">But if you have been using Azure for a while, you may have created multiple Azure subscriptions.</span></span> <span data-ttu-id="489a5-107">可将 Azure PowerShell 配置为针对特定的订阅执行命令。</span><span class="sxs-lookup"><span data-stu-id="489a5-107">You can configure Azure PowerShell to execute commands against a particular subscription.</span></span>
 
-1. <span data-ttu-id="831b7-108">获取帐户中所有订阅的列表。</span><span class="sxs-lookup"><span data-stu-id="831b7-108">Get a list of all subscriptions in your account.</span></span>
+1. <span data-ttu-id="489a5-108">获取帐户中所有订阅的列表。</span><span class="sxs-lookup"><span data-stu-id="489a5-108">Get a list of all subscriptions in your account.</span></span>
 
     ```powershell-interactive
     Get-AzureRmSubscription
@@ -48,13 +48,13 @@ ms.locfileid: "51574747"
     CurrentStorageAccount :
     ```
 
-2. <span data-ttu-id="831b7-109">设置默认值。</span><span class="sxs-lookup"><span data-stu-id="831b7-109">Set the default.</span></span>
+2. <span data-ttu-id="489a5-109">设置默认值。</span><span class="sxs-lookup"><span data-stu-id="489a5-109">Set the default.</span></span>
 
     ```powershell-interactive
     Select-AzureRmSubscription -SubscriptionName "My Demos"
     ```
 
-3. <span data-ttu-id="831b7-110">通过运行 `Get-AzureRmContext` cmdlet 验证更改。</span><span class="sxs-lookup"><span data-stu-id="831b7-110">Verify the change by running the `Get-AzureRmContext` cmdlet.</span></span>
+3. <span data-ttu-id="489a5-110">通过运行 `Get-AzureRmContext` cmdlet 验证更改。</span><span class="sxs-lookup"><span data-stu-id="489a5-110">Verify the change by running the `Get-AzureRmContext` cmdlet.</span></span>
 
     ```powershell-interactive
     Get-AzureRmContext
@@ -69,4 +69,4 @@ ms.locfileid: "51574747"
     CurrentStorageAccount :
     ```
 
-<span data-ttu-id="831b7-111">设置默认订阅后，所有后续 Azure PowerShell 命令将针对此订阅运行。</span><span class="sxs-lookup"><span data-stu-id="831b7-111">Once you set your default subscription, all subsequent Azure PowerShell commands run against this subscription.</span></span>
+<span data-ttu-id="489a5-111">设置默认订阅后，所有后续 Azure PowerShell 命令将针对此订阅运行。</span><span class="sxs-lookup"><span data-stu-id="489a5-111">Once you set your default subscription, all subsequent Azure PowerShell commands run against this subscription.</span></span>
