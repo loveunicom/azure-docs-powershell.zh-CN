@@ -53,7 +53,7 @@ Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
     * 资源 - 2018-02-01
     * Keyvault - 2016-10-01
     * Dns - 2016-04-01
-* https://github.com/Azure/azure-rest-api-specs/blob/master/profile/2018-03-01-hybrid.json 提供每个资源类型的完整 API 版本映射
+* [https://github.com/Azure/azure-rest-api-specs/blob/master/profile/2018-03-01-hybrid.json](https://github.com/Azure/azure-rest-api-specs/blob/master/profile/2018-03-01-hybrid.json)  提供每个资源类型的完整 API 版本映射
 
 ## <a name="content"></a>内容：
 ### <a name="azure-bridge"></a>Azure Bridge
