@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/16/2018
-ms.openlocfilehash: 0830f3e00f85d3b69eff9a999bdb6c3e952cf360
-ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
+ms.openlocfilehash: 616a9e14c3944e3151676d89b8a22e35d8f9d406
+ms.sourcegitcommit: 558436c824d9b59731aa9b963cdc8df4dea932e7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52259389"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52586422"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>使用 PowerShellGet 在 Windows 上安装 Azure PowerShell
 
@@ -103,15 +103,15 @@ Get-Module -Name AzureRM -List | select Name,Version
 如果使用本地 Azure Stack 资源、运行旧版 Windows，或使用 Azure 经典部署模型，则可能需要多个版本。 若要安装旧版本，请在安装时提供 `-RequiredVersion` 参数。
 
 ```powershell-interactive
-# Install version 1.2.9 of Azure PowerShell
-Install-Module -Name AzureRM -RequiredVersion 1.2.9
+# Install version 2.3.0 of Azure PowerShell
+Install-Module -Name AzureRM -RequiredVersion 2.3.0
 ```
 
 加载 Azure PowerShell 模块时，默认加载最新版本。 若要加载另一版本，请提供 `-RequiredVersion` 参数。
 
 ```powershell-interactive
-# Load version 1.2.9 of Azure PowerShell
-Import-Module -Name AzureRM -RequiredVersion 1.2.9
+# Load version 2.3.0 of Azure PowerShell
+Import-Module -Name AzureRM -RequiredVersion 2.3.0
 ```
 
 ## <a name="provide-feedback"></a>提供反馈
