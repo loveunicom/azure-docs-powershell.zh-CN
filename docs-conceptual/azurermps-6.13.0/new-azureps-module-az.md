@@ -17,13 +17,13 @@ ms.locfileid: "52587306"
 # <a name="introducing-the-new-azure-powershell-az-module"></a>新 Azure Powershell Az 模块简介
 
 从 2018 年 11 月起，Azure PowerShell `Az` 模块在完整公共预览版中提供。
-Az 提供更短的命令，提高了稳定性，还支持 Windows、macOS 和 Linux。 Az 还提供与 AzureRM 的功能奇偶一致性以及轻松从 AzureRM 执行迁移的途径。
+Az 提供更短的命令，提高了稳定性，并且支持 Windows、macOS 和 Linux。 Az 还提供与 AzureRM 的功能校验以及从 AzureRM 轻松迁移的途径。
 
-Az 使用 .NET Standard 库，这意味着它在 PowerShell 5.x 和 PowerShell 6.x 上运行。
-由于 PowerShell 6.x 可以在 Linux、 macOS 和 Windows 上运行，因此这意味着 Az 对所有平台均可用。
-使用 .NET Standard，我们可以在将对用户的影响降至最低的情况下统一 Azure PowerShell 的代码库。
+Az 使用 .NET 标准库，这意味着它可以在 5.x 和 6.x 版的 PowerShell 上运行。
+由于 PowerShell 6.x 可以在 Linux、 macOS 和 Windows 上运行，因此 Az 具备全平台适配能力。
+使用 .NET 标准库，既可以统一 Azure PowerShell 的代码库，同时又将对用户的影响降至最低。
 
-Az 是新模块，因此版本已重置。 第一个稳定版本将是 1.0，但该模块与到 2018 年 11 月为止的 AzureRm 具有功能奇偶一致性。
+Az 是新模块，因此版本已重置。 第一个稳定版本将是 1.0，但当前模块已经与到 2018 年 11 月为止的 AzureRm 具有功能校验。
 
 ## <a name="upgrade-to-az"></a>升级到 Az
 
@@ -41,6 +41,6 @@ Az 是新模块，因此版本已重置。 第一个稳定版本将是 1.0，但
 
 有关迁移过程的完整说明，请参阅[从 AzureRM 迁移到 Az](migrate-from-azurerm-to-az.md)。
 
-## <a name="the-future-of-support-for-azurerm"></a>对 AzureRM 的支持的未来
+## <a name="the-future-of-support-for-azurerm"></a>对 AzureRM 的支持计划
 
 `Az` 1.0 版在 2018 年 12 月发布时，现有 `AzureRM` 模块将不再接收新的 cmdlet 或功能。 但是，`AzureRM` 仍会受到正式维护，并且会获得 bug 修复。 若要及时了解最新的 Azure 服务和功能，应切换到 `Az` 模块。
