@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/07/2018
-ms.openlocfilehash: 0c73e7ac1d47a2a97b6136fa481d0adce8de33db
-ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
+ms.openlocfilehash: 720387ec1b23f10ddf2b153cf0705b2b6d1b7b82
+ms.sourcegitcommit: 558436c824d9b59731aa9b963cdc8df4dea932e7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52259383"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52587697"
 ---
 # <a name="migrate-from-azurerm-to-azure-powershell-az"></a>从 AzureRM 迁移到 Azure PowerShell Az
 
@@ -21,7 +21,7 @@ Az 模块与 AzureRM 具有功能奇偶一致性，但 Az 模块使用更短且�
 
 ## <a name="ensure-your-existing-scripts-work-with-the-latest-azurerm-release"></a>请确保现有的脚本与最新的 AzureRM 版本配合工作
 
-这是最重要的步骤！ 运行现有的脚本，并确保它们与最新版本的 AzureRM (__6.12.0__) 配合工作。 如果脚本不起作用，请务必阅读 [AzureRM 迁移指南](migration-guide.6.0.0.md)。
+这是最重要的步骤！ 运行现有的脚本，并确保它们与最新版本的 AzureRM (__6.13.0__) 配合工作。 如果脚本不起作用，请务必阅读 [AzureRM 迁移指南](migration-guide.6.0.0.md)。
 
 ## <a name="install-the-azure-powershell-az-module"></a>安装 Azure Powershell Az 模块
 

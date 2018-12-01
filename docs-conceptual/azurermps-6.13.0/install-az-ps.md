@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 11/16/2018
-ms.openlocfilehash: 32e96c6459c9db0c4b9eda0cc170c85ba99a22ca
-ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
+ms.date: 11/26/2018
+ms.openlocfilehash: 3d52b18750341f220dc8e10d6bf89796457c5a10
+ms.sourcegitcommit: 558436c824d9b59731aa9b963cdc8df4dea932e7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52259454"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52588173"
 ---
 # <a name="install-the-azure-powershell-az-module"></a>安装 Azure PowerShell 的“Az”模块
 
@@ -32,7 +32,9 @@ $PSVersionTable.PSVersion
 
 > [!IMPORTANT]
 >
-> 一个系统上不应同时安装有 `AzureRM` 和 `Az` 模块。 若要安装 `Az` 模块，必须卸载 `AzureRM`。 有关如何执行该操作的说明，请参阅[卸载 Azure PowerShell 模块 (AzureRM)](uninstall-azurerm-ps.md)。
+> 可以同时安装 `AzureRM` 和 `Az` 模块。 如果同时安装这两个模块，__则不要启用别名__。
+> 启用别名会导致在 `AzureRM` cmdlet 与 `Az` 命令别名之间出现冲突，并且可能会导致意外行为。
+> 建议在安装 `Az` 模块之前卸载 `AzureRM`。 随时都可以卸载 `AzureRM` 或启用别名。 有关卸载说明，请参阅[卸载 Azure PowerShell 模块 (AzureRM)](uninstall-azurerm-ps.md)。 
 
 若要在全局范围安装模块，需要具有提升的权限来安装 PowerShell 库中的模块。 若要安装 Azure PowerShell，请在提升的会话中（在 Windows 上“以管理员身份运行”，或在 macOS 或 Linux 上使用超级用户权限）运行以下命令：
 
