@@ -21,7 +21,7 @@ Azure PowerShell 提供一组可以使用 [Azure 资源管理器](/azure/azure-r
 
 使用 [Cloud Shell](/azure/cloud-shell/overview) 在浏览器中运行 Azure PowerShell，或者在自己的计算机上[安装](install-azurerm-ps.md)它。 然后阅读[入门](get-started-azureps.md)一文开始使用。 有关最新版本的信息，请参阅[发行说明](release-notes-azureps.md)。
 
-以下示例有助于了解如何使用 Azure PowerShell 执行常见方案：
+以下示例有助于学习如何使用 Azure PowerShell 执行常见方案：
 
 * [Linux 虚拟机](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=/powershell/azure/toc.json)
 * [Windows 虚拟机](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=/powershell/azure/toc.json)
@@ -30,9 +30,9 @@ Azure PowerShell 提供一组可以使用 [Azure 资源管理器](/azure/azure-r
 
 [!INCLUDE[az-replacing-azurerm](../includes/az-replacing-azurerm.md)]
 
-## <a name="learn-powershell-basics"></a>了解 PowerShell 基础知识
+## <a name="learn-powershell-basics"></a>学习 PowerShell 基础知识
 
-如果你不熟悉 PowerShell，可以参阅 PowerShell 简介。
+如果你不熟悉 PowerShell，阅读 PowerShell 简介会很有帮助。
 
 * [安装 PowerShell](/powershell/scripting/setup/installing-windows-powershell)
 * [通过 PowerShell 编写脚本](/powershell/scripting/powershell-scripting)
