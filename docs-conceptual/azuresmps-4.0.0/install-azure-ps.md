@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/06/2017
-ms.openlocfilehash: 21b61a2f91b4f6211fbeec8ba234782355b9a4b3
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 6cc6d9984e49c0cbc23c7ef3a77b98c0b7f3a8e0
+ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024760"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52828325"
 ---
 # <a name="installing-the-azure-powershell-service-management-module"></a>安装 Azure PowerShell 服务管理模块
 
@@ -85,7 +85,8 @@ Azure PowerShell 模块经常更新。 如果发现 cmdlet 联机帮助包含模
 |我正在运行某个包含 PowerShell 3 或 PowerShell 4 的 Windows 版本|[获取 PackageManagement 模块](http://go.microsoft.com/fwlink/?LinkID=746217)|
 
 <div id="helpmechoose"/>
-### 检查 Azure PowerShell 的版本
+
+### <a name="checking-the-version-of-azure-powershell"></a>检查 Azure PowerShell 的版本
 
 虽然我们建议尽早升级到最新版本，但仍然支持多个 Azure PowerShell 版本。 若要确定安装的 Azure PowerShell 版本，请从命令行运行 `Get-Module AzureRM`。
 
