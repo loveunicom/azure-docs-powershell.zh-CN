@@ -77,7 +77,7 @@ Connect-AzAccount
 >
 > 如果已禁用模块自动加载，则需使用 `Import-Module Az` 手动导入模块。 考虑到模块的构造方式，这可能需要几秒钟时间。
 
-需对每个启动的新 PowerShell 会话重复这些步骤。 若要了解如何跨 PowerShell 会话保持 Azure 登录状态，请参阅[跨 PowerShell 会话保持用户凭据](context-persistence.md)。
+需要在每个新启动的 PowerShell 会话中重复这些步骤。 若要了解如何跨 PowerShell 会话保持 Azure 登录状态，请参阅[跨 PowerShell 会话保持用户凭据](context-persistence.md)。
 
 ## <a name="update-the-azure-powershell-module"></a>更新 Azure PowerShell 模块
 
