@@ -145,13 +145,13 @@ Version   : latest
 Id        :
 ```
 
-## <a name="create-a-fully-configured-linux-virtual-machine"></a>创建完全配置的 Linux 虚拟机
+## <a name="create-a-fully-configured-linux-virtual-machine"></a>创建完整自定义配置的 Linux 虚拟机
 
 前面的示例使用了简化的语法和默认参数值来创建 Windows 虚拟机。 在此示例中，我们为虚拟机的所有选项提供值。
 
 ### <a name="create-a-resource-group"></a>创建资源组
 
-对于此示例，我们想要创建资源组。 使用 Azure 中的资源组可以同时管理希望以逻辑方式分组的多个资源。 例如，可为应用程序或项目创建资源组，并在其中添加虚拟机、数据库和 CDN 服务。
+在本例中，我们需要创建资源组。 使用 Azure 中的资源组可以同时管理希望以逻辑方式分组的多个资源。 例如，可为应用程序或项目创建资源组，并在其中添加虚拟机、数据库和 CDN 服务。
 
 让我们在 Azure 的西欧区域创建一个名为“MyResourceGroup”的资源组。 为此，请键入以下命令：
 
@@ -167,7 +167,7 @@ Tags              :
 ResourceId        : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/myResourceGroup
 ```
 
-这一新资源组将用于包含我们创建的新 VM 所需的所有资源。 若要创建新的 Linux VM，必须先创建其他所需的资源并将其分配到配置中。 然后，可以使用该配置来创建 VM。 此外，用户配置文件的 .ssh 目录中需具备名为 `id_rsa.pub` 的 SSH 公钥。
+这一新资源组将用于容纳我们创建的新 VM 所需的所有资源。 若要创建新的 Linux VM，必须先创建其他所需的资源并将其分配到配置中。 然后，可以使用该配置来创建 VM。 此外，用户配置文件的 .ssh 目录中需具备名为 `id_rsa.pub` 的 SSH 公钥。
 
 #### <a name="create-the-required-network-resources"></a>创建所需的网络资源
 
