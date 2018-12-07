@@ -63,6 +63,6 @@ Enable-AzureRmAlias -Scope CurrentUser
 | AzureRM.RecoveryServices.Backup | Az.RecoveryServices |
 | AzureRM.RecoveryServices.SiteRecovery | Az.RecoveryServices |
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
-按照以下步骤操作，可以更新所有现有脚本以使用新模块。 如果对这些步骤有任何疑问或问题，使得迁移难于执行，请对本文发表评论，以便我们可以改进说明。
+按照以上这些步骤操作，可以更新所有现有脚本以使用新模块。 如果对这些步骤有任何疑问或问题，使得迁移难于执行，请对本文发表评论，以便我们可以改进指导说明。
