@@ -145,7 +145,7 @@ Version   : latest
 Id        :
 ```
 
-## <a name="create-a-fully-configured-linux-virtual-machine"></a>创建完整自定义配置的 Linux 虚拟机
+## <a name="create-a-fully-configured-linux-virtual-machine"></a>创建完全配置的 Linux 虚拟机
 
 前面的示例使用了简化的语法和默认参数值来创建 Windows 虚拟机。 在此示例中，我们为虚拟机的所有选项提供值。
 
